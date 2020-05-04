@@ -22,6 +22,41 @@ $(document).ready(function () {
     speed: 900,
     autoplay: true,
     autoplaySpeed: 5000,
+    responsive: [
+      {
+        breakpoint: 1240,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplaySpeed: 3000,
+
+        }
+      },
+      {
+        breakpoint: 811,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplaySpeed: 2500,
+        }
+      },
+      {
+        breakpoint: 621,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplaySpeed: 2000,
+        }
+      },
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplaySpeed: 1300,
+        }
+      },
+    ]
   });
 
   // Прогрес бар
@@ -39,10 +74,14 @@ $(document).ready(function () {
     const offset = circumfarence - percent / 100 * circumfarence;
     circle.style.strokeDashoffset = offset;
   };
-
-
   setProgress(67);
 
 
 });
-
+// .бургер меню 
+$(document).ready(function () {
+  // на  класс header__burger вешаем событие клика тогда прик клике на header__burger будет доавляться клас active таким блокам как header__burger и nav при повторном нажатии убераться
+  $('.header__burger').click(function (event) {
+    $('.header__burger,.nav').toggleClass('active');
+  });
+});
