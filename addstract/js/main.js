@@ -85,7 +85,9 @@ $(document).ready(function () {
     $('.header__burger,.nav,body').toggleClass('active');
   });
   $('.nav__list-item').click(function (event) {
-    $('.header__burger,.nav').toggleClass('active');
+    $('.header__burger,.nav,body').toggleClass('active');
   });
-  
+  $('.nav__list-item,.header__burger').click(function (event) {
+    $('.nav-wrapper').removeClass('animate__fadeInDown');
+  });
 });
