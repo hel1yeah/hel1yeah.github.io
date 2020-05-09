@@ -80,13 +80,16 @@ $(document).ready(function () {
 });
 // .бургер меню 
 $(document).ready(function () {
-  // на  класс header__burger вешаем событие клика тогда прик клике на header__burger будет доавляться клас active таким блокам как header__burger и nav при повторном нажатии убераться
+  // на  класс header__burger вешаем событие клика тогда прик клике на header__burger будет доавляться клас active таким блокам как header__burger  nav  body при повторном нажатии убераться
   $('.header__burger').click(function (event) {
     $('.header__burger,.nav,body').toggleClass('active');
   });
+  // при нажатии на .nav__list-item удаляем клас active у .header__burger,.nav,body
   $('.nav__list-item').click(function (event) {
-    $('.header__burger,.nav,body').toggleClass('active');
+    $('.header__burger,.nav,body').removeClass('active');
   });
+
+
   $('.nav__list-item,.header__burger').click(function (event) {
     $('.nav-wrapper').removeClass('animate__fadeInDown');
   });
