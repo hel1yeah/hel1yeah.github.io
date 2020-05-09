@@ -82,6 +82,10 @@ $(document).ready(function () {
 $(document).ready(function () {
   // на  класс header__burger вешаем событие клика тогда прик клике на header__burger будет доавляться клас active таким блокам как header__burger и nav при повторном нажатии убераться
   $('.header__burger').click(function (event) {
+    $('.header__burger,.nav,body').toggleClass('active');
+  });
+  $('.nav__list-item').click(function (event) {
     $('.header__burger,.nav').toggleClass('active');
   });
+  
 });
