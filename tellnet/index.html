@@ -66,7 +66,7 @@
           <div class="service-link"><a href="#">
               + повний комп'ютерний сервіс</a>
           </div>
-          <button class="button">
+          <button class="button btn-modal">
             Підключити
           </button>
         </div>
@@ -111,7 +111,7 @@
               <div class="tariffs__particular--price">100 ₴</div>
               <div class="tariffs__particular--decription">у місяць</div>
             </div>
-            <button class="button button-align">
+            <button class="button button-align btn-modal">
               Підключити
             </button>
           </div>
@@ -165,13 +165,13 @@
         </div>
         <div class="speed-test">
           <a href="https://2ip.ua/ua/services/ip-service/speedtest" target="_blank">ПЕРЕВІРИТИ ШВИДКІСТЬ ВАШОГО
-          ІНТЕРНЕТУ</a>
+            ІНТЕРНЕТУ</a>
         </div>
       </div>
     </section>
     <!-- /tariffs -->
     <!-- discount -->
-     <section class="discount">
+    <section class="discount">
       <div class="container">
         <div class="discount__title title-text-top">
           <h2>У нас акції!</h2>
@@ -184,13 +184,14 @@
           <div class="discount__conditions">
             <div class="discount__conditions--items">
               <h3>Оплачуй 12 місяців - користуйся 13</h3>
-              <p>При одноразовій оплаті річного абонемента будь-якого тарифного плану, Ви отримуєте додатковий місяць використання інтернету безкоштовно.
+              <p>При одноразовій оплаті річного абонемента будь-якого тарифного плану, Ви отримуєте додатковий місяць
+                використання інтернету безкоштовно.
               </p>
             </div>
             <div class="discount__conditions--items">
               <h3>Приведи друга - ремонтуй ПК зі знижкою</h3>
               <p>Якщо по Вашій рекомендації ми підключаємо нового абонента, Ви отримуєте можливість ремонту комп'ютера
-              зі знижкою 15% в Протягом року з моменту підключення.</p>
+                зі знижкою 15% в Протягом року з моменту підключення.</p>
             </div>
           </div>
         </div>
@@ -231,7 +232,8 @@
           </p>
           <p>
             Основні конкурентні переваги компанії Tell-Net - це швидке реагування на завдання, молодий
-            колектив, прагне до зростання компанії і повищенной власних технічних навичок. У своїй роботі ми дотримуємося
+            колектив, прагне до зростання компанії і повищенной власних технічних навичок. У своїй роботі ми
+            дотримуємося
             принципам чесності, сумлінності і турботі про клієнта.
           </p>
         </div>
@@ -345,7 +347,7 @@
             </div>
             <div class="service__item-description">
               <p>Заправка картриджів для
-              лазерних принтерів</p>
+                лазерних принтерів</p>
             </div>
           </div>
           <div class="service__item">
@@ -354,7 +356,7 @@
             </div>
             <div class="service__item-description">
               <p>Ремонт і чистка ноутбуків
-              і ПК
+                і ПК
               </p>
             </div>
           </div>
@@ -377,7 +379,7 @@
           <div class="contacts__map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5273.063560713284!2d30.79037040298136!3d50.51680762932173!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1590583821184!5m2!1sru!2sua"
-              width="525" height="540" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+              width="525px" height="540px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
               tabindex="0">
             </iframe>
           </div>
@@ -388,7 +390,7 @@
             <div class="number-address-wrapper">
               <div class="number__box">
                 <div class="number__title">
-                    Наші телефони:
+                  Наші телефони:
                 </div>
                 <ul class="number__list">
                   <li class="number__item">
@@ -410,11 +412,11 @@
               </div>
               <div class="address__box">
                 <div class="address__title">
-                    Наша адреса:
+                  Наша адреса:
                 </div>
                 <div class="address__position">
                   м Бровари,
-                  вул.Короленка, д.66А 
+                  вул.Короленка, д.66А
                   підвальне приміщення
                 </div>
               </div>
@@ -469,6 +471,35 @@
         </address>
       </div>
     </section>
+    <!-- pop-up -->
+    <section class="overlay">
+      <div class="modal">
+        <div class="modal__form-block">
+          <div class="modal__title title-text-top">
+            <h2>
+              Залишити заявку на підключення
+            </h2>
+          </div>
+          <form class="form" action="" method="post">
+            <div class="form__name">Ваше ім'я</div>
+            <input class="input" type="text" name="name_user" id="input-name" placeholder="Алексей">
+            <div class="form__name">Введіть номер телефону</div>
+            <input class="input" type="number" name="user_phone" id="input-phone" placeholder="+38(097)-43-45-360">
+            <button class="button modal-button">
+              Підключити
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+      <!-- /pop-up -->
+      <!-- aside -->
+      <aside class="aside">
+        <a class="aside__scroll-up" href="#">
+          <img src="images/arrow-up.svg" alt="scroll-up">
+        </a>
+      </aside>
+      <!-- /aside -->
   </main>
   <!-- /maine -->
 
@@ -502,20 +533,14 @@
           </div>
           <div class="footer__designer">
             Designer:
-            <a href="https://www.behance.net/SoundSoul_A/appreciated" target="_blank" >SoundSoul_A</a>
+            <a href="https://www.behance.net/SoundSoul_A/appreciated" target="_blank">SoundSoul_A</a>
           </div>
         </div>
       </div>
     </div>
   </footer>
   <!-- footer -->
-  <!-- aside -->
-  <aside class="aside">
-    <a class="aside__scroll-up" href="#">
-      <img src="images/arrow-up.svg" alt="scroll-up">
-    </a>
-  </aside>
-  <!-- /aside -->
+
   <!-- script -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
   </script>
