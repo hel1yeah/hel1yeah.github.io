@@ -21,7 +21,8 @@
             <a href="#"><img src="images/logo.svg" alt="Tell-Net"></a>
           </div>
         </div>
-        <div class="wrapper-number-language">
+        <div class="actions-wrapper">
+          <div class="wrapper-number-language">
           <div class="phone-number-icon">
             <a href="tel:380974345360">
               <img src="images/icon-phone-number.svg" alt="icon-phone-number">
@@ -45,7 +46,25 @@
             </li>
           </ul>
         </div>
-
+        <div class="navBurger-wrapper">
+          <div class="navBurger" id="navToggle"></div>
+        </div>
+        
+        </div>
+        
+        <div class="overlay">
+          <nav class="overlayMenu">
+            <ul role="menu">
+              <li><a href="#tariffs-link" class="menu-item">Тарифи</a></li>
+              <li><a href="#discount-link" class="menu-item">Акції</a></li>
+              <li><a href="#about-us-link" class="menu-item">Про нас</a></li>
+              <li><a href="#connection-link" class="menu-item">Залишити заявку</a></li>
+              <li><a href="#payme-link" class="menu-item">Оплата онлайн</a></li>
+              <li><a href="#types-service" class="menu-item">Услуги</a></li>
+              <li><a href="#contacts-link" class="menu-item">Контакти</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="heading">
         <div class="text-behind internet">
@@ -63,7 +82,7 @@
       </div>
       <div class="act">
         <div class="act__item">
-          <div class="service-link"><a href="#">
+          <div class="service-link"><a href="#types-service">
               + повний комп'ютерний сервіс</a>
           </div>
           <button class="button btn-modal">
@@ -80,6 +99,7 @@
   <!-- maine -->
   <main class="maine">
     <!-- tariffs -->
+    <div id="tariffs-link"></div>
     <section class="tariffs">
       <div class="container">
         <div class="tariffs__text">
@@ -133,7 +153,7 @@
               <div class="tariffs__particular--price">120 ₴</div>
               <div class="tariffs__particular--decription">у місяць</div>
             </div>
-            <button class="button button-align">
+            <button class="button button-align btn-modal">
               Підключити
             </button>
           </div>
@@ -155,7 +175,7 @@
               <div class="tariffs__particular--price">150 ₴</div>
               <div class="tariffs__particular--decription">у місяць</div>
             </div>
-            <button class="button button-align">
+            <button class="button button-align btn-modal">
               Підключити
             </button>
           </div>
@@ -171,6 +191,7 @@
     </section>
     <!-- /tariffs -->
     <!-- discount -->
+    <div id="discount-link"></div>
     <section class="discount">
       <div class="container">
         <div class="discount__title title-text-top">
@@ -207,6 +228,7 @@
     </section>
     <!-- /discount -->
     <!-- about-us -->
+    <div id="about-us-link"></div>
     <section class="about-us">
       <div class="container">
         <div class="about-us__title-text title-text-top">
@@ -240,6 +262,7 @@
       </div>
     </section>
     <!-- connections -->
+    <div id="connection-link"></div>
     <section class="connection">
       <div class="container">
         <div class="connection__inner-wrapper">
@@ -268,6 +291,7 @@
     </section>
     <!-- /about-us -->
     <!-- payme -->
+    <div id="payme-link"></div>
     <section class="payme">
       <div class="container">
         <div class="payme__inner-wrapper">
@@ -288,7 +312,8 @@
     </section>
     <!-- /payme -->
     <!-- service -->
-    <section class="service">
+    <div id="types-service"></div>
+    <section class="service" >
       <div class="container">
         <div class="service__title title-text-top">
           <h2>
@@ -322,7 +347,7 @@
               <img src="images/service-images/video-img.svg" alt="windows">
             </div>
             <div class="service__item-description">
-              <p>Монтаж відеоспостереження</p>
+              <p>Монтаж відео спостереження</p>
             </div>
           </div>
           <div class="service__item">
@@ -372,6 +397,8 @@
       </div>
     </section>
     <!-- /service -->
+    <!-- contacts -->
+    <div id="contacts-link"></div>
     <section class="contacts">
       <div class="container">
         <address class="contacts__address">
@@ -471,8 +498,10 @@
         </address>
       </div>
     </section>
+    <!-- /contacts -->
     <!-- pop-up -->
-    <section class="overlay">
+    <section class="pop-up">
+      <div class="modal__close"></div>
       <div class="modal">
         <div class="modal__form-block">
           <div class="modal__title title-text-top">

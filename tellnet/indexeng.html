@@ -63,10 +63,10 @@
       </div>
       <div class="act">
         <div class="act__item">
-          <div class="service-link"><a href="#">
+          <div class="service-link"><a href="#types-service">
               + full computer service</a>
           </div>
-          <button class="button">
+          <button class="button btn-modal">
             Connect
           </button>
         </div>
@@ -111,7 +111,7 @@
               <div class="tariffs__particular--price">100 ₴</div>
               <div class="tariffs__particular--decription">per month</div>
             </div>
-            <button class="button button-align">
+            <button class="button button-align btn-modal">
               Connect
             </button>
           </div>
@@ -133,7 +133,7 @@
               <div class="tariffs__particular--price">120 ₴</div>
               <div class="tariffs__particular--decription">per month</div>
             </div>
-            <button class="button button-align">
+            <button class="button button-align btn-modal">
               Connect
             </button>
           </div>
@@ -297,6 +297,7 @@
     </section>
     <!-- /payme -->
     <!-- service -->
+    <div id="types-service"></div>
     <section class="service">
       <div class="container">
         <div class="service__title title-text-top">
@@ -482,8 +483,29 @@
         </address>
       </div>
     </section>
-
+    <!-- pop-up -->
+    <section class="pop-up">
+      <div class="modal__close"></div>
+      <div class="modal">
+        <div class="modal__form-block">
+          <div class="modal__title title-text-top">
+            <h2>
+            Leave a connection request
+            </h2>
+          </div>
+          <form class="form" action="" method="post">
+            <div class="form__name">Your name</div>
+            <input class="input" type="text" name="name_user" id="input-name" placeholder="Алексей">
+            <div class="form__name">Enter the phone number</div>
+            <input class="input" type="number" name="user_phone" id="input-phone" placeholder="+38(097)-43-45-360">
+            <button class="button modal-button">
+              Connect
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
+    <!-- /pop-up -->
 
 
     <!-- aside -->
