@@ -1,0 +1,52 @@
+[data-theme="light"] {
+  --main-color-bg: rgb(241, 240, 240);
+  --bold-text-color: rgb(29, 29, 29);
+  --help-text-color: rgb(140, 140, 140);
+  --default-block-bg-color: rgb(255, 255, 255);
+  --breeds-select-bg-color: rgb(248, 248, 247);
+  --action-user-bg-color: rgb(248, 248, 247);
+  --time-bg-color: rgb(255, 255, 255);
+  
+  --test: rgb(140, 140, 140);
+
+  --btn-active-bg-color: rgba(255, 134, 142, 1);
+  --header-card-active-color: rgb(251, 224, 220);
+  --hover-grid-card-color: rgba(255, 134, 142, 0.6);
+  --hover-color: rgb(251, 223, 218);
+
+  --options-color: rgb(248, 248, 247);
+  --bgc-title-color: rgb(251, 224, 220);
+  --search-button-color: rgb(251, 223, 218);
+
+  // цвета что не меняються в зависимости от темы
+  --while-color: rgb(255, 255, 255);
+  --fiolet-card-color: rgba(180, 183, 255, 1);
+  --grean-card-color: rgba(151, 234, 185, 1);
+  --orange-card-color: rgba(255, 237, 204, 1);
+  --speed: 0.6s;
+}
+
+[data-theme="dark"] {
+  --main-color-bg: rgb(29, 29, 29);
+  --bold-text-color: rgb(255, 255, 255);
+  --help-text-color: rgb(140, 140, 140);
+  --default-block-bg-color: rgb(40, 40, 40);
+  --breeds-select-bg-color: rgb(71, 71, 71);
+  --action-user-bg-color: rgb(51, 51, 51);
+  --time-bg-color: rgb(29, 29, 29);
+
+  --btn-active-bg-color: rgba(255, 134, 142, 1);
+  --header-card-active-color: rgb(251, 224, 220);
+  --hover-grid-card-color: rgba(255, 134, 142, 0.6);
+  --hover-color: rgb(251, 223, 218);
+
+  --options-color: rgb(51, 51, 51);
+  --search-button-color: rgb(83, 59, 60);
+
+  // цвета что не меняються в зависимости от темы
+  --while-color: rgb(255, 255, 255);
+  --fiolet-card-color: rgba(180, 183, 255, 1);
+  --grean-card-color: rgba(151, 234, 185, 1);
+  --orange-card-color: rgba(255, 237, 204, 1);
+  --speed: 0.6s;
+}
