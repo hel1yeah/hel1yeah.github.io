@@ -1,21 +1,29 @@
 html {
+  font-family: 'Natasha', sans-serif;
+  font-size: 20px;
   box-sizing: border-box;
+  background: var(--color-light);
 }
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
-
+ul {
+  margin: 0;
+  padding: 0;
+}
 li {
   list-style-type: none; /* Убираем маркеры */
 }
+
+a {
+  text-decoration: none;
+}
 body {
-  height: 100%;
-  font-family: "Jost", sans-serif;
-  font-size: 18px;
-  height: 100%;
-  overflow-x: hidden;
+
 }
 
 h1,
@@ -24,74 +32,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Jost", sans-serif;
-  font-size: 18px;
+  font-family: 'Natasha', sans-serif;
+  font-size: 1rem;
+
 }
 
 button {
   outline: transparent;
   border: transparent;
-
 }
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 30px 20px 0;
-}
-
-.search-attitude-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 0 10px;
-}
-
-
-// style with all grids components
-.grid-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, minmax(140px, 200px));
-  grid-auto-rows: minmax(140px, 200px);
-}
-.grid-container__item {
-  width: 100%;
+  max-width: 1366px;
   height: 100%;
-
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: var(--speed);
-  &:nth-child(10n + 1) {
-    grid-row: span 2;
-  }
-  &:nth-child(10n + 4) {
-    grid-column: 2/4;
-    grid-row: span 2;
-  }
-  &:nth-child(10n + 6) {
-    grid-row: auto;
-  }
-  &:nth-child(10n + 8) {
-    grid-column: 3;
-    grid-row: span 2;
-  }
-  &:nth-child(10n + 9) {
-    grid-column: 1/3;
-    grid-row: span 2;
-  }
-  &:hover .grid-container__item--hover {
-    top: 0;
-  }
-  & .center{
-    align-items: center;
-    justify-content: center;
-  }
-  & .end{
-    align-items: flex-end;
-  }
+  margin: 0 auto;
+  padding: 0 20px;
 }

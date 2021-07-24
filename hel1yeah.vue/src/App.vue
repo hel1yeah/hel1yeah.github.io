@@ -1,10 +1,23 @@
 <template>
-  <div id="nav">
-    
+  <div id="app" data-theme="light">
+    <!-- ========= HEADER PAGE ========= -->
+    <Header> </Header>
+    <!-- ========= /HEADER PAGE ========= -->
   </div>
-  
 </template>
 
-<style lang="scss">
+<script>
+import Header from '@/views/Header.vue'
 
-</style>
+export default {
+  name: 'app',
+  components: {
+    Header,
+  },
+  data() {
+    return {}
+  },
+}
+</script>
+
+<style lang="scss" scoped></style>
