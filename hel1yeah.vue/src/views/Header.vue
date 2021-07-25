@@ -233,9 +233,6 @@ $menu-animation-timing: ease-out;
 }
 .header__title {
   text-align: center;
-  & h1 {
-    font-size: 3.25rem;
-  }
   & p {
     font-family: 'MuseoSans', sans-serif;
     font-size: 2rem;
