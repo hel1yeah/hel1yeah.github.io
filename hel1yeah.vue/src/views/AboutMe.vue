@@ -113,6 +113,7 @@ export default {
 
 <style lang="scss" scoped>
 .about-me {
+  margin: 4rem 0 0
 }
 .container {
 }
@@ -126,16 +127,13 @@ export default {
   grid-gap: 2rem;
   grid-template-columns: 57% 40%;
   grid-template-rows: 1fr;
-
 }
 
 .wrapper__merit-links {
   display: flex;
   flex-direction: column;
-
 }
 .about-me__background {
-
 }
 
 .about-me__background-title {
@@ -188,7 +186,7 @@ export default {
 }
 .merit__item--descr {
   font-weight: 300;
-  margin: 1.5rem 0 0 0;
+  margin: 2.5rem 0 0 0;
 }
 
 .about-me__links-title {
@@ -234,14 +232,22 @@ export default {
     grid-template-rows: 1fr;
   }
 }
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1050px) {
   .about-me__gread {
     grid-template-columns: 100%;
     grid-gap: 0;
-    
   }
   .merit-wrapper {
     flex-direction: row;
+  }
+}
+@media screen and (max-width: 475px) {
+  .merit-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .merit__item {
+    margin: 3rem 0.3rem 0;
   }
 }
 </style>
