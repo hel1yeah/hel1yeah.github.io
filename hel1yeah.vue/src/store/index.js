@@ -52,6 +52,22 @@ export default createStore({
       { name: 'Elementary', level: 'A2' },
       { name: 'humor', level: '69 (:' },
     ],
+    isProjects: [
+      {
+        name: 'Prechu',
+        descr: 'Первые шаги в путь Front-End',
+        img: require('../assets/images/full-page/prechu.png'),
+        demo: require('../assets/images/demo-page/prechu-demo.png'),
+        id: 1,
+      },
+      {
+        name: 'Prechu',
+        descr: 'Первые шаги в путь Front-End',
+        img: require('../assets/images/full-page/prechu.png'),
+        demo: require('../assets/images/demo-page/prechu-demo.png'),
+        id: 1,
+      },
+    ],
   },
   mutations: {},
   actions: {},
