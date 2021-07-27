@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { createStore } from 'vuex'
 
 export default createStore({
@@ -52,24 +53,43 @@ export default createStore({
       { name: 'Elementary', level: 'A2' },
       { name: 'humor', level: '69 (:' },
     ],
-    isProjects: [
-      {
-        name: 'Prechu',
-        descr: 'Первые шаги в путь Front-End',
-        img: require('../assets/images/full-page/prechu.png'),
-        demo: require('../assets/images/demo-page/prechu-demo.png'),
-        id: 1,
-      },
-      {
-        name: 'Prechu',
-        descr: 'Первые шаги в путь Front-End',
-        img: require('../assets/images/full-page/prechu.png'),
-        demo: require('../assets/images/demo-page/prechu-demo.png'),
-        id: 1,
-      },
-    ],
+    isProjects: null,
+    isLoading: false,
+    error: null,
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    isProjectsUploadStart(state) {
+      state.isProjects = null
+      state.isLoading = true
+    },
+    isProjectsUploadSuccess(state, payload) {
+      state.isProjects = payload
+      state.isLoading = false
+    },
+    isProjectsUploadFailure(state, payload) {
+      state.isProjects = null
+      state.error = payload
+      state.isLoading = false
+    },
+  },
+  actions: {
+    getWorks({ commit }) {
+      commit('isProjectsUploadStart')
+      return new Promise((resolve) => {
+        axios
+          .get(
+            'https://hel1-yeah-default-rtdb.europe-west1.firebasedatabase.app/works-data.json',
+          )
+          .then((response) => {
+            if (response.status === 200) {
+              commit('isProjectsUploadSuccess', response.data)
+            }
+          })
+          .catch((err) => {
+            commit('isProjectsUploadFailure', err)
+          })
+      })
+    },
+  },
   modules: {},
 })
