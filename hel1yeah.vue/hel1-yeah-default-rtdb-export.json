@@ -102,7 +102,7 @@
       "id": "9",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fmediumclonevue.png?alt=media&token=b6a51248-236e-4bf3-931a-48a349619f93",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fmediumclonevue-demo.png?alt=media&token=94cceab9-a5b6-4577-8ec9-accb66296dc0",
-      "link": null
+      "link": "https://mediumclonevue.web.app/#/"
     },
     {
       "name": "Tell-Net-pro",
@@ -119,7 +119,7 @@
       "id": "15",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fvue-app-pets.png?alt=media&token=3c1faf70-c24e-4cd8-9870-1bfe7fcbe7da",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fvue-app-pets-demo.png?alt=media&token=bac4c4b6-2498-48df-91f1-d6493b057763",
-      "link": null
+      "link": "https://vue-app-212e8.web.app/"
     }
   ]
 }
