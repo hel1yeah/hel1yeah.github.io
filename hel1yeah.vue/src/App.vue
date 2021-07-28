@@ -3,7 +3,7 @@
     <!-- ========= HEADER PAGE ========= -->
     <Header> </Header>
     <!-- ========= /HEADER PAGE ========= -->
-    
+
     <!-- ========= AboutMe PAGE ========= -->
     <AboutMe> </AboutMe>
     <!-- ========= /AboutMe PAGE ========= -->
@@ -12,9 +12,12 @@
     <Skills> </Skills>
     <!-- ========= /Skills PAGE ========= -->
 
-    <!-- ========= Skills PAGE ========= -->
+    <!-- ========= Works PAGE ========= -->
     <Works> </Works>
-    <!-- ========= /Skills PAGE ========= -->
+    <!-- ========= /Works PAGE ========= -->
+    <!-- ========= Footer PAGE ========= -->
+    <Footer> </Footer>
+    <!-- ========= /Footer PAGE ========= -->
   </div>
 </template>
 
@@ -23,6 +26,7 @@ import Header from '@/views/Header.vue'
 import AboutMe from '@/views/AboutMe.vue'
 import Skills from '@/views/Skills.vue'
 import Works from '@/views/Works.vue'
+import Footer from '@/views/Footer.vue'
 
 export default {
   name: 'app',
@@ -31,6 +35,7 @@ export default {
     AboutMe,
     Skills,
     Works,
+    Footer,
   },
   data() {
     return {}
@@ -38,4 +43,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#app{
+  margin: 0 0 5rem;
+}
+</style>
