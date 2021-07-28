@@ -9,20 +9,22 @@
           :key="project.id"
           :style="{ backgroundImage: `url(${project.demo})` }"
         >
-          <h5 class="works__name">
-            {{ project.name }}
-          </h5>
-          <p class="works__descr">{{ project.descr }}</p>
-          <a
-            v-if="project.link !== null"
-            :href="project.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Сайт: {{ project.name }}</a
-          >
-          <a class="works__link" :href="project.img" download
-            >crfxfnmsdfsdfgsdffg ffds</a
-          >
+          <div class="content-item__info">
+            <h5 class="works__name">
+              {{ project.name }}
+            </h5>
+            <p class="works__descr">{{ project.descr }}</p>
+            <a
+              class="works__link"
+              v-if="project.link != null"
+              :href="project.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Сайт: {{ project.name }}</a
+            >
+          </div>
+
+          <!-- <a class="works__link" :href="project.img" download>Скачать макет</a> -->
         </div>
       </div>
     </div>
@@ -62,7 +64,6 @@ export default {
 .works__title {
 }
 .works__content {
-  z-index: 1;
   margin: 2rem 0 0;
   display: flex;
   flex-direction: row;
@@ -73,6 +74,7 @@ export default {
   color: var(--color-light);
 }
 .works__content-item {
+  z-index: 1;
   width: 350px;
   height: 350px;
   background-size: contain;
@@ -85,7 +87,7 @@ export default {
   transition: 0.7s;
   &::before {
     content: '';
-    z-index: 1;
+    z-index: -1;
     position: absolute;
     top: 0;
     left: -360px;
@@ -98,7 +100,7 @@ export default {
   }
   &::after {
     content: '';
-    z-index: 1;
+    z-index: -1;
     position: absolute;
     top: 0;
     right: -360px;
@@ -116,18 +118,37 @@ export default {
       transform: translateX(12%) rotate(45deg) scale(2);
     }
     &.works__content-item::after {
-      right: 100px; 
+      right: 100px;
       transform: translateX(-12%) rotate(45deg) scale(2);
+    }
+    & .content-item__info{
+      opacity: 1;
     }
   }
 }
+.content-item__info {
+  padding: 20px;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  opacity: 0;
+  transition: 1s;
+}
 .works__name {
+  font-size: 1.5rem;
   z-index: 2;
 }
 .works__descr {
   z-index: 2;
 }
 .works__link {
+  color: var(--color-light);
   z-index: 2;
+  transition: .7s;
+  &:hover{
+    color: var(--color-grey);
+    cursor: pointer;
+  }
 }
 </style>
