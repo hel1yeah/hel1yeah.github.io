@@ -12,7 +12,7 @@ app.use(router)
 app.use(vuescrollto, {
   container: 'body',
   duration: 700,
-  easing: 'ease-in-out',
+  easing: 'line',
   offset: -60,
   force: true,
   cancelable: true,

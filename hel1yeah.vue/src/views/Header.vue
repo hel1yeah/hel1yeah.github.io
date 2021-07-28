@@ -43,11 +43,17 @@
         /></a>
       </div>
     </div>
+    <ArrayUp></ArrayUp>
   </section>
 </template>
 
 <script>
+import ArrayUp from '@/components/ArrayUp.vue'
 export default {
+  name: 'Header',
+  components:{
+    ArrayUp,
+  },
   data() {
     return {
       isActive: false,

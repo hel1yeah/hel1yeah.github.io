@@ -112,7 +112,6 @@ export default {
     transition: 0.7s;
   }
   &:hover {
-    cursor: pointer;
     &.works__content-item::before {
       left: 100px;
       transform: translateX(12%) rotate(45deg) scale(2);

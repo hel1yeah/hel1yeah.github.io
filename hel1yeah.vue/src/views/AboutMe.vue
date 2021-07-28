@@ -113,7 +113,7 @@ export default {
 
 <style lang="scss" scoped>
 .about-me {
-  margin: 4rem 0 0
+  margin: 4rem 0 0;
 }
 .container {
 }
