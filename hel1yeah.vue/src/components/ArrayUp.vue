@@ -34,10 +34,10 @@ export default {
 
 <style lang="scss" scoped>
 .arrow-up {
-  z-index: 999;
+  z-index: 100;
   position: fixed;
-  bottom: 4rem;
-  right: 4rem;
+  bottom: 2rem;
+  right: 2rem;
   border: 1.25px solid var(--color-green);
   width: 50px;
   height: 50px;
@@ -55,5 +55,9 @@ export default {
 .arrow-up__img {
   width: 30px;
   height: 30px;
+}
+
+@media screen and (max-width: ) {
+  
 }
 </style>

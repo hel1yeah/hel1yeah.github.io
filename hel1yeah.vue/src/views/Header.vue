@@ -44,15 +44,20 @@
       </div>
     </div>
     <ArrayUp></ArrayUp>
+    <MobileMenu :isActive="isActive" @closeModal="useBurger">
+
+    </MobileMenu>
   </section>
 </template>
 
 <script>
 import ArrayUp from '@/components/ArrayUp.vue'
+import MobileMenu from '@/components/MobileMenu.vue'
 export default {
   name: 'Header',
-  components:{
+  components: {
     ArrayUp,
+    MobileMenu,
   },
   data() {
     return {
@@ -62,8 +67,11 @@ export default {
   methods: {
     useBurger() {
       let clickDelay = 500
+      let body = document.querySelector('body')
       const burgerMenu = this.$refs.burgerMenu
       burgerMenu.classList.toggle('active')
+      body.classList.toggle('close')
+
       this.isActive = !this.isActive
 
       if (!burgerMenu.classList.contains('active')) {
@@ -118,7 +126,7 @@ export default {
 }
 .header__logo {
   width: 100px;
-  z-index: 999;
+  z-index: 1000;
 }
 .burger-menu {
   display: none;
@@ -127,7 +135,7 @@ export default {
   height: 30px;
   color: var(--color-light);
   cursor: pointer;
-  z-index: 999;
+  z-index: 1000;
 }
 
 $menu-animation-duration: 400ms;
@@ -283,26 +291,6 @@ $menu-animation-timing: ease-out;
   .header__menu {
     display: none;
     position: absolute;
-    top: 100%;
-    li:first-child {
-      margin-top: 40px;
-    }
-    &.active {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100vw;
-      max-width: 100%;
-      height: 100vh;
-      background: var(--color-dark);
-      .header__menu-item a {
-        padding: 40px;
-        font-size: 2rem;
-      }
-    }
   }
 }
 </style>

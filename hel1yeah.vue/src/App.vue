@@ -1,7 +1,8 @@
 <template>
   <div id="app" data-theme="light">
     <!-- ========= HEADER PAGE ========= -->
-    <Header> </Header>
+    <Header>
+    </Header>
     <!-- ========= /HEADER PAGE ========= -->
 
     <!-- ========= AboutMe PAGE ========= -->

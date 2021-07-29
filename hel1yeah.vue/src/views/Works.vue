@@ -74,7 +74,7 @@ export default {
   color: var(--color-light);
 }
 .works__content-item {
-  z-index: 1;
+  z-index: 0;
   width: 350px;
   height: 350px;
   background-size: contain;
