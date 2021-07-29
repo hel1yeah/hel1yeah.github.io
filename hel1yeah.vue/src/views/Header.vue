@@ -16,9 +16,15 @@
           </div>
 
           <ul class="header__menu" :class="{ active: isActive }">
-            <li class="header__menu-item"><a href="#">обо мне</a></li>
-            <li class="header__menu-item"><a href="#">навыки</a></li>
-            <li class="header__menu-item"><a href="#">работы</a></li>
+            <li class="header__menu-item">
+              <a v-scroll-to="'#about-me'" href="#">обо мне</a>
+            </li>
+            <li class="header__menu-item">
+              <a v-scroll-to="'#skills'" href="#">навыки</a>
+            </li>
+            <li class="header__menu-item">
+              <a v-scroll-to="'#works'" href="#">работы</a>
+            </li>
           </ul>
           <a class="header__email" href="mailto:hel1_yeah@ukr.net"
             >hel1_yeah@ukr.net</a
@@ -30,17 +36,24 @@
         </div>
         <a class="header__arrow-down"
           ><img
+            v-scroll-to="'#about-me'"
             class="header__arrow-down--img"
             src="./../assets/images/down-arrow.svg"
             alt="down-arrow"
         /></a>
       </div>
     </div>
+    <ArrayUp></ArrayUp>
   </section>
 </template>
 
 <script>
+import ArrayUp from '@/components/ArrayUp.vue'
 export default {
+  name: 'Header',
+  components:{
+    ArrayUp,
+  },
   data() {
     return {
       isActive: false,
@@ -233,9 +246,6 @@ $menu-animation-timing: ease-out;
 }
 .header__title {
   text-align: center;
-  & h1 {
-    font-size: 3.25rem;
-  }
   & p {
     font-family: 'MuseoSans', sans-serif;
     font-size: 2rem;

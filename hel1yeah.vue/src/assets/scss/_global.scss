@@ -3,6 +3,7 @@ html {
   font-size: 20px;
   box-sizing: border-box;
   background: var(--color-light);
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -23,7 +24,6 @@ a {
   text-decoration: none;
 }
 body {
-
 }
 
 h1,
@@ -33,10 +33,20 @@ h4,
 h5,
 h6 {
   font-family: 'Natasha', sans-serif;
-  font-size: 1rem;
   margin: 0;
   padding: 0;
+}
 
+h1 {
+  font-size: 3.25rem;
+}
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.85rem;
+  margin: 2rem 0 1.75rem;
+  color: var(--color-grey);
 }
 
 button {
