@@ -44,9 +44,7 @@
       </div>
     </div>
     <ArrayUp></ArrayUp>
-    <MobileMenu :isActive="isActive" @closeModal="useBurger">
-
-    </MobileMenu>
+    <MobileMenu :isActive="isActive" @closeModal="useBurger"> </MobileMenu>
   </section>
 </template>
 
