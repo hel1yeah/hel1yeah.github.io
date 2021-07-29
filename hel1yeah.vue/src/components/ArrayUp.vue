@@ -1,5 +1,5 @@
 <template>
-  <a class="arrow-up" v-if="scroll > 400" @click="hendleTop"
+  <a class="arrow-up" v-if="scroll > 400" @click="handleTop"
     ><img
       class="arrow-up__img"
       src="./../assets/images/up-arrow.svg"
@@ -16,7 +16,7 @@ export default {
     }
   },
   methods: {
-    hendleTop() {
+    handleTop() {
       window.scrollTo({
         top: 0,
       })
