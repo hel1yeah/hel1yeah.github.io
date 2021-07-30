@@ -1,5 +1,6 @@
 <template>
   <section class="works" id="works">
+    <comp-particles class="works__particles"></comp-particles>
     <div class="container">
       <h2 class="works__title">Работы</h2>
       <div class="works__content">
@@ -33,9 +34,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import CompParticles from '@/components/CompParticles.vue'
 
 export default {
   name: 'Works',
+  components: {
+    CompParticles,
+  },
   data() {
     return {}
   },
@@ -58,12 +63,22 @@ export default {
 <style lang="scss" scoped>
 .works {
   margin: 4rem 0 0;
+  position: relative;
+}
+.works__particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 .container {
 }
 .works__title {
 }
 .works__content {
+  position: relative;
   margin: 2rem 0 0;
   display: flex;
   flex-direction: row;
@@ -156,9 +171,8 @@ export default {
     margin: 0 0 2rem;
   }
   .content-item__info {
-  padding: .5rem;
-
-}
+    padding: 0.5rem;
+  }
   .works__name {
     font-size: 1.1rem;
   }
@@ -186,8 +200,8 @@ export default {
     font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 388px){
-    .works__content-item {
+@media screen and (max-width: 388px) {
+  .works__content-item {
     width: 275px;
     height: 275px;
   }

@@ -195,14 +195,14 @@ export default {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  transition: 1s;
 }
 .about-me__links-list-item {
   position: relative;
   display: inline-block;
-  transition: 1s;
   margin: 0.2rem 0 0.2rem;
+
   &:hover .about-me__link-img {
-    transition: 1s;
     opacity: 1;
     left: 100%;
   }
@@ -215,6 +215,7 @@ export default {
   padding: 0.5rem;
 }
 .about-me__link-img {
+  transition: 1s;
   opacity: 0;
   position: absolute;
   width: 40px;

@@ -4,121 +4,129 @@
       "name": "Prechu",
       "descr": "Первые шаги в путь Front-End",
       "id": "1",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fprechu.png?alt=media&token=99273771-5d4e-489a-ac05-1090a9969b2f",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fprechu-demo.png?alt=media&token=a83d2ca1-29c6-49ee-9a44-3153d467558e",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fprechu.jpg?alt=media&token=bcdec0dd-f560-4d3d-b034-78a6fdc0e66d",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fprechu-demo.jpg?alt=media&token=672d50ac-0bd0-4fd1-955c-a46f2ecfc5ed",
       "link": null
     },
     {
       "name": "MISOCIAL",
       "descr": "Не сложный сайт, но уже с Flex!",
       "id": "2",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fmisocial.png?alt=media&token=fbdd968d-2ef9-404a-b7dc-ef8bef0cb5e6",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fmisocial-demo.png?alt=media&token=c7c108b7-1144-4e7e-9862-15f1d508e9e4f",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fmisocial.jpg?alt=media&token=932341ef-19a4-428a-8960-fefa05fbd26a",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fmisocial-demo.jpg?alt=media&token=7b4b753b-feaf-4cd2-b82c-b6e362d18ebd",
       "link": null
     },
     {
       "name": "Fdisign",
       "descr": "Одно из заданий онлайн вебинаров.",
-      "id": "7",
-      "img": "hhttps://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ffdisign.png?alt=media&token=6c3208d3-ad3a-40da-b891-0b54dffcebeb",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ffdisign-demo.png?alt=media&token=10a59fd3-a138-451c-9cb4-3a636ce598e3",
+      "id": "3",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ffdisign.jpg?alt=media&token=06569d89-4106-4e06-b5cd-cc2abb70c681",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ffdisign-demo.jpg?alt=media&token=f03f0c97-5026-47fd-a3e8-625237af44e7",
       "link": null
     },
     {
       "name": "Tell-Net",
       "descr": "Первая попытка создать сайт для своей компании, я решил чт оя не только отличный верстальщик, но и дизайнер и вот, что получилось - Дитя доктора франкенштейна. Это меня не остановит",
-      "id": "14",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftell-net.png?alt=media&token=817cbc05-f2b0-4d2a-a393-efd152c9f497",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftell-net-demo.png?alt=media&token=ab5e4ed4-8ac8-4845-b689-ef16a60695e5",
+      "id": "4",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftell-net.jpg?alt=media&token=dc1c938b-9b72-4b5a-806e-95d4a5b14512",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftell-net-demo.jpg?alt=media&token=fadc5cc8-8657-43c6-a000-09f90134bdf4",
       "link": null
     },
     {
       "name": "Benelli",
       "descr": "Очень умный текст.",
       "id": "5",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fbenelli.png?alt=media&token=39b8165f-498b-4c9e-a9d5-f5eeb8e6694e",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fbenelli-demo.png?alt=media&token=be8c8434-5539-4fd7-a786-1da117921cf0",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fbenelli.jpg?alt=media&token=1ed84712-60e4-434d-9c17-1c8a9c611717",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fbenelli-demo.jpg?alt=media&token=d4e7c971-4bfd-4478-a3f2-e4d405de4570",
       "link": null
     },
     {
       "name": "Tajam",
       "descr": "Отработка практичных навыков написания лендинга",
-      "id": "12",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftajam.png?alt=media&token=b210c714-bc0c-42e1-b8de-582d04d51d2d",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftajam-demo.png?alt=media&token=8210625c-a51d-4569-9e5b-b769943bd0be",
+      "id": "6",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftajam.jpg?alt=media&token=5f061ecc-bf8a-4720-a296-c0c68cf1975a",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftajam-demo.jpg?alt=media&token=dc2eaa2a-ef87-453e-a3f5-c002545e9371",
       "link": null
+    },
+    {
+      "name": "Golden",
+      "descr": "Отработка практичных навыков написания лендинга, Адаптив, и даже стрелочка вверх, навигация по сайту",
+      "id": "7",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fgolden.jpg?alt=media&token=6af24939-a817-42f3-a868-d14bc8a8a1cf",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fgolden-demo.jpg?alt=media&token=50796b00-8b6f-4a61-b8e2-7d6c8167cebc",
+      "link": "https://hel1yeah.github.io/websites/golden/"
     },
     {
       "name": "Addstract",
       "descr": "Сложный проєкт и с помощью дизайнера, стал еще сложнее. Уже присуцтвует адаптив!!! Технологи и новое: Gulp, Responsive markup, Burger menu, Progress bar и много Position Absolute! ",
-      "id": "3",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Faddstract.png?alt=media&token=65071855-4382-41e2-8fa3-4b5410bf6eaa",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Faddstract-demo.png?alt=media&token=096cf15a-a72c-4242-aaf0-3f9f93721f18",
+      "id": "8",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Faddstract.jpg?alt=media&token=69747f43-83fb-4caa-9db4-bd6620afc4df",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Faddstract-demo.jpg?alt=media&token=1b4b87f5-2dd7-4896-b7c0-98da39aa7e2b8",
       "link": null
     },
     {
       "name": "Surf",
       "descr": "Сверх крутой макет, сделаный с помощью марафона по вёрстке с Вадимом Прокопчуком. В основном это была обработка крайних случаев. Подхрд к не стандартным блокам и их решения.",
-      "id": "8",
+      "id": "9",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fgo-surf.png?alt=media&token=c0bb916a-bd2c-484f-aae7-1a932e35f7d8",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fgo-surf-demo.png?alt=media&token=aee0e08f-a81d-4812-8e6b-6c454206ab1b",
-      "link": null
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fgo-surf-demo.jpg?alt=media&token=353b19d9-9ddb-40b9-bce0-5cc13db79fc9",
+      "link": "https://hel1yeah.github.io/websites/surf/"
     },
     {
       "name": "A-style",
       "descr": "Реально работающий проєкт. Оперативная полиграфия и широкоформатная печать любого размера. Технологи и новое:  Responsive markup, Burger menu, Gulp, Slider, PHPmailer, BEM, Animate.js, Google-maps ",
-      "id": "4",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fa-style.png?alt=media&token=63c73cf8-dcf3-454c-9714-0eb5f907b759",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fa-style-demo.png?alt=media&token=b9f85641-8075-4b3a-86bb-cf80fa57e5ed",
+      "id": "10",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fa-style.jpg?alt=media&token=52f04208-4534-4638-af15-f7f776d1bf50",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fa-style-demo.jpg?alt=media&token=2a1c965c-73bd-4a43-8b94-3e800c25617c",
       "link": "https://a-style.000webhostapp.com/"
     },
     {
       "name": "Central103",
       "descr": "Национальная ИТ-система, контролирующая качество оказания экстренной медицинской помощи и ускоряет прибытия первых реагувальников. Больше использование SVG и много Position Absolute, Много всплывающих окон и банеров.",
-      "id": "6",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fcentral103.png?alt=media&token=eab90151-8e14-4a40-a9e5-d205b3a89be3",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fcentral103-demo.png?alt=media&token=5cf41f28-ca17-49f7-8730-801f643bb2a1",
+      "id": "11",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fcentral103.jpg?alt=media&token=e3ddb1fe-75d1-4781-90ed-a4dbbf12e0ef",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fcentral103-demo.jpg?alt=media&token=83cd1475-c72a-4686-9a6b-05e2f42fe7b6",
       "link": "https://emd.gov.ua/"
     },
     {
       "name": "Need-for-Js",
       "descr": "Прохождение вебинара для практики JavaScript, в основном работа с offsetParent, offsetLeft/Top, offsetWidth/Height, и т.д.",
-      "id": "10",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fneed-for-js.png?alt=media&token=bad38f55-b4de-4b7c-a83c-2d63a6e0efe0",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fneed-for-js-demo.png?alt=media&token=e024ad58-6b13-41a2-85ec-9886785e6b7d",
+      "id": "12",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fneed-for-js.jpg?alt=media&token=d9a7b103-4d22-4286-a435-6f12e8f1c65c",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fneed-for-js-demo.jpg?alt=media&token=f507cead-c812-42e7-8930-8ffe0f55ee6e",
       "link": null
     },
     {
       "name": "Nike-Shop",
       "descr": "Создание небольшого магазинчика с помощью Vue.js, Vue-Router, Vue-Carousel",
-      "id": "11",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fnike-shop.png?alt=media&token=5a907480-a319-4762-8e9d-1df412810cb9",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fnike-shop-demo.png?alt=media&token=5ce9a118-a3dd-43d6-aadd-91a13f353c48",
+      "id": "13",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fnike-shop.jpg?alt=media&token=53625165-7859-4c68-ad9a-b8a90fc2ba04",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fnike-shop-demo.jpg?alt=media&token=bb14b493-a7fd-4d48-a6a6-4596538c0953",
       "link": null
     },
     {
       "name": "MediumClone",
       "descr": "Финальный сайт курса Monsterlessons копия популярного сайта Medium , Изучение best practice API, Vuex, axios, Vue, Vue-Router, создание регистрации и логина.",
-      "id": "9",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fmediumclonevue.png?alt=media&token=b6a51248-236e-4bf3-931a-48a349619f93",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fmediumclonevue-demo.png?alt=media&token=94cceab9-a5b6-4577-8ec9-accb66296dc0",
+      "id": "14",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fmediumclonevue.jpg?alt=media&token=4374da4c-c873-48e8-9f46-ef58bdc63cd8",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fmediumclonevue-demo.jpg?alt=media&token=105c6997-c8aa-4f48-97cc-8356d20df6cd",
       "link": "https://mediumclonevue.web.app/#/"
     },
     {
       "name": "Tell-Net-pro",
       "descr": "Сайт с корого и начинался мой путь в веб, Такой сайт я хотел создать для воей компании с самого начала! Технологи: HTML5, SCSS, Git, Responsive, Adaptive, PHPMailer, JavaScript, SVG sprite",
-      "id": "13",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftell-net-pro.png?alt=media&token=d56db7c3-f703-45de-adde-bb9e6d510073",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftell-net-pro-demo.png?alt=media&token=fb9f9e30-ef1d-4b7f-a1f7-ad5c7768d801",
+      "id": "15",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftell-net-pro.jpg?alt=media&token=ff986229-98d9-461b-bcfe-11d1cc65b12b",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftell-net-pro-demo.jpg?alt=media&token=ec983f1b-c590-45d1-855c-3fdb7bc42101",
       "link": "https://www.tell.net.ua/"
     },
 
     {
       "name": "VueAppPets",
       "descr": "Тут я использовал все свои скинлы что бы сделать этото сложное приложение. Технологи: HTML5, SCSS, Git, JavaScript, Vue, Vue-Router, Vuex, axios, API, Grid, Google) ",
-      "id": "15",
-      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fvue-app-pets.png?alt=media&token=3c1faf70-c24e-4cd8-9870-1bfe7fcbe7da",
-      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fvue-app-pets-demo.png?alt=media&token=bac4c4b6-2498-48df-91f1-d6493b057763",
+      "id": "16",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fvue-app-pets.jpg?alt=media&token=60926a77-5762-4447-9cd6-5570edc51a8a",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fvue-app-pets-demo.jpg?alt=media&token=e1316d67-2878-4eac-93d6-81bbd6d59976",
       "link": "https://vue-app-212e8.web.app/"
     }
   ]

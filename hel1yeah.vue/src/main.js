@@ -3,12 +3,16 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuescrollto from './../node_modules/vue-scrollto'
-const app = createApp(App)
+import particles from "particles.vue3";
+
 import 'normalize.css/normalize.css'
 
 import './assets/scss/main.scss'
+
+const app = createApp(App)
 app.use(store)
 app.use(router)
+app.use(particles)
 app.use(vuescrollto, {
   container: 'body',
   duration: 700,
