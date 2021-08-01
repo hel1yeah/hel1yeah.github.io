@@ -2,7 +2,7 @@
   <section class="about-me" id="about-me">
     <div class="container">
       <div class="about-me__inner-wrapper">
-        <h2 class="about-me__title left-to-right-about-me">Обо мне</h2>
+         <h2 class="left-to-right-about-me">Навыки</h2>
         <div class="about-me__gread">
           <div class="about-me__background left-to-right-about-me">
             <h3 class="about-me__background-title">Бэкграунд</h3>
@@ -104,6 +104,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'AboutMe',
+  components:{
+  },
   data() {
     return {}
   },

@@ -2,49 +2,50 @@
   <section class="works" id="works">
     <comp-particles class="works__particles"></comp-particles>
     <div class="container">
-      <Title>Работы</Title>
+      <h2 class="works__title left-to-right-works">Работы</h2>
       <work-item></work-item>
-      <!-- <div
-          class="works__content-item"
-          v-for="project in projects"
-          :key="project.id"
-          :style="{ backgroundImage: `url(${project.demo})` }"
-        >
-          <div class="content-item__info">
-            <h5 class="works__name">
-              {{ project.name }}
-            </h5>
-            <p class="works__descr">{{ project.descr }}</p>
-            <a
-              class="works__link"
-              v-if="project.link != null"
-              :href="project.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Сайт: {{ project.name }}</a
-            >
-          </div>
-        </div> -->
     </div>
   </section>
 </template>
 
 <script>
-import Title from '@/components/Title.vue'
 import WorkItem from '@/components/WorkItem.vue'
 import CompParticles from '@/components/CompParticles.vue'
+
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   name: 'Works',
   components: {
-    Title,
+
     WorkItem,
     CompParticles,
   },
   data() {
     return {}
   },
-  
+  methods: {
+    gsapLeftToRightWorks() {
+      gsap.from('.left-to-right-works', {
+        scrollTrigger: {
+          trigger: '.left-to-right-works',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1,
+        x: -50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
+  },
+  mounted() {
+    this.gsapLeftToRightWorks()
+  },
 }
 </script>
 
