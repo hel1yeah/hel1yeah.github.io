@@ -2,10 +2,11 @@
   <section class="works" id="works">
     <comp-particles class="works__particles"></comp-particles>
     <div class="container">
-      <h2 class="works__title">Работы</h2>
-      <div class="works__content">
+      <h2 class="works__title left-to-right-works">Работы</h2>
+      <div class="works__content ">
+        
         <div
-          class="works__content-item"
+          class="works__content-item up-works"
           v-for="project in projects"
           :key="project.id"
           :style="{ backgroundImage: `url(${project.demo})` }"
@@ -24,8 +25,6 @@
               >Сайт: {{ project.name }}</a
             >
           </div>
-
-          <!-- <a class="works__link" :href="project.img" download>Скачать макет</a> -->
         </div>
       </div>
     </div>
@@ -36,6 +35,11 @@
 import { mapState } from 'vuex'
 import CompParticles from '@/components/CompParticles.vue'
 
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'Works',
   components: {
@@ -48,6 +52,33 @@ export default {
     getWorks() {
       this.$store.dispatch('getWorks')
     },
+    gsapLeftToRightWorks() {
+      gsap.from('.left-to-right-works', {
+        scrollTrigger: {
+          trigger: '.left-to-right-works',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1,
+        x: -50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
+    gsapUpWorks() {
+      gsap.from('.up-works', {
+        scrollTrigger: {
+          trigger: '.up-works',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power2.inOut',
+        stagger: 0.2,
+      })
+    },
   },
   computed: {
     ...mapState({
@@ -56,6 +87,8 @@ export default {
   },
   mounted() {
     this.getWorks()
+    this.gsapUpWorks()
+    this.gsapLeftToRightWorks()()
   },
 }
 </script>

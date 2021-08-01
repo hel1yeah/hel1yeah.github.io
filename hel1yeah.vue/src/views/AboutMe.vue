@@ -2,9 +2,9 @@
   <section class="about-me" id="about-me">
     <div class="container">
       <div class="about-me__inner-wrapper">
-        <h2 class="about-me__title">Обо мне</h2>
+        <h2 class="about-me__title left-to-right-about-me">Обо мне</h2>
         <div class="about-me__gread">
-          <div class="about-me__background">
+          <div class="about-me__background left-to-right-about-me">
             <h3 class="about-me__background-title">Бэкграунд</h3>
             <p class="about-me__background-descr">
               Junior Front - End Developer. В мир Web-разработки попал случайно,
@@ -32,7 +32,7 @@
             </p>
           </div>
           <div class="wrapper__merit-links">
-            <div class="about-me__merit">
+            <div class="about-me__merit right-to-left-about-me">
               <h3 class="about-me__merit-title">Заслуги</h3>
               <div class="merit-wrapper">
                 <div class="merit__item">
@@ -64,7 +64,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-me__links">
+            <div class="about-me__links right-to-left-about-me">
               <h3 class="about-me__links-title">Связь</h3>
               <ul class="about-me__links-list">
                 <li
@@ -97,6 +97,11 @@
 <script>
 import { mapState } from 'vuex'
 
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'AboutMe',
   data() {
@@ -107,20 +112,53 @@ export default {
       links: (state) => state.isLinks,
     }),
   },
-  methods: {},
+  mounted() {
+    this.gsapLeftToRightAboutMe()
+    this.gsapRightToLeftAboutMe()
+  },
+  methods: {
+    gsapLeftToRightAboutMe() {
+      gsap.from('.left-to-right-about-me', {
+        scrollTrigger: {
+          trigger: '.left-to-right-about-me',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1.5,
+        x: -50,
+        opacity: 0,
+        ease: 'power2.inOut',
+        stagger: 0.2,
+      })
+    },
+    gsapRightToLeftAboutMe() {
+      gsap.from('.right-to-left-about-me', {
+        scrollTrigger: {
+          trigger: '.right-to-left-about-me',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1.5,
+        x: 50,
+        opacity: 0,
+        stagger: 0.5,
+        ease: 'power2.inOut',
+      })
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .about-me {
   margin: 4rem 0 0;
+  overflow: hidden;
 }
 .container {
 }
 .about-me__inner-wrapper {
 }
 .about-me__title {
-  margin: 4rem 0 0;
 }
 .about-me__gread {
   display: grid;

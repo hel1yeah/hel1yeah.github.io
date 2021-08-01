@@ -4,7 +4,7 @@
       <div class="header__inner-wrapper">
         <nav class="header__nav">
           <img
-            class="header__logo"
+            class="header__logo left-to-right"
             src="./../assets/hel1-logo.svg"
             alt="hel1-logo.svg"
           />
@@ -15,7 +15,7 @@
             <span class="burger-menu-piece"></span>
           </div>
 
-          <ul class="header__menu" :class="{ active: isActive }">
+          <ul class="header__menu top-down" :class="{ active: isActive }">
             <li class="header__menu-item">
               <a v-scroll-to="'#about-me'" href="#">обо мне</a>
             </li>
@@ -26,7 +26,7 @@
               <a v-scroll-to="'#works'" href="#">работы</a>
             </li>
           </ul>
-          <a class="header__email" href="mailto:hel1_yeah@ukr.net"
+          <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net"
             >hel1_yeah@ukr.net</a
           >
         </nav>
@@ -34,7 +34,7 @@
           <h1>дело, которым я живу</h1>
           <p>вёрстка & front-end</p>
         </div>
-        <a class="header__arrow-down"
+        <a class="header__arrow-down upwards"
           ><img
             v-scroll-to="'#about-me'"
             class="header__arrow-down--img"
@@ -51,6 +51,9 @@
 <script>
 import ArrayUp from '@/components/ArrayUp.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
+
+import { gsap } from 'gsap'
+
 export default {
   name: 'Header',
   components: {
@@ -62,6 +65,13 @@ export default {
       isActive: false,
     }
   },
+  mounted() {
+    this.gsapUpwards()
+    this.gsapLeftToRight()
+    this.gsapRightToLeft()
+    this.gsapTopDown()
+  },
+
   methods: {
     useBurger() {
       let clickDelay = 500
@@ -80,6 +90,38 @@ export default {
         burgerMenu.classList.remove('closing')
       }, clickDelay)
     },
+    gsapUpwards() {
+      gsap.from('.upwards', {
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
+    gsapLeftToRight() {
+      gsap.from('.left-to-right', {
+        duration: 1.7,
+        x: -50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
+    gsapRightToLeft() {
+      gsap.from('.right-to-left', {
+        duration: 1.2,
+        x: 50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
+    gsapTopDown() {
+      gsap.from('.top-down', {
+        duration: 1.1,
+        y: -50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
   },
 }
 </script>
@@ -94,6 +136,7 @@ export default {
   background-position: center center;
   background-size: cover;
   color: var(--color-light);
+  overflow: hidden;
 
   & a {
     color: var(--color-light);
@@ -246,6 +289,7 @@ $menu-animation-timing: ease-out;
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px;
+    position: relative;
   }
 }
 .header__email {
