@@ -1,10 +1,14 @@
 <template>
   <section class="skills" id="skills">
     <div class="container">
-      <h2 class="skills__title">Навыки</h2>
+      <h2 class="skills__title left-to-right-skills">Навыки</h2>
       <div class="skills__content">
         <div class="skills__content--item">
-          <div class="content-item" v-for="skill in skills" :key="skill.level">
+          <div
+            class="content-item up-skills"
+            v-for="skill in skills"
+            :key="skill.level"
+          >
             <div class="circle">
               <div class="circle-inner">
                 <span class="circle-inner__txt">{{ skill.level }}</span>
@@ -20,8 +24,15 @@
 
 <script>
 import { mapState } from 'vuex'
+
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 export default {
-  name: 'c',
+  name: 'Skills',
   data() {
     return {}
   },
@@ -29,6 +40,39 @@ export default {
     ...mapState({
       skills: (state) => state.isSkills,
     }),
+  },
+  mounted() {
+    this.gsapUpSkills()
+    this.gsapLeftToRightSkills()
+  },
+  methods: {
+    gsapUpSkills() {
+      gsap.from('.up-skills', {
+        scrollTrigger: {
+          trigger: '.up-skills',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        ease: 'power2.inOut',
+        stagger: 0.2,
+      })
+    },
+    gsapLeftToRightSkills() {
+      gsap.from('.left-to-right-skills', {
+        scrollTrigger: {
+          trigger: '.left-to-right-skills',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1,
+        x: -50,
+        opacity: 0,
+        ease: 'power2.inOut',
+      })
+    },
   },
 }
 </script>

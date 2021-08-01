@@ -4,7 +4,6 @@ import router from './router'
 import store from './store'
 import vuescrollto from './../node_modules/vue-scrollto'
 import particles from "particles.vue3";
-
 import 'normalize.css/normalize.css'
 
 import './assets/scss/main.scss'
