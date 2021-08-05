@@ -26,7 +26,7 @@
     },
     {
       "name": "Tell-Net",
-      "descr": "Первая попытка создать сайт для своей компании, я решил чт оя не только отличный верстальщик, но и дизайнер и вот, что получилось - Дитя доктора франкенштейна. Это меня не остановит",
+      "descr": "Первая попытка создать сайт для своей компании, я решил что я не только отличный верстальщик, но и дизайнер и вот, что получилось - Дитя доктора франкенштейна. Это меня не остановит!",
       "id": "4",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftell-net.jpg?alt=media&token=dc1c938b-9b72-4b5a-806e-95d4a5b14512",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftell-net-demo.jpg?alt=media&token=fadc5cc8-8657-43c6-a000-09f90134bdf4",
@@ -66,7 +66,7 @@
     },
     {
       "name": "Surf",
-      "descr": "Сверх крутой макет, сделаный с помощью марафона по вёрстке с Вадимом Прокопчуком. В основном это была обработка крайних случаев. Подхрд к не стандартным блокам и их решения.",
+      "descr": "Сверх крутой макет, сделаный с помощью марафона по вёрстке с Вадимом Прокопчуком. В основном это была обработка крайних случаев. Подход к не стандартным блокам и их решения.",
       "id": "9",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fgo-surf.png?alt=media&token=c0bb916a-bd2c-484f-aae7-1a932e35f7d8",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fgo-surf-demo.jpg?alt=media&token=353b19d9-9ddb-40b9-bce0-5cc13db79fc9",
@@ -98,7 +98,7 @@
     },
     {
       "name": "Nike-Shop",
-      "descr": "Создание небольшого магазинчика с помощью Vue.js, Vue-Router, Vue-Carousel",
+      "descr": "Первые шаги во вью. Создание небольшого магазинчика с помощью Vue.js, Vue-Router, Vue-Carousel",
       "id": "13",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fnike-shop.jpg?alt=media&token=53625165-7859-4c68-ad9a-b8a90fc2ba04",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fnike-shop-demo.jpg?alt=media&token=bb14b493-a7fd-4d48-a6a6-4596538c0953",
@@ -106,7 +106,7 @@
     },
     {
       "name": "MediumClone",
-      "descr": "Финальный сайт курса Monsterlessons копия популярного сайта Medium , Изучение best practice API, Vuex, axios, Vue, Vue-Router, создание регистрации и логина.",
+      "descr": "Финальный сайт курса Monsterlessons копия популярного сайта Medium, Изучение best practice API, Регистрация + Авторизация, Vuex, axios, Vue, Vue-Router, создание регистрации и логина.",
       "id": "14",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fmediumclonevue.jpg?alt=media&token=4374da4c-c873-48e8-9f46-ef58bdc63cd8",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fmediumclonevue-demo.jpg?alt=media&token=105c6997-c8aa-4f48-97cc-8356d20df6cd",
@@ -114,7 +114,7 @@
     },
     {
       "name": "Tell-Net-pro",
-      "descr": "Сайт с корого и начинался мой путь в веб, Такой сайт я хотел создать для воей компании с самого начала! Технологи: HTML5, SCSS, Git, Responsive, Adaptive, PHPMailer, JavaScript, SVG sprite",
+      "descr": "Сайт с корого и начинался мой путь в веб, Такой сайт я хотел создать для своей компании с самого начала! Адаптивный, красивый, современны, с онлайн оплатой! Технологи: HTML5, SCSS, Git, Responsive, Adaptive, PHPMailer, JavaScript, SVG sprite",
       "id": "15",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftell-net-pro.jpg?alt=media&token=ff986229-98d9-461b-bcfe-11d1cc65b12b",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftell-net-pro-demo.jpg?alt=media&token=ec983f1b-c590-45d1-855c-3fdb7bc42101",
@@ -123,7 +123,7 @@
 
     {
       "name": "VueAppPets",
-      "descr": "Тут я использовал все свои скинлы что бы сделать этото сложное приложение. Технологи: HTML5, SCSS, Git, JavaScript, Vue, Vue-Router, Vuex, axios, API, Grid, Google) ",
+      "descr": "В этом кейсе: я использовал все свои скилы, что бы сделать этото сложное приложениеи интересное приложение. Было интересно самому разобратся с апи, и настройить все запросы. Технологи: HTML5, SCSS, Git, JavaScript, Vue, Vue-Router, Vuex, axios, API, Grid, Google) ",
       "id": "16",
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fvue-app-pets.jpg?alt=media&token=60926a77-5762-4447-9cd6-5570edc51a8a",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fvue-app-pets-demo.jpg?alt=media&token=e1316d67-2878-4eac-93d6-81bbd6d59976",
