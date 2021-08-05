@@ -23,15 +23,15 @@ document.addEventListener('keyup', stopRun);
 // создаём на странице елемент "audio" и присваеваем его константе audioMuzlo
 const audioMuzlo = document.createElement('audio');
 // указываем атрибут src и относительный путь к файлу которій должен запускаться для audioMuzlo
-audioMuzlo.src = '../audio/soundTrack.mp3';
+audioMuzlo.src = './audio/soundTrack.mp3';
 // для audioMuzlo задаём звук от 0 до 1
 audioMuzlo.volume = 0.3;
 
 // звук мотора
 // создаём на странице елемент "audio" и присваеваем его константе audioEngine
 const audioEngine = document.createElement('audio');
-// указываем атрибут src и относительный путь к файлу которій должен запускаться для audioEngine
-audioEngine.src = '../audio/engine1.mp3';
+// указываем атрибут src и относительный путь к файлу который должен запускаться для audioEngine
+audioEngine.src = './audio/engine1.mp3';
 // для audioEngine задаём звук от 0 до 1 с помощью атрибута volume
 audioEngine.volume = 0.2;
 // для audioEngine используем булевый метод loop и присваеваем ему true, что значит сразу как аудио проиграеться до конца оно тутже запуститься с начала. аналогия  автоплей
