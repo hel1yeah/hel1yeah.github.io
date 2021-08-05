@@ -135,7 +135,7 @@ function startGame() {
     enemy.classList.add('enemy'); // создаём класс енеми
     enemy.y = (-HEIGHT_ELEM - 40) * setting.traffic * ( 1 + i ) ; // высота появления машинок 
     enemy.style.left = Math.floor(Math.random() * (GAME_AREA.offsetWidth - HEIGHT_ELEM / 2)) + 'px';// рандомное расстояние enemy от левого края с учётом того что бы машинка не касалась правого края
-    enemy.style.background = `transparent url(../image/enemy${randomEnemy}.png) center no-repeat`;
+    enemy.style.background = `url(./image/enemy${randomEnemy}.png) center no-repeat`;
     enemy.style.backgroundSize = 'cover';
     enemy.style.top = enemy.y + 'px';
     GAME_AREA.append(enemy); // добавляем машинку на страницу 
