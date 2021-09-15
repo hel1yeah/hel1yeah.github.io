@@ -128,6 +128,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fvue-app-pets.jpg?alt=media&token=60926a77-5762-4447-9cd6-5570edc51a8a",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fvue-app-pets-demo.jpg?alt=media&token=e1316d67-2878-4eac-93d6-81bbd6d59976",
       "link": "https://vue-app-212e8.web.app/"
+    },
+    {
+      "name": "TopMediaGroupsTest",
+      "descr": "Задание по создании кастомной формы на позицию Front-end Developer (Vue.JS) для Top Media Groups. Кастомные чекбоксы, селекты, инпуты. Принцип работы инпутов как в Material Design",
+      "id": "17",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftest-castom-form-tmg-web.jpg?alt=media&token=e3770f1d-b7bc-4616-ad57-c802988f8c0a",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftest-castom-form-tmg-web.jpg?alt=media&token=bf55a0e0-4f35-4170-b7e9-6ded2a17c70e",
+      "link": "https://test-castom-form-tmg.web.app/"
     }
   ]
 }

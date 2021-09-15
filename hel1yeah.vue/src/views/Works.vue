@@ -21,7 +21,6 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'Works',
   components: {
-
     WorkItem,
     CompParticles,
   },
