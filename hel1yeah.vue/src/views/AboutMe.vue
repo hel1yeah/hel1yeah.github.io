@@ -2,14 +2,14 @@
   <section class="about-me" id="about-me">
     <div class="container">
       <div class="about-me__inner-wrapper">
-         <h2 class="left-to-right-about-me">Навыки</h2>
+        <h2 class="left-to-right-about-me">Навыки</h2>
         <div class="about-me__gread">
           <div class="about-me__background left-to-right-about-me">
             <h3 class="about-me__background-title">Бэкграунд</h3>
             <p class="about-me__background-descr">
-              Junior Front - End Developer. В мир Web-разработки попал случайно,
-              по работе нужно было разобраться в некоторых тонкостях этой сферы.
-              И я разобрался. Потратив огромное количество часов на всевозможные
+              Front - End Developer. В мир Web-разработки попал случайно, по
+              работе нужно было разобраться в некоторых тонкостях этой сферы. И
+              я разобрался. Потратив огромное количество часов на всевозможные
               статьи и видео, эта вселенная оставила очень большое впечатление.
             </p>
             <p class="about-me__background-descr">
@@ -104,8 +104,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'AboutMe',
-  components:{
-  },
+  components: {},
   data() {
     return {}
   },
