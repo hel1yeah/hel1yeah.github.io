@@ -1,6 +1,7 @@
 <template>
   <section class="works" id="works">
-    <comp-particles class="works__particles"></comp-particles>
+    <!-- <comp-particles></comp-particles> -->
+
     <div class="container">
       <h2 class="works__title left-to-right-works">Работы</h2>
       <work-item></work-item>
@@ -10,7 +11,8 @@
 
 <script>
 import WorkItem from '@/components/WorkItem.vue'
-import CompParticles from '@/components/CompParticles.vue'
+
+// import CompParticles from '@/components/CompParticles.vue'
 
 import { gsap } from 'gsap'
 
@@ -22,7 +24,7 @@ export default {
   name: 'Works',
   components: {
     WorkItem,
-    CompParticles,
+    // CompParticles,
   },
   data() {
     return {}
@@ -48,12 +50,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .works {
   margin: 4rem 0 0;
   position: relative;
 }
-.works__particles {
+.works.works__particles {
   position: absolute;
   top: 0;
   left: 0;

@@ -57,7 +57,7 @@ export default {
   height: 30px;
 }
 
-@media screen and (max-width: ) {
-  
-}
+// @media screen and (max-width: ) {
+
+// }
 </style>
