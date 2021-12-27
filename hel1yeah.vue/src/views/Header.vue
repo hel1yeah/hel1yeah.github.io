@@ -131,7 +131,7 @@ export default {
   z-index: 1;
   position: relative;
   height: 100vh;
-  background: url('./../assets/images/header_bg.jpg');
+  background: url('./../assets/images/header_bg.webp');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
