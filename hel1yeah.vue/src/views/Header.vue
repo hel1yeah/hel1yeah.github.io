@@ -31,7 +31,7 @@
           >
         </nav>
         <div class="header__title">
-          <h1>дело, которым я живу</h1>
+          <h1>Любимое дело</h1>
           <p>вёрстка & front-end</p>
         </div>
         <a class="header__arrow-down upwards"

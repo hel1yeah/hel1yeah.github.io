@@ -136,6 +136,22 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftest-castom-form-tmg-web.jpg?alt=media&token=e3770f1d-b7bc-4616-ad57-c802988f8c0a",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ftest-castom-form-tmg-web.jpg?alt=media&token=bf55a0e0-4f35-4170-b7e9-6ded2a17c70e",
       "link": "https://test-castom-form-tmg.web.app/"
+    },
+    {
+      "name": "Currency Converter",
+      "descr": "Небольшое SPA для мониторинга реальных курсов валют и олнайн конвертации одной валюты в другую. Технологии: Vue.js 3, Vuex, Vue Router, JavaScript, SCSS, Git,axios",
+      "id": "18",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Ftest-castom-form-tmg-web.jpg?alt=media&token=e3770f1d-b7bc-4616-ad57-c802988f8c0a",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fcurrency-converter.pandateam-demo.jpg?alt=media&token=3ce93ba6-ce5c-4248-b711-61cb8efca9f2",
+      "link": "https://converter-panda-team-140a1.web.app/"
+    },
+    {
+      "name": "jsВelivr",
+      "descr": "Ищем все возможные npm пакеты, Реализован, лайв поиск, пагинация с запоминанием страницы. Технологии: Vuetify, Vuex, Vue Router, Git,axios, Vue.js 3",
+      "id": "19",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ffrozeneon-vuejs-demo.jpg?alt=media&token=e1f98a92-ff89-46af-9dfc-a7f405c867fc",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ffrozeneon-vuejs-demo.jpg?alt=media&token=e1f98a92-ff89-46af-9dfc-a7f405c867fc",
+      "link": "https://frozeneonvuejs.web.app/"
     }
   ]
 }

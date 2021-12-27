@@ -12,8 +12,6 @@
 <script>
 import WorkItem from '@/components/WorkItem.vue'
 
-// import CompParticles from '@/components/CompParticles.vue'
-
 import { gsap } from 'gsap'
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -24,7 +22,6 @@ export default {
   name: 'Works',
   components: {
     WorkItem,
-    // CompParticles,
   },
   data() {
     return {}
