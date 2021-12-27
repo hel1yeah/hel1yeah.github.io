@@ -107,11 +107,11 @@ export default {
   &:hover {
     &.works__content-item::before {
       left: 100px;
-      transform: translateX(12%) rotate(45deg) scale(2);
+      transform: rotate(45deg) scale(2);
     }
     &.works__content-item::after {
       right: 100px;
-      transform: translateX(-12%) rotate(45deg) scale(2);
+      transform: rotate(45deg) scale(2);
     }
     & .content-item__info {
       opacity: 1;

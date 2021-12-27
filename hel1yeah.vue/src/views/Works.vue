@@ -1,7 +1,5 @@
 <template>
   <section class="works" id="works">
-    <!-- <comp-particles></comp-particles> -->
-
     <div class="container">
       <h2 class="works__title left-to-right-works">Работы</h2>
       <work-item></work-item>
@@ -52,14 +50,7 @@ export default {
   margin: 4rem 0 0;
   position: relative;
 }
-.works.works__particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+
 .container {
 }
 .works__title {
