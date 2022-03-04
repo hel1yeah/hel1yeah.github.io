@@ -2,13 +2,15 @@
   <section class="works" id="works">
     <div class="container">
       <h2 class="works__title left-to-right-works">Работы</h2>
-      <work-item></work-item>
+      <work-item />
     </div>
+    <particles />
   </section>
 </template>
 
 <script>
 import WorkItem from '@/components/WorkItem.vue'
+import Particles from '@/components/Particles.vue'
 
 import { gsap } from 'gsap'
 
@@ -20,6 +22,7 @@ export default {
   name: 'Works',
   components: {
     WorkItem,
+    Particles,
   },
   data() {
     return {}
