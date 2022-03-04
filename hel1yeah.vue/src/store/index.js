@@ -52,10 +52,24 @@ export default createStore({
       { name: 'Elementary', level: 'A2' },
       { name: 'GSAP', level: '55%' },
     ],
+    menuList: [
+      {
+        scrollTo: '#about-me',
+        name: 'обо мне'
+      },
+      {
+        scrollTo: '#skills',
+        name: 'навыки'
+      },
+      {
+        scrollTo: '#works',
+        name: 'работы'
+      },
+    ],
     isProjects: null,
     isLoading: false,
     error: null,
-    theme: 'light'
+    isTheme: 'light'
   },
   mutations: {
     isProjectsUploadStart(state) {

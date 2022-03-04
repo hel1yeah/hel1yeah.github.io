@@ -8,7 +8,9 @@
             src="./../assets/hel1-logo.svg"
             alt="hel1-logo.svg"
           />
-
+          <theme-switch>
+            
+          </theme-switch>
           <div class="burger-menu right-to-left" @click="useBurger()" ref="burgerMenu">
             <span class="burger-menu-piece"></span>
             <span class="burger-menu-piece"></span>
@@ -16,14 +18,8 @@
           </div>
 
           <ul class="header__menu top-down" :class="{ active: isActive }">
-            <li class="header__menu-item">
-              <a v-scroll-to="'#about-me'" href="#">обо мне</a>
-            </li>
-            <li class="header__menu-item">
-              <a v-scroll-to="'#skills'" href="#">навыки</a>
-            </li>
-            <li class="header__menu-item">
-              <a v-scroll-to="'#works'" href="#">работы</a>
+            <li class="header__menu-item" v-for="item in menuList" :key="item.scrollTo">
+              <a v-scroll-to="item.scrollTo" href="#">{{ item.name }}</a>
             </li>
           </ul>
           <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net">hel1_yeah@ukr.net</a>
@@ -43,18 +39,16 @@
       </div>
     </div>
     <ArrayUp></ArrayUp>
-    <MobileMenu 
-      :isActive="isActive" 
-      :menuList="menuList" 
-      @closeModal="useBurger" 
-    />
+    <MobileMenu :isActive="isActive" @closeModal="useBurger" />
   </section>
 </template>
 
 <script>
 import ArrayUp from '@/components/ArrayUp.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
+import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
+import { mapState } from 'vuex'
 import { gsap } from 'gsap'
 
 export default {
@@ -62,24 +56,11 @@ export default {
   components: {
     ArrayUp,
     MobileMenu,
+    ThemeSwitch,
   },
   data() {
     return {
       isActive: false,
-      menuList: [
-        {
-          scrollTo: '#about-me',
-          name: 'обо мне'
-        },
-        {
-          scrollTo: '#skills',
-          name: 'навыки'
-        },
-        {
-          scrollTo: '#works',
-          name: 'работы'
-        },
-      ]
     }
   },
   mounted() {
@@ -140,6 +121,11 @@ export default {
       })
     },
   },
+  computed: {
+    ...mapState({
+      menuList: (state) => state.menuList,
+    }),
+  },
 }
 </script>
 
@@ -185,6 +171,7 @@ export default {
 .header__logo {
   width: 100px;
   z-index: 1000;
+  position: relative;
 }
 .burger-menu {
   display: none;
