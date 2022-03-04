@@ -70,7 +70,7 @@ export default {
   z-index: 0;
   width: 350px;
   height: 350px;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   margin: 0 0 5rem;

@@ -55,6 +55,7 @@ export default createStore({
     isProjects: null,
     isLoading: false,
     error: null,
+    theme: 'light'
   },
   mutations: {
     isProjectsUploadStart(state) {

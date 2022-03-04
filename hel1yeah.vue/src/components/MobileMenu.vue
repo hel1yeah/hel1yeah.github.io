@@ -1,31 +1,12 @@
 <template>
   <ul class="mobile-menu__list" :class="{ active: isActive }">
-    <li class="mobile-menu__item">
+    <li v-for="item in menuList" :key="item.scrollTo" class="mobile-menu__item">
       <a
-        v-scroll-to="'#about-me'"
-        @click="closeModal"
         class="mobile-menu__item--link"
-        href="#"
-        >обо мне</a
-      >
-    </li>
-    <li class="mobile-menu__item">
-      <a
-        v-scroll-to="'#skills'"
+        v-scroll-to="item.scrollTo"
         @click="closeModal"
-        class="mobile-menu__item--link"
         href="#"
-        >навыки</a
-      >
-    </li>
-    <li class="mobile-menu__item">
-      <a
-        v-scroll-to="'#works'"
-        @click="closeModal"
-        class="mobile-menu__item--link"
-        href="#"
-        >работы</a
-      >
+      >{{ item.name }}</a>
     </li>
   </ul>
 </template>
@@ -37,6 +18,10 @@ export default {
   props: {
     isActive: {
       type: Boolean,
+      required: true,
+    },
+    menuList: {
+      type: Array,
       required: true,
     },
   },
@@ -66,7 +51,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
   padding: 4rem 0;
   scroll-behavior: inherit;
@@ -76,5 +61,16 @@ export default {
   padding: 2rem;
 }
 .mobile-menu__item {
+}
+
+@media screen and (max-width: 605px) {
+  .mobile-menu__list.active {
+    justify-content: center;
+    font-size: 1.5rem;
+    padding-top: 10rem
+  }
+  .mobile-menu__item {
+    margin: 30px;
+  }
 }
 </style>

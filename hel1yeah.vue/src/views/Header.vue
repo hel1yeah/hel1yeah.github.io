@@ -9,7 +9,7 @@
             alt="hel1-logo.svg"
           />
 
-          <div class="burger-menu" @click="useBurger()" ref="burgerMenu">
+          <div class="burger-menu right-to-left" @click="useBurger()" ref="burgerMenu">
             <span class="burger-menu-piece"></span>
             <span class="burger-menu-piece"></span>
             <span class="burger-menu-piece"></span>
@@ -26,25 +26,28 @@
               <a v-scroll-to="'#works'" href="#">работы</a>
             </li>
           </ul>
-          <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net"
-            >hel1_yeah@ukr.net</a
-          >
+          <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net">hel1_yeah@ukr.net</a>
         </nav>
         <div class="header__title">
           <h1>Любимое дело</h1>
           <p>вёрстка & front-end</p>
         </div>
-        <a class="header__arrow-down upwards"
-          ><img
+        <a class="header__arrow-down upwards">
+          <img
             v-scroll-to="'#about-me'"
             class="header__arrow-down--img"
             src="./../assets/images/down-arrow.svg"
             alt="down-arrow"
-        /></a>
+          />
+        </a>
       </div>
     </div>
     <ArrayUp></ArrayUp>
-    <MobileMenu :isActive="isActive" @closeModal="useBurger"> </MobileMenu>
+    <MobileMenu 
+      :isActive="isActive" 
+      :menuList="menuList" 
+      @closeModal="useBurger" 
+    />
   </section>
 </template>
 
@@ -63,6 +66,20 @@ export default {
   data() {
     return {
       isActive: false,
+      menuList: [
+        {
+          scrollTo: '#about-me',
+          name: 'обо мне'
+        },
+        {
+          scrollTo: '#skills',
+          name: 'навыки'
+        },
+        {
+          scrollTo: '#works',
+          name: 'работы'
+        },
+      ]
     }
   },
   mounted() {
@@ -131,7 +148,7 @@ export default {
   z-index: 1;
   position: relative;
   height: 100vh;
-  background: url('./../assets/images/header_bg.webp');
+  background: url("./../assets/images/header_bg.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -140,7 +157,7 @@ export default {
 
   & a {
     color: var(--color-light);
-    font-family: 'MuseoSans';
+    font-family: "MuseoSans";
     font-weight: 100;
     text-transform: lowercase;
 
@@ -162,7 +179,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'MuseoSans', sans-serif;
+  font-family: "MuseoSans", sans-serif;
   font-size: 0.9rem;
 }
 .header__logo {
@@ -297,7 +314,7 @@ $menu-animation-timing: ease-out;
 .header__title {
   text-align: center;
   & p {
-    font-family: 'MuseoSans', sans-serif;
+    font-family: "MuseoSans", sans-serif;
     font-size: 2rem;
   }
 }
