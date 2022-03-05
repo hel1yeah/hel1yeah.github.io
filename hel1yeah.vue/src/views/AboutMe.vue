@@ -183,6 +183,7 @@ export default {
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 0 0 1.75rem;
+  color: var(--descr-text-color);
 }
 
 .about-me__merit-title {
@@ -222,10 +223,12 @@ export default {
 }
 .merit__item-square-inside-txt {
   transform: rotate(45deg);
+  color: var(--descr-text-color);
 }
 .merit__item--descr {
   font-weight: 300;
   margin: 2.5rem 0 0 0;
+  color: var(--descr-text-color);
 }
 
 .about-me__links-title {
@@ -242,13 +245,14 @@ export default {
   margin: 0.2rem 0 0.2rem;
 
   &:hover .about-me__link-img {
+    fill: red;
     opacity: 1;
     left: 100%;
   }
 }
 .about-me__link {
   font-family: 'MuseoSans', sans-serif;
-  color: var(--color-green);
+  color: var(--color-bright);
   display: inline-block;
 
   padding: 0.5rem;

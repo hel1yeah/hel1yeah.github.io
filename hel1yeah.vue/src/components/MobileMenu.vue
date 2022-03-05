@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'MobileMenu',
   emits: ['closeModal'],
@@ -20,16 +22,17 @@ export default {
       type: Boolean,
       required: true,
     },
-    menuList: {
-      type: Array,
-      required: true,
-    },
   },
   methods: {
     closeModal() {
       this.$emit('closeModal')
     },
   },
+  computed: {
+    ...mapState({
+      menuList: (state) => state.menuList,
+    }),
+  }
 }
 </script>
 

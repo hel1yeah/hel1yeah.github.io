@@ -1,5 +1,4 @@
 <template>
-  <div id="app" data-theme="light">
     <!-- ========= HEADER PAGE ========= -->
     <Header>
     </Header>
@@ -19,7 +18,6 @@
     <!-- ========= Footer PAGE ========= -->
     <Footer> </Footer>
     <!-- ========= /Footer PAGE ========= -->
-  </div>
 </template>
 
 <script>
