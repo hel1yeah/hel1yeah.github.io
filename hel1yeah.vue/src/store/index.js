@@ -72,23 +72,26 @@ export default createStore({
     isTheme: 'light'
   },
   mutations: {
-    isProjectsUploadStart(state) {
+    setProjectsUploadStart(state) {
       state.isProjects = null
       state.isLoading = true
     },
-    isProjectsUploadSuccess(state, payload) {
+    setProjectsUploadSuccess(state, payload) {
       state.isProjects = payload
       state.isLoading = false
     },
-    isProjectsUploadFailure(state, payload) {
+    setProjectsUploadFailure(state, payload) {
       state.isProjects = null
       state.error = payload
       state.isLoading = false
     },
+    setTheme(state, payload) {
+      state.isTheme = payload
+    }
   },
   actions: {
     getWorks({ commit }) {
-      commit('isProjectsUploadStart')
+      commit('setProjectsUploadStart')
       return new Promise((resolve) => {
         axios
           .get(
@@ -96,14 +99,34 @@ export default createStore({
           )
           .then((response) => {
             if (response.status === 200) {
-              commit('isProjectsUploadSuccess', response.data)
+              commit('setProjectsUploadSuccess', response.data)
             }
           })
           .catch((err) => {
-            commit('isProjectsUploadFailure', err)
+            commit('setProjectsUploadFailure', err)
           })
       })
     },
+    changeTheme({ state, commit }) {
+      const elem = document.getElementById('app')
+      if (state.isTheme === 'light') {
+        elem.setAttribute('data-theme', 'dark')
+        localStorage.setItem('theme', 'dark')
+        commit('setTheme', 'dark')
+      } else {
+        elem.setAttribute('data-theme', 'light')
+        localStorage.setItem('theme', 'light')
+        commit('setTheme', 'light')
+      }
+    },
+    checkTheme({ commit }, theme) {
+      const elem = document.getElementById('app')
+
+      elem.setAttribute('data-theme', theme)
+      localStorage.setItem('theme', theme)
+      commit('setTheme', theme)
+
+    }
   },
   modules: {},
 })

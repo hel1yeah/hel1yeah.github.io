@@ -121,8 +121,10 @@ export default {
 .circle-inner__txt {
   font-family: 'MuseoSans', sans-serif;
   font-weight: lighter;
+  color: var(--descr-text-color);
 }
 .skills-descr {
+  color: var(--descr-text-color);
 }
 @media screen and (max-width: 1200px) {
   .skills__content--item {

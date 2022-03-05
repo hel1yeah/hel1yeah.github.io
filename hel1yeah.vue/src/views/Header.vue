@@ -1,16 +1,14 @@
 <template>
-  <section class="header">
+  <section 
+    class="header" 
+    :class="theme === 'light' ? 'header-light' : 'header-dark'">
     <div class="container">
       <div class="header__inner-wrapper">
         <nav class="header__nav">
-          <img
-            class="header__logo left-to-right"
-            src="./../assets/hel1-logo.svg"
-            alt="hel1-logo.svg"
-          />
-          <theme-switch>
-            
-          </theme-switch>
+
+          <TheHeaderLogo />            
+          <ThemeSwitch />
+          
           <div class="burger-menu right-to-left" @click="useBurger()" ref="burgerMenu">
             <span class="burger-menu-piece"></span>
             <span class="burger-menu-piece"></span>
@@ -48,6 +46,8 @@ import ArrayUp from '@/components/ArrayUp.vue'
 import MobileMenu from '@/components/MobileMenu.vue'
 import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
+import TheHeaderLogo from '@/components/SVGcomponents/TheHeaderLogo.vue'
+
 import { mapState } from 'vuex'
 import { gsap } from 'gsap'
 
@@ -57,6 +57,7 @@ export default {
     ArrayUp,
     MobileMenu,
     ThemeSwitch,
+    TheHeaderLogo,
   },
   data() {
     return {
@@ -124,7 +125,9 @@ export default {
   computed: {
     ...mapState({
       menuList: (state) => state.menuList,
+      theme: (state) => (state.isTheme)
     }),
+
   },
 }
 </script>
@@ -134,20 +137,32 @@ export default {
   z-index: 1;
   position: relative;
   height: 100vh;
-  background: url("./../assets/images/header_bg.webp");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  color: var(--color-light);
-  overflow: hidden;
+  transition: var(--speed);
+  
+  &.header-dark {
+    background: url("./../assets/images/header_bg-dark.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: var(--header-color-text);
+    overflow: hidden;
+  }
+  &.header-light {
+    background: url("./../assets/images/header_bg.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: var(--header-color-text);
+    overflow: hidden;
+  }
 
   & a {
-    color: var(--color-light);
+    color: var(--header-color-text);
     font-family: "MuseoSans";
     font-weight: 100;
     text-transform: lowercase;
-
     font-size: 0.9rem;
+    transition: var(--speed);
   }
 }
 .header__inner-wrapper {
@@ -168,17 +183,13 @@ export default {
   font-family: "MuseoSans", sans-serif;
   font-size: 0.9rem;
 }
-.header__logo {
-  width: 100px;
-  z-index: 1000;
-  position: relative;
-}
+
 .burger-menu {
   display: none;
   position: relative;
   width: 40px;
   height: 30px;
-  color: var(--color-light);
+  color: var(--header-color-text);
   cursor: pointer;
   z-index: 1000;
 }
@@ -190,7 +201,7 @@ $menu-animation-timing: ease-out;
   display: block;
   position: absolute;
   width: 40px;
-  border-top: 6px solid var(--color-light);
+  border-top: 6px solid var(--header-color-text);
   transform-origin: 50% 50%;
   transition: transform $menu-animation-duration $menu-animation-timing;
 
@@ -294,23 +305,27 @@ $menu-animation-timing: ease-out;
     font-weight: bold;
     padding: 20px;
     position: relative;
+    transition: var(--speed)
   }
 }
 .header__email {
 }
 .header__title {
   text-align: center;
+
   & p {
     font-family: "MuseoSans", sans-serif;
     font-size: 2rem;
+    color: var(--header-color-text);
+    transition: var(--speed);
   }
 }
 .header__arrow-down {
-  border: 1.25px solid var(--color-light);
+  border: 1.25px solid var(--header-color-text);
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  color: var(--color-light);
+  color: var(--header-color-text);
 
   display: flex;
   align-items: center;
