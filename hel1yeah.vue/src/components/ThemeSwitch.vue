@@ -1,12 +1,7 @@
 <template>
   <div class="theme-switch__wrapper">
     <label class="theme-switch__label">
-      <input 
-        class="theme-switch__input" 
-        type="checkbox" 
-        v-model="cheked"
-        @click="changeTheme" 
-      />
+      <input class="theme-switch__input" type="checkbox" v-model="cheked" @click="changeTheme" />
       <div class="theme-switch__checkbox">
         <div class="theme-switch__checkbox-circle"></div>
       </div>
@@ -55,6 +50,11 @@ export default {
 
 <style lang="scss" scoped>
 .theme-switch__wrapper {
+  z-index: 100;
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  // transform: rotate(deg);
 }
 .theme-switch__label {
   position: relative;
@@ -64,18 +64,18 @@ export default {
   position: absolute;
   appearance: none;
   &:checked + .theme-switch__checkbox {
-    border: 3px solid var(--color-green);
+    border: 2px solid var(--color-green-light);
   }
   &:checked + .theme-switch__checkbox > .theme-switch__checkbox-circle {
     background-color: var(--color-bright);
-    left: 66%;
+    top: 66%;
   }
 }
 .theme-switch__checkbox {
-  width: 60px;
-  height: 26px;
+  width: 26px;
+  height: 60px;
   border-radius: 12px;
-  border: 3px solid var(--color-green-light);
+  border: 2px solid var(--color-green);
   position: relative;
   transition: 0.7s;
   padding: 1px;
@@ -87,9 +87,9 @@ export default {
   background-color: var(--color-bright);
   transition: 0.7s;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 1px;
+  top: 1px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .theme-switch__description {
 }

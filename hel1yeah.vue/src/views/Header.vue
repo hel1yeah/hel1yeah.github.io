@@ -7,7 +7,7 @@
         <nav class="header__nav">
 
           <TheHeaderLogo />            
-          <ThemeSwitch />
+
           
           <div class="burger-menu right-to-left" @click="useBurger()" ref="burgerMenu">
             <span class="burger-menu-piece"></span>
@@ -48,7 +48,6 @@
 <script>
 
 import MobileMenu from '@/components/MobileMenu.vue'
-import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
 import TheHeaderLogo from '@/components/SVGcomponents/TheHeaderLogo.vue'
 
@@ -58,9 +57,7 @@ import { gsap } from 'gsap'
 export default {
   name: 'Header',
   components: {
-
     MobileMenu,
-    ThemeSwitch,
     TheHeaderLogo,
   },
   data() {

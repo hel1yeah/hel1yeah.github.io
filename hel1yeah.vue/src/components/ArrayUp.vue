@@ -71,8 +71,8 @@ export default {
   z-index: 100;
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
-  border: 1.25px solid var(--arrow-down-color);
+  right: 3rem;
+  border: 2px solid var(--arrow-down-color);
   width: 50px;
   height: 50px;
   border-radius: 50%;

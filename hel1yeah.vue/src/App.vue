@@ -18,7 +18,8 @@
     <!-- ========= Footer PAGE ========= -->
     <Footer></Footer>
     <!-- ========= /Footer PAGE ========= -->
-    <ArrayUp></ArrayUp>
+    <ArrayUp />
+    <ThemeSwitch />
   </div>
 </template>
 
@@ -30,6 +31,7 @@ import Works from '@/views/Works.vue'
 import Footer from '@/views/Footer.vue'
 
 import ArrayUp from '@/components/ArrayUp.vue'
+import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
 export default {
   name: 'app',
@@ -40,6 +42,7 @@ export default {
     Works,
     Footer,
     ArrayUp,
+    ThemeSwitch,
   },
   data() {
     return {}
