@@ -40,13 +40,13 @@
         </a>
       </div>
     </div>
-    <ArrayUp></ArrayUp>
+    
     <MobileMenu :isActive="isActive" @closeModal="useBurger" />
   </section>
 </template>
 
 <script>
-import ArrayUp from '@/components/ArrayUp.vue'
+
 import MobileMenu from '@/components/MobileMenu.vue'
 import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
@@ -58,7 +58,7 @@ import { gsap } from 'gsap'
 export default {
   name: 'Header',
   components: {
-    ArrayUp,
+
     MobileMenu,
     ThemeSwitch,
     TheHeaderLogo,

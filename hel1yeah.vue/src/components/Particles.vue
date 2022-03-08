@@ -24,7 +24,6 @@ export default {
     startInitParticles() {
       const screenWidth = window.screen.width
       if (screenWidth >= 768) {
-        console.log(screenWidth);
         if (document.readyState === "complete") {
           this.initParticles()
         } else {

@@ -18,6 +18,7 @@
     <!-- ========= Footer PAGE ========= -->
     <Footer></Footer>
     <!-- ========= /Footer PAGE ========= -->
+    <ArrayUp></ArrayUp>
   </div>
 </template>
 
@@ -28,6 +29,8 @@ import Skills from '@/views/Skills.vue'
 import Works from '@/views/Works.vue'
 import Footer from '@/views/Footer.vue'
 
+import ArrayUp from '@/components/ArrayUp.vue'
+
 export default {
   name: 'app',
   components: {
@@ -36,6 +39,7 @@ export default {
     Skills,
     Works,
     Footer,
+    ArrayUp,
   },
   data() {
     return {}
