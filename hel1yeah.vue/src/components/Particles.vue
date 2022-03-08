@@ -22,13 +22,18 @@ export default {
   },
   methods: {
     startInitParticles() {
-      if (document.readyState === "complete") {
-        this.initParticles()
-      } else {
-        setTimeout(() => {
-          this.startInitParticles()
-        }, 100);
+      const screenWidth = window.screen.width
+      if (screenWidth >= 768) {
+        console.log(screenWidth);
+        if (document.readyState === "complete") {
+          this.initParticles()
+        } else {
+          setTimeout(() => {
+            this.startInitParticles()
+          }, 100);
+        }
       }
+
     },
     initParticles() {
       const theme = localStorage.getItem('theme')
@@ -152,7 +157,10 @@ export default {
   },
   watch: {
     isTheme: function () {
-      this.initParticles()
+      const screenWidth = window.screen.width
+      if (screenWidth >= 768) {
+        this.initParticles()
+      }
     },
   },
   computed: {
