@@ -58,12 +58,13 @@ export default {
 }
 .theme-switch__label {
   position: relative;
+  cursor: pointer;
 }
 .theme-switch__input {
   position: absolute;
   appearance: none;
   &:checked + .theme-switch__checkbox {
-    border: 3px solid var(--color-green-light);
+    border: 3px solid var(--color-green);
   }
   &:checked + .theme-switch__checkbox > .theme-switch__checkbox-circle {
     background-color: var(--color-bright);
@@ -74,7 +75,7 @@ export default {
   width: 60px;
   height: 26px;
   border-radius: 12px;
-  border: 3px solid var(--color-green);
+  border: 3px solid var(--color-green-light);
   position: relative;
   transition: 0.7s;
   padding: 1px;

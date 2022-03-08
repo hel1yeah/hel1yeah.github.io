@@ -1,23 +1,24 @@
 <template>
+  <div>
     <!-- ========= HEADER PAGE ========= -->
-    <Header>
-    </Header>
+    <Header></Header>
     <!-- ========= /HEADER PAGE ========= -->
 
     <!-- ========= AboutMe PAGE ========= -->
-    <AboutMe> </AboutMe>
+    <AboutMe></AboutMe>
     <!-- ========= /AboutMe PAGE ========= -->
 
     <!-- ========= Skills PAGE ========= -->
-    <Skills> </Skills>
+    <Skills></Skills>
     <!-- ========= /Skills PAGE ========= -->
 
     <!-- ========= Works PAGE ========= -->
-    <Works> </Works>
+    <Works></Works>
     <!-- ========= /Works PAGE ========= -->
     <!-- ========= Footer PAGE ========= -->
-    <Footer> </Footer>
+    <Footer></Footer>
     <!-- ========= /Footer PAGE ========= -->
+  </div>
 </template>
 
 <script>
@@ -44,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#app{
+#app {
   margin: 0 0 5rem;
 }
 </style>

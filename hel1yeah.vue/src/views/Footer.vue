@@ -18,6 +18,7 @@
   font-family: 'MuseoSans', serif;
   text-transform: uppercase;
   margin: 0 0 5rem;
+  color: var(--descr-text-color)
 
 }
 </style>

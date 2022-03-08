@@ -57,5 +57,6 @@ export default {
 .container {
 }
 .works__title {
+  z-index: 1;
 }
 </style>

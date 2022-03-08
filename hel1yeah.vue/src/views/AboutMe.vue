@@ -24,7 +24,7 @@
               себя я не открыл, потому что большую часть материала знал до
               этого. Дальше - я взялся за изучение: jQuery, Gulp, GitHub, Git,
               Figma. Сейчас я изучаю JavaScript, дальше будет
-              <s> React </s> Vue.js!
+              <s>React</s> Vue.js!
             </p>
             <p class="about-me__background-descr">
               Если у Вас есть советы, пожелания, предложения по практике или
@@ -57,33 +57,24 @@
                       <p class="merit__item-square-inside-txt">100%</p>
                     </div>
                   </div>
-                  <span class="merit__item--descr"
-                    >Преданность <br />
-                    королю</span
-                  >
+                  <span class="merit__item--descr">
+                    Преданность
+                    <br />королю
+                  </span>
                 </div>
               </div>
             </div>
             <div class="about-me__links right-to-left-about-me">
               <h3 class="about-me__links-title">Связь</h3>
               <ul class="about-me__links-list">
-                <li
-                  class="about-me__links-list-item"
-                  v-for="(link, index) in links"
-                  :key="index"
-                >
+                <li class="about-me__links-list-item" v-for="(link, index) in links" :key="index">
                   <a
                     class="about-me__link"
                     :title="link.title"
                     :href="link.link"
                     target="_blank"
-                    >{{ link.text }}
-                  </a>
-                  <img
-                    class="about-me__link-img"
-                    :src="link.img"
-                    :alt="link.title"
-                  />
+                  >{{ link.text }}</a>
+                  <component v-bind:is="`${link.title}-icon-svg`" class="about-me__link-img"></component>
                 </li>
               </ul>
             </div>
@@ -101,10 +92,24 @@ import { gsap } from 'gsap'
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import FacebookIconSvg from '@/components/SVGcomponents/FacebookIconSvg.vue'
+import LinkedinIconSvg from '@/components/SVGcomponents/LinkedinIconSvg.vue'
+import GithubIconSvg from '@/components/SVGcomponents/GithubIconSvg.vue'
+import TelegramIconSvg from '@/components/SVGcomponents/TelegramIconSvg.vue'
+import UkrnetIconSvg from '@/components/SVGcomponents/UkrnetIconSvg.vue'
+import GmailIconSvg from '@/components/SVGcomponents/GmailIconSvg.vue'
+
 gsap.registerPlugin(ScrollTrigger)
 export default {
   name: 'AboutMe',
-  components: {},
+  components: {
+    FacebookIconSvg,
+    LinkedinIconSvg,
+    GithubIconSvg,
+    TelegramIconSvg,
+    UkrnetIconSvg,
+    GmailIconSvg,
+  },
   data() {
     return {}
   },
@@ -179,7 +184,7 @@ export default {
 }
 
 .about-me__background-descr {
-  font-family: 'MuseoSans', sans-serif;
+  font-family: "MuseoSans", sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 0 0 1.75rem;
@@ -194,7 +199,7 @@ export default {
   justify-content: space-around;
   text-align: center;
   flex-wrap: wrap;
-  font-family: 'MuseoSans', sans-serif;
+  font-family: "MuseoSans", sans-serif;
 }
 .merit__item {
   display: flex;
@@ -245,13 +250,12 @@ export default {
   margin: 0.2rem 0 0.2rem;
 
   &:hover .about-me__link-img {
-    fill: red;
     opacity: 1;
     left: 100%;
   }
 }
 .about-me__link {
-  font-family: 'MuseoSans', sans-serif;
+  font-family: "MuseoSans", sans-serif;
   color: var(--color-bright);
   display: inline-block;
 

@@ -16,8 +16,12 @@
           </div>
 
           <ul class="header__menu top-down" :class="{ active: isActive }">
-            <li class="header__menu-item" v-for="item in menuList" :key="item.scrollTo">
-              <a v-scroll-to="item.scrollTo" href="#">{{ item.name }}</a>
+            <li class="header__menu-item" 
+            v-for="item in menuList" 
+            :key="item.scrollTo">
+              <a 
+                v-scroll-to="item.scrollTo" 
+                href="#">{{ item.name }}</a>
             </li>
           </ul>
           <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net">hel1_yeah@ukr.net</a>
@@ -137,7 +141,7 @@ export default {
   z-index: 1;
   position: relative;
   height: 100vh;
-  transition: var(--speed);
+
   
   &.header-dark {
     background: url("./../assets/images/header_bg-dark.webp");
@@ -321,18 +325,16 @@ $menu-animation-timing: ease-out;
   }
 }
 .header__arrow-down {
-  border: 1.25px solid var(--header-color-text);
+  border: 1.25px solid var(--header-arrow-down-color);
   width: 50px;
   height: 50px;
   border-radius: 50%;
   color: var(--header-color-text);
-
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
+
 }
 
 .header__arrow-down--img {

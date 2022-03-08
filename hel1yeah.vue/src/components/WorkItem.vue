@@ -65,6 +65,7 @@ export default {
   flex-wrap: wrap;
   font-family: 'MuseoSans', serif;
   color: var(--color-light);
+  z-index: 1;
 }
 .works__content-item {
   z-index: 0;
