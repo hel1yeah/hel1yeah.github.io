@@ -92,5 +92,6 @@ export default {
   transform: translateX(-50%);
 }
 .theme-switch__description {
+  
 }
 </style>
