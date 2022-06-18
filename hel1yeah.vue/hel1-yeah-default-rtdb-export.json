@@ -152,6 +152,14 @@
       "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ffrozeneon-vuejs-demo.jpg?alt=media&token=e1f98a92-ff89-46af-9dfc-a7f405c867fc",
       "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Ffrozeneon-vuejs-demo.jpg?alt=media&token=e1f98a92-ff89-46af-9dfc-a7f405c867fc",
       "link": "https://frozeneonvuejs.web.app/"
+    },
+    {
+      "name": "Flappy Bird",
+      "descr": "Всем хорошо знакомая игра Flappy Bird реализованна сборщиком Vite, Технологии: Vue.js 3, Pixi.js ",
+      "id": "20",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/full-img%2Fflappy-bird-img.png?alt=media&token=9fe2fbd2-179e-44d3-b11d-f4ed275b4bba",
+      "demo": "https://firebasestorage.googleapis.com/v0/b/hel1-yeah.appspot.com/o/demo-img%2Fflappy-bird-demo.png?alt=media&token=a6e3a1a4-ac3a-4c5b-b481-ce838efc5149",
+      "link": "https://flappybirdpixijs.web.app/"
     }
   ]
 }

@@ -58,23 +58,20 @@ export default {
 .works__content {
   position: relative;
   margin: 2rem 0 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
   font-family: 'MuseoSans', serif;
+  gap: 20px;
   color: var(--color-light);
   z-index: 1;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 .works__content-item {
   z-index: 0;
-  width: 350px;
+  width: 100%;
   height: 350px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  margin: 0 0 5rem;
   border: 2px solid var(--color-green);
   position: relative;
   overflow: hidden;
@@ -83,35 +80,35 @@ export default {
     content: '';
     z-index: -1;
     position: absolute;
-    top: 0;
-    left: -360px;
+    top: 50%;
+    left: -540px;
     background-color: var(--color-green);
     opacity: 0.7;
-    width: 100%;
-    height: 100%;
-    transform: rotate(45deg);
+    width: 500px;
+    height: 500px;
+    transform: translateY(-50%) rotate(45deg);
     transition: 0.7s;
   }
   &::after {
     content: '';
     z-index: -1;
     position: absolute;
-    top: 0;
-    right: -360px;
+    top: 50%;
+    right: -540px;
     background-color: var(--color-green);
     opacity: 0.7;
-    width: 100%;
-    height: 100%;
-    transform: rotate(45deg);
+    width: 500px;
+    height: 500px;
+    transform: translateY(-50%) rotate(45deg);
     transition: 0.7s;
   }
   &:hover {
     &.works__content-item::before {
-      left: 100px;
+      left: -40px;
       transform: rotate(45deg) scale(2);
     }
     &.works__content-item::after {
-      right: 100px;
+      right: -40px;
       transform: rotate(45deg) scale(2);
     }
     & .content-item__info {
@@ -144,10 +141,8 @@ export default {
   }
 }
 @media screen and (max-width: 769px) {
-  .works__content-item {
-    width: 300px;
-    height: 300px;
-    margin: 0 0 2rem;
+  .works__content {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
   .content-item__info {
     padding: 0.5rem;
@@ -164,14 +159,6 @@ export default {
 }
 
 @media screen and (max-width: 639px) {
-  .works__content {
-    justify-content: center;
-  }
-  .works__content-item {
-    width: 350px;
-    height: 350px;
-    margin: 0 0 1rem;
-  }
   .works__name {
     font-size: 1.7rem;
   }
@@ -180,9 +167,6 @@ export default {
   }
 }
 @media screen and (max-width: 388px) {
-  .works__content-item {
-    width: 275px;
-    height: 275px;
-  }
+
 }
 </style>
