@@ -1,7 +1,7 @@
 <template>
   <section class="works" id="works">
     <div class="container">
-      <h2 class="works__title left-to-right-works">Работы</h2>
+      <h2 class="works__title left-to-right-works">The Works</h2>
       <work-item />
     </div>
     <particles />

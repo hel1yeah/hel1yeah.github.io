@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <span class="footer-txt">2019-2099 / СМОТРЮ В БУДУЩЕЕ</span>
+      <span class="footer-txt">2019-2099 / LOOKING TO THE FUTURE</span>
     </div>
     
   </footer>

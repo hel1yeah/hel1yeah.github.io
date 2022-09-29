@@ -49,15 +49,15 @@ export default createStore({
     menuList: [
       {
         scrollTo: '#about-me',
-        name: 'обо мне'
+        name: 'about me'
       },
       {
         scrollTo: '#skills',
-        name: 'навыки'
+        name: 'skills'
       },
       {
         scrollTo: '#works',
-        name: 'работы'
+        name: 'works'
       },
     ],
     isProjects: null,

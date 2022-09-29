@@ -1,34 +1,39 @@
 <template>
-  <section 
-    class="header" 
-    :class="theme === 'light' ? 'header-light' : 'header-dark'">
+  <section
+    class="header"
+    :class="theme === 'light' ? 'header-light' : 'header-dark'"
+  >
     <div class="container">
       <div class="header__inner-wrapper">
         <nav class="header__nav">
+          <TheHeaderLogo />
 
-          <TheHeaderLogo />            
-
-          
-          <div class="burger-menu right-to-left" @click="useBurger()" ref="burgerMenu">
+          <div
+            class="burger-menu right-to-left"
+            @click="useBurger()"
+            ref="burgerMenu"
+          >
             <span class="burger-menu-piece"></span>
             <span class="burger-menu-piece"></span>
             <span class="burger-menu-piece"></span>
           </div>
 
           <ul class="header__menu top-down" :class="{ active: isActive }">
-            <li class="header__menu-item" 
-            v-for="item in menuList" 
-            :key="item.scrollTo">
-              <a 
-                v-scroll-to="item.scrollTo" 
-                href="#">{{ item.name }}</a>
+            <li
+              class="header__menu-item"
+              v-for="item in menuList"
+              :key="item.scrollTo"
+            >
+              <a v-scroll-to="item.scrollTo" href="#">{{ item.name }}</a>
             </li>
           </ul>
-          <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net">hel1_yeah@ukr.net</a>
+          <a class="header__email right-to-left" href="mailto:hel1_yeah@ukr.net"
+            >hel1_yeah@ukr.net</a
+          >
         </nav>
         <div class="header__title">
-          <h1>Любимое дело</h1>
-          <p>вёрстка & front-end</p>
+          <h1>Favorite Business</h1>
+          <p>layout & front-end</p>
         </div>
         <a class="header__arrow-down upwards">
           <img
@@ -40,13 +45,12 @@
         </a>
       </div>
     </div>
-    
+
     <MobileMenu :isActive="isActive" @closeModal="useBurger" />
   </section>
 </template>
 
 <script>
-
 import MobileMenu from '@/components/MobileMenu.vue'
 
 import TheHeaderLogo from '@/components/SVGcomponents/TheHeaderLogo.vue'
@@ -126,9 +130,8 @@ export default {
   computed: {
     ...mapState({
       menuList: (state) => state.menuList,
-      theme: (state) => (state.isTheme)
+      theme: (state) => state.isTheme,
     }),
-
   },
 }
 </script>
@@ -139,9 +142,8 @@ export default {
   position: relative;
   height: 100vh;
 
-  
   &.header-dark {
-    background: url("./../assets/images/header_bg-dark.webp");
+    background: url('./../assets/images/header_bg-dark.webp');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -149,7 +151,7 @@ export default {
     overflow: hidden;
   }
   &.header-light {
-    background: url("./../assets/images/header_bg.webp");
+    background: url('./../assets/images/header_bg.webp');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -159,7 +161,7 @@ export default {
 
   & a {
     color: var(--header-color-text);
-    font-family: "MuseoSans";
+    font-family: 'MuseoSans';
     font-weight: 100;
     text-transform: lowercase;
     font-size: 0.9rem;
@@ -181,7 +183,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "MuseoSans", sans-serif;
+  font-family: 'MuseoSans', sans-serif;
   font-size: 0.9rem;
 }
 
@@ -306,7 +308,7 @@ $menu-animation-timing: ease-out;
     font-weight: bold;
     padding: 20px;
     position: relative;
-    transition: var(--speed)
+    transition: var(--speed);
   }
 }
 .header__email {
@@ -315,7 +317,7 @@ $menu-animation-timing: ease-out;
   text-align: center;
 
   & p {
-    font-family: "MuseoSans", sans-serif;
+    font-family: 'MuseoSans', sans-serif;
     font-size: 2rem;
     color: var(--header-color-text);
     transition: var(--speed);
@@ -331,7 +333,6 @@ $menu-animation-timing: ease-out;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
 }
 
 .header__arrow-down--img {

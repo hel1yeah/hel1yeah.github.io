@@ -1,7 +1,7 @@
 <template>
   <section class="skills" id="skills">
     <div class="container">
-      <h2 class="skills__title left-to-right-skills">Навыки</h2>
+      <h2 class="skills__title left-to-right-skills">Skills</h2>
       <div class="skills__content">
         <div class="skills__content--item">
           <div

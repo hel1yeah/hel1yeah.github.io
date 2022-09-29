@@ -2,38 +2,40 @@
   <section class="about-me" id="about-me">
     <div class="container">
       <div class="about-me__inner-wrapper">
-        <h2 class="left-to-right-about-me">Навыки</h2>
+        <h2 class="left-to-right-about-me">About me</h2>
         <div class="about-me__gread">
           <div class="about-me__background left-to-right-about-me">
-            <h3 class="about-me__background-title">Бэкграунд</h3>
+            <h3 class="about-me__background-title">Background</h3>
             <p class="about-me__background-descr">
-              Front - End Developer. В мир Web-разработки попал случайно, по
-              работе нужно было разобраться в некоторых тонкостях этой сферы. И
-              я разобрался. Потратив огромное количество часов на всевозможные
-              статьи и видео, эта вселенная оставила очень большое впечатление.
+              Front - End Developer. I got into the world of Web-development by accident.
+              Work needed to understand some of the intricacies of this area. И
+              I figured it out. After spending a lot of hours on all sorts of
+              articles and videos, this universe has left a very big impression.
             </p>
             <p class="about-me__background-descr">
-              Настолько большое, что вместо того чтобы отдыхать после работы, я,
-              сам того не замечая, засиживался до позднего вечера за
-              разработкой. Так Front-End стал для меня хобби, которым мне
-              хочется заниматься.
+              So much so that instead of resting after work, I,
+              I would sit up late into the evening working on
+              working. That's how Front-End became a hobby for me that I
+              want to do.
             </p>
             <p class="about-me__background-descr">
-              Изучив самостоятельно HTML5, CSS3, Photoshop, я чувствовал, что
-              чего-то не знаю. Следующий шаг - курсы. К сожалению, нового для
-              себя я не открыл, потому что большую часть материала знал до
-              этого. Дальше - я взялся за изучение: jQuery, Gulp, GitHub, Git,
-              Figma. Сейчас я изучаю JavaScript, дальше будет
+              Having studied HTML5, CSS3, and Photoshop on my own, I felt that
+              something I didn't know. The next step was courses. Unfortunately, I didn't discover
+              I didn't learn anything new because I already knew most of the material.
+              most of the material I knew before. Next - I took up studying: jQuery, Gulp, GitHub, Git,
+              Figma. Now I'm studying JavaScript, the next thing will be
               <s>React</s> Vue.js!
             </p>
             <p class="about-me__background-descr">
-              Если у Вас есть советы, пожелания, предложения по практике или
-              работе, буду рад знакомству!
+              I am a qualified and professional web developer with one years of
+              experience in front-end. I will be happy to work in your cool team and
+              create an interesting and most importantly necessary product. Strong
+              creative and analytical skills. Team player with an eye for detail.
             </p>
           </div>
           <div class="wrapper__merit-links">
             <div class="about-me__merit right-to-left-about-me">
-              <h3 class="about-me__merit-title">Заслуги</h3>
+              <h3 class="about-me__merit-title">Merits</h3>
               <div class="merit-wrapper">
                 <div class="merit__item">
                   <div class="merit__item-square-outside">
@@ -41,7 +43,7 @@
                       <p class="merit__item-square-inside-txt">101%</p>
                     </div>
                   </div>
-                  <span class="merit__item--descr">Обучаемость</span>
+                  <span class="merit__item--descr">Learnability</span>
                 </div>
                 <div class="merit__item">
                   <div class="merit__item-square-outside">
@@ -49,7 +51,7 @@
                       <p class="merit__item-square-inside-txt">777</p>
                     </div>
                   </div>
-                  <span class="merit__item--descr">Удача</span>
+                  <span class="merit__item--descr">Luck</span>
                 </div>
                 <div class="merit__item">
                   <div class="merit__item-square-outside">
@@ -58,14 +60,14 @@
                     </div>
                   </div>
                   <span class="merit__item--descr">
-                    Преданность
-                    <br />королю
+                    Loyalty to the
+                    <br />King
                   </span>
                 </div>
               </div>
             </div>
             <div class="about-me__links right-to-left-about-me">
-              <h3 class="about-me__links-title">Связь</h3>
+              <h3 class="about-me__links-title">Link</h3>
               <ul class="about-me__links-list">
                 <li class="about-me__links-list-item" v-for="(link, index) in links" :key="index">
                   <a
