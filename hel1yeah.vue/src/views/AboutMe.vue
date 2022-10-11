@@ -212,7 +212,7 @@ export default {
   width: 130px;
 }
 .merit__item-square-outside {
-  border: 1.25px solid var(--color-green);
+  border: 1.25px solid var(--border-color);
   width: 90px;
   height: 90px;
   transform: rotate(-45deg);

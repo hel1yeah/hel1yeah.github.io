@@ -82,7 +82,7 @@ export default {
     position: absolute;
     top: 50%;
     left: -540px;
-    background-color: var(--color-green);
+    background-color: var(--border-color);
     opacity: 0.7;
     width: 500px;
     height: 500px;
@@ -95,7 +95,7 @@ export default {
     position: absolute;
     top: 50%;
     right: -540px;
-    background-color: var(--color-green);
+    background-color: var(--border-color);
     opacity: 0.7;
     width: 500px;
     height: 500px;

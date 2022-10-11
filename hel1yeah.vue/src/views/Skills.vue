@@ -102,7 +102,7 @@ export default {
 .circle {
   width: 4rem;
   height: 4rem;
-  border: 2px solid var(--color-green);
+  border: 2px solid var(--border-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -112,7 +112,7 @@ export default {
 .circle-inner {
   width: 3.5rem;
   height: 3.5rem;
-  border: 1px solid var(--color-green);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   display: flex;
   align-items: center;

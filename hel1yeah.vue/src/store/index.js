@@ -45,6 +45,9 @@ export default createStore({
       { name: 'PHOTOSHOP, FIGMA', level: '76%' },
       { name: 'Elementary', level: 'A2' },
       { name: 'GSAP', level: '55%' },
+      { name: 'Rest API, Axios', level: '56%' },
+      { name: 'Pinia', level: '73%' },
+      { name: 'Pixi.js', level: '33%' },
     ],
     menuList: [
       {
