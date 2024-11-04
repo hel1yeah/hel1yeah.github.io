@@ -53,9 +53,6 @@ export default {
   margin: 4rem 0 0;
   position: relative;
 }
-
-.container {
-}
 .works__title {
   z-index: 1;
 }

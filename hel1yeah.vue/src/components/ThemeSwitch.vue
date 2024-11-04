@@ -1,7 +1,12 @@
 <template>
   <div class="theme-switch__wrapper">
     <label class="theme-switch__label">
-      <input class="theme-switch__input" type="checkbox" v-model="cheked" @click="changeTheme" />
+      <input
+        class="theme-switch__input"
+        type="checkbox"
+        v-model="cheked"
+        @click="changeTheme"
+      />
       <div class="theme-switch__checkbox">
         <div class="theme-switch__checkbox-circle"></div>
       </div>
@@ -16,35 +21,31 @@ export default {
   name: 'ThemeSwitch',
   data() {
     return {
-      cheked: null
+      cheked: null,
     }
   },
   computed: {
     ...mapState({
-      theme: (state) => (state.isTheme)
+      theme: (state) => state.isTheme,
     }),
-
-
   },
   methods: {
-    ...mapActions([
-      'changeTheme',
-      'checkTheme'
-    ]),
+    ...mapActions(['changeTheme', 'checkTheme']),
     getTheme() {
       const isTheme = localStorage.getItem('theme')
+      const defaultTheme = 'light'
       if (isTheme) {
         this.cheked = false
-        this.checkTheme(isTheme);
+        this.checkTheme(isTheme)
       } else {
         this.cheked = true
-        this.checkTheme(theme);
+        this.checkTheme(defaultTheme)
       }
     },
   },
   mounted() {
     this.getTheme()
-  }
+  },
 }
 </script>
 
@@ -92,6 +93,5 @@ export default {
   transform: translateX(-50%);
 }
 .theme-switch__description {
-  
 }
 </style>

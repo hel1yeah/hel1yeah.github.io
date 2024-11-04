@@ -10,11 +10,10 @@ import './assets/scss/main.scss'
 
 const app = createApp(App)
 app.use(store)
-app.use(router)
+// app.use(router)
 app.use(vuescrollto, {
   container: 'body',
-  duration: 700,
-  easing: 'line',
+  easing: 'ease',
   offset: -60,
   force: true,
   cancelable: true,

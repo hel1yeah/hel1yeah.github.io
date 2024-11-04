@@ -40,6 +40,7 @@ export default createStore({
       { name: 'CSS3, SCSS, BEM', level: '79%' },
       { name: 'adaptive', level: '79%' },
       { name: 'JavaScript', level: '82%' },
+      { name: 'TypeScript', level: '67%' },
       { name: 'Vue.js', level: '85%' },
       { name: 'git, github', level: '55%' },
       { name: 'PHOTOSHOP, FIGMA', level: '76%' },
@@ -47,26 +48,26 @@ export default createStore({
       { name: 'GSAP', level: '55%' },
       { name: 'Rest API, Axios', level: '56%' },
       { name: 'Pinia', level: '73%' },
-      { name: 'Pixi.js', level: '33%' },
+      { name: 'Pixi.js', level: '10%' },
     ],
     menuList: [
       {
         scrollTo: '#about-me',
-        name: 'about me'
+        name: 'about me',
       },
       {
         scrollTo: '#skills',
-        name: 'skills'
+        name: 'skills',
       },
       {
         scrollTo: '#works',
-        name: 'works'
+        name: 'works',
       },
     ],
     isProjects: null,
     isLoading: false,
     error: null,
-    isTheme: 'light'
+    isTheme: 'light',
   },
   mutations: {
     setProjectsUploadStart(state) {
@@ -84,12 +85,12 @@ export default createStore({
     },
     setTheme(state, payload) {
       state.isTheme = payload
-    }
+    },
   },
   actions: {
     getWorks({ commit }) {
       commit('setProjectsUploadStart')
-      return new Promise((resolve) => {
+      return new Promise(() => {
         axios
           .get(
             'https://hel1-yeah-default-rtdb.europe-west1.firebasedatabase.app/works-data.json',
@@ -122,8 +123,7 @@ export default createStore({
       elem.setAttribute('data-theme', theme)
       localStorage.setItem('theme', theme)
       commit('setTheme', theme)
-
-    }
+    },
   },
   modules: {},
 })
