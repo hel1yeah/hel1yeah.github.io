@@ -7,30 +7,19 @@
           <div class="about-me__background left-to-right-about-me">
             <h3 class="about-me__background-title">Background</h3>
             <p class="about-me__background-descr">
-              Front - End Developer. I got into the world of Web-development by accident.
-              Work needed to understand some of the intricacies of this area. И
-              I figured it out. After spending a lot of hours on all sorts of
-              articles and videos, this universe has left a very big impression.
+              Front-End Developer | Vue.js, Nuxt.js, TypeScript
             </p>
             <p class="about-me__background-descr">
-              So much so that instead of resting after work, I,
-              I would sit up late into the evening working on
-              working. That's how Front-End became a hobby for me that I
-              want to do.
+              I entered the world of web development by chance, but it quickly became my passion. What started as a necessity turned into an obsession—I spent countless hours studying articles, videos, and documentation, constantly improving my skills. Instead of resting after work, I stayed up late, experimenting with code and building projects.
             </p>
             <p class="about-me__background-descr">
-              Having studied HTML5, CSS3, and Photoshop on my own, I felt that
-              something I didn't know. The next step was courses. Unfortunately, I didn't discover
-              I didn't learn anything new because I already knew most of the material.
-              most of the material I knew before. Next - I took up studying: jQuery, Gulp, GitHub, Git,
-              Figma. Now I'm studying JavaScript, the next thing will be
-              <s>React</s> Vue.js!
+              Over time, I mastered HTML5, CSS3, JavaScript, and TypeScript, later expanding my expertise to Vue.js (2-3), Nuxt.js, Pinia, and API integrations. I also gained experience in mobile development with Ionic and Capacitor, working on PWA and .apk applications.
             </p>
             <p class="about-me__background-descr">
-              I am a qualified and professional web developer with one years of
-              experience in front-end. I will be happy to work in your cool team and
-              create an interesting and most importantly necessary product. Strong
-              creative and analytical skills. Team player with an eye for detail.
+              Now, with 3+ years of experience in front-end development, I specialize in building scalable, high-performance applications. I thrive in team environments, enjoy solving complex UI challenges, and constantly seek to improve both my technical and analytical skills.
+            </p>
+            <p class="about-me__background-descr">
+              I’m looking for an opportunity to work with like-minded professionals, contribute to innovative projects, and create meaningful, user-friendly products. Let’s build something great together!
             </p>
           </div>
           <div class="wrapper__merit-links">
