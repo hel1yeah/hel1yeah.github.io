@@ -1,7 +1,0 @@
-{
-  "endOfLine": "auto",
-  "semi": false,
-  "prettier.singleQuote": true,
-  "singleQuote": true,
-  "trailingComma": "all"
-}
