@@ -5,10 +5,16 @@ package-lock.json
 # Build outputs
 dist/
 build/
+.output/
+
+# Nuxt.js specific
+.nuxt/
+.data/
 
 # IDE and Editor files
 .vscode/
 .idea/
+.claude/
 *.swp
 *.swo
 *~
@@ -48,3 +54,6 @@ coverage/
 # Temporary files
 *.tmp
 .tmp/
+
+# Project specific
+OLD_SITE/
