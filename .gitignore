@@ -1,13 +1,7 @@
 # Dependencies
 node_modules/
-package-lock.json
 
-# Build outputs
-dist/
-build/
-.output/
-
-# Nuxt.js specific
+# Nuxt.js build cache (не output файли для GitHub Pages)
 .nuxt/
 .data/
 
@@ -55,5 +49,6 @@ coverage/
 *.tmp
 .tmp/
 
-# Project specific
+# Project specific - старі версії сайту в підпапках
 OLD_SITE/
+new_portfolio/

@@ -1,0 +1,1 @@
+import{_ as e}from"./DlAUqK2U.js";import{c as t,a as s,o as n}from"./FuMbziic.js";const r={},c={class:"not-found"};function a(_,o){return n(),t("div",c,[...o[0]||(o[0]=[s("h1",null,"404",-1)])])}const l=e(r,[["render",a]]);export{l as default};
