@@ -1,0 +1,126 @@
+@use "variables" as *;
+
+// Кастомний скролбар з градієнтом та бордерами
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  margin: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-gradient);
+  background-size: var(--card-gradient-size);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  transition: all $transition-fast;
+  animation: gradientShift 8s ease infinite;
+
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    animation-play-state: paused;
+  }
+
+  &:active {
+    background-size: 150% 150%;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 15px var(--secondary-color);
+  }
+}
+
+::-webkit-scrollbar-button {
+  background: var(--surface-color);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  height: 16px;
+  width: 16px;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: var(--card-gradient);
+    background-size: var(--card-gradient-size);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+  }
+
+  &:active {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 12px var(--secondary-color);
+  }
+}
+
+// Стрілки для кнопок скрола
+::-webkit-scrollbar-button:single-button {
+  display: block;
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Стрілка вгору (vertical)
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 2 L2 7 L8 7 Z' fill='%23999'/%3E%3C/svg%3E");
+
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 2 L2 7 L8 7 Z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+}
+
+// Стрілка вниз (vertical)
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 8 L2 3 L8 3 Z' fill='%23999'/%3E%3C/svg%3E");
+
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M5 8 L2 3 L8 3 Z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+}
+
+// Стрілка вліво (horizontal)
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 5 L7 2 L7 8 Z' fill='%23999'/%3E%3C/svg%3E");
+
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 5 L7 2 L7 8 Z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+}
+
+// Стрілка вправо (horizontal)
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M8 5 L3 2 L3 8 Z' fill='%23999'/%3E%3C/svg%3E");
+
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M8 5 L3 2 L3 8 Z' fill='%23fff'/%3E%3C/svg%3E");
+  }
+}
+
+// Кут між вертикальним та горизонтальним скролбаром
+::-webkit-scrollbar-corner {
+  background: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+}
+
+// Анімація градієнта
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Firefox підтримка
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-color);
+}

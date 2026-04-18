@@ -1,0 +1,85 @@
+{
+	"welcome": "Ласкаво просимо",
+	"home": "Головна",
+	"about-me": "Про мене",
+	"skills": "Навички",
+	"projects": "Проекти",
+	"contact": "Контакти",
+	"buttons": {
+		"login": "Увійти",
+		"readMore": "Читати далі",
+		"addNew": "Додати нове",
+		"downloadCV": "Завантажити CV"
+	},
+	"works": {
+		"title": "Мої роботи",
+		"loading": "Завантаження...",
+		"error": "Помилка завантаження даних:",
+		"sitePrefix": "Сайт:"
+	},
+	"footer": {
+		"copyright": "ДИВЛЮСЯ В МАЙБУТНЄ"
+	},
+	"theme": {
+		"nature": "Світла тема",
+		"dark": "Темна тема"
+	},
+	"locales": {
+		"placeholder": "Оберіть мову"
+	},
+	"aboutMe": {
+		"background": "Біографія",
+		"jobTitle": "Front-End розробник | Vue.js, Nuxt.js, TypeScript",
+		"description1": "Я досвіченний Front-End розробник з понад 4-річним досвідом створення адаптивних, високопродуктивних веб-додатків з використанням Vue.js, Nuxt.js та TypeScript. Мій шлях у веб-розробку почався з необхідності, але швидко переріс у глибоку відданість оволодінню ремеслом. Я присвятив незліченні години вивченню — дослідженню документації, експериментам з кодом та роботі над особистими та професійними проєктами.",
+		"description2": "Моя основна експертиза включає сучасний JavaScript/TypeScript, Vue.js (Options та Composition API), Nuxt.js та управління станом з Vuex та Pinia. Я маю великий досвід інтеграції RESTful та GraphQL API з використанням Axios або Fetch, налаштування архітектури проєкту, оптимізації продуктивності через SSR, ледаче завантаження та розділення коду, а також впровадження потоків автентифікації з JWT та OAuth.",
+		"description3": "Я також створював мобільні додатки з використанням Ionic та Capacitor і розробляв APK для платформ, таких як Sunmi Store. Мій робочий процес часто включає інструменти, такі як GitHub Actions, ESLint, Prettier та Husky, щоб забезпечити якість коду та ефективність CI/CD.",
+		"description4": "Мені подобається перетворювати складні UI/UX-дизайни (з Figma або PSD) на елегантні, багаторазові компоненти, і я постійно прагну покращити якість продукту та користувацький досвід.",
+		"description5": "Зараз я шукаю можливість приєднатися до команди мотивованих професіоналів, де я можу продовжувати навчатися, робити значний внесок і допомагати створювати продукти, які мають реальний вплив.",
+		"merits": "Заслуги",
+		"links": "Посилання",
+		"meritsData": {
+			"learnability": "Навчуваність",
+			"luck": "Удача",
+			"loyalty": "Відданість королю"
+		}
+	},
+	"hero": {
+		"status": "Відкритий до проєктів",
+		"line1": "Верстка та інтерфейси,",
+		"line2": "зібрані з інженерною точністю.",
+		"lead": "Front-end розробник. Створюю швидкі, доступні й акуратні веб-продукти на Vue 3, Nuxt 3 і TypeScript.",
+		"ctaPrimary": "Дивитись роботи",
+		"ctaSecondary": "Про мене"
+	},
+	"seo": {
+		"home": {
+			"title": "Yurii Larsen — Front-End розробник (Vue, Nuxt, TypeScript)",
+			"description": "Front-end розробник з України. Створюю швидкі та доступні веб-додатки на Vue 3, Nuxt 3 і TypeScript. Обрані роботи, стек і контакти.",
+			"keywords": "front-end розробник, Vue 3, Nuxt 3, TypeScript, Pinia, GSAP, SSR, SPA, Україна, портфоліо, веб-розробник, JavaScript, адаптивна верстка"
+		},
+		"aboutMe": {
+			"title": "Про мене — Yurii Larsen, Front-End розробник",
+			"description": "4+ роки досвіду: Vue і Nuxt додатки, SSR, state management з Pinia, REST/GraphQL API, GSAP анімації, мобільні збірки з Capacitor та Ionic.",
+			"keywords": "про Yurii Larsen, Vue розробник, Nuxt розробник, TypeScript, Pinia, Vuex, Composition API, Capacitor, Ionic, front-end інженер"
+		},
+		"works": {
+			"title": "Роботи — Портфоліо Yurii Larsen",
+			"description": "Обрані проєкти: SPA на Vue 3, SSR-сайти на Nuxt 3, адаптивні інтерфейси, GSAP-анімації, інтеграції API. Живі демо та код у портфоліо.",
+			"keywords": "Vue проєкти, Nuxt проєкти, SPA портфоліо, SSR, front-end кейси, GSAP, адаптивний UI, приклади веб-додатків, Yurii Larsen"
+		},
+		"notFound": {
+			"title": "404 — Сторінку не знайдено | Yurii Larsen",
+			"description": "Такої сторінки не існує. Поверніться до портфоліо."
+		},
+		"og": {
+			"siteName": "Yurii Larsen — Front-End розробник",
+			"locale": "uk_UA",
+			"imageAlt": "Yurii Larsen — Портфоліо Front-End розробника (Vue, Nuxt, TypeScript)"
+		},
+		"jsonLd": {
+			"role": "Front-End розробник",
+			"summary": "Front-end розробник створює веб-додатки на Vue 3, Nuxt 3, TypeScript, Pinia та GSAP.",
+			"knowsAbout": "Vue 3, Nuxt 3, TypeScript, JavaScript, Pinia, Vuex, GSAP, SCSS, REST API, GraphQL, Capacitor, Ionic"
+		}
+	}
+}

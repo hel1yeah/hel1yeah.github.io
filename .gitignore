@@ -1,54 +1,24 @@
-# Dependencies
-node_modules/
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
-# Nuxt.js build cache (не output файли для GitHub Pages)
-.nuxt/
-.data/
-
-# IDE and Editor files
-.vscode/
-.idea/
-.claude/
-*.swp
-*.swo
-*~
-.DS_Store
-
-# OS files
-Thumbs.db
-Desktop.ini
+# Node dependencies
+node_modules
 
 # Logs
-logs/
+logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# Environment variables
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
 .env
-.env.local
-.env.*.local
-
-# Vue.js specific
-.cache/
-.temp/
-*.local
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Coverage directory
-coverage/
-*.lcov
-
-# Temporary files
-*.tmp
-.tmp/
-
-# Project specific - старі версії сайту в підпапках
-OLD_SITE/
-new_portfolio/
+.env.*
+!.env.example

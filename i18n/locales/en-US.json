@@ -1,0 +1,85 @@
+{
+  "welcome": "Welcome",
+  "home": "Home",
+  "about-me": "About me",
+  "skills": "Skills",
+  "projects": "Projects",
+  "contact": "Contact",
+  "buttons": {
+    "login": "Login",
+    "readMore": "Read more",
+    "addNew": "Add New",
+    "downloadCV": "Download CV"
+  },
+  "works": {
+    "title": "My Works",
+    "loading": "Loading...",
+    "error": "Error loading data:",
+    "sitePrefix": "Website:"
+  },
+  "footer": {
+    "copyright": "LOOKING TO THE FUTURE"
+  },
+  "theme": {
+    "nature": "Nature Theme",
+    "dark": "Dark Theme"
+  },
+  "locales": {
+    "placeholder": "Select Language"
+  },
+  "aboutMe": {
+    "background": "Background",
+    "jobTitle": "Front-End Developer | Vue.js, Nuxt.js, TypeScript",
+    "description1": "I am a passionate Front-End Developer with over 3 years of experience building responsive, high-performance web applications using Vue.js, Nuxt.js, and TypeScript. My journey into web development began out of necessity but quickly evolved into a deep commitment to mastering the craft. I dedicated countless hours to learning—exploring documentation, experimenting with code, and working on personal and professional projects.",
+    "description2": "My core expertise includes modern JavaScript/TypeScript, Vue.js (Options and Composition API), Nuxt.js, and state management with Vuex and Pinia. I have extensive experience integrating RESTful and GraphQL APIs using Axios or Fetch, configuring project architecture, optimizing performance through SSR, lazy loading, and code-splitting, and implementing authentication flows with JWT and OAuth.",
+    "description3": "I've also built mobile-ready applications using Ionic and Capacitor, and developed APKs for platforms like Sunmi Store. My workflow often includes tools such as GitHub Actions, ESLint, Prettier, and Husky to ensure code quality and CI/CD efficiency.",
+    "description4": "Throughout my career, I've worked in Scrum teams, participated in technical discussions, contributed to architecture decisions, and mentored junior developers through code reviews. I enjoy translating complex UI/UX designs (from Figma or PSD) into elegant, reusable components and continually strive to enhance both product quality and user experience.",
+    "description5": "I am now looking for an opportunity to join a team of motivated professionals where I can continue learning, contribute meaningfully, and help build products that have real impact.",
+    "merits": "Merits",
+    "links": "Links",
+    "meritsData": {
+      "learnability": "Learnability",
+      "luck": "Luck",
+      "loyalty": "Loyalty to the King"
+    }
+  },
+  "hero": {
+    "status": "Available for projects",
+    "line1": "Layout & interfaces,",
+    "line2": "engineered.",
+    "lead": "Front-end developer crafting fast, accessible, beautiful web products with Vue 3, Nuxt 3 and TypeScript.",
+    "ctaPrimary": "View works",
+    "ctaSecondary": "About me"
+  },
+  "seo": {
+    "home": {
+      "title": "Yurii Larsen — Front-End Developer (Vue, Nuxt, TypeScript)",
+      "description": "Front-end developer from Ukraine building fast, accessible web apps with Vue 3, Nuxt 3 and TypeScript. Selected works, stack and contact.",
+      "keywords": "front-end developer, Vue 3, Nuxt 3, TypeScript, Pinia, GSAP, SSR, SPA, Ukraine, portfolio, web developer, JavaScript, responsive design"
+    },
+    "aboutMe": {
+      "title": "About — Yurii Larsen, Front-End Developer",
+      "description": "4+ years shipping Vue and Nuxt apps: SSR, state management with Pinia, REST/GraphQL, GSAP animations, and mobile builds with Capacitor and Ionic.",
+      "keywords": "about Yurii Larsen, Vue developer, Nuxt developer, TypeScript, Pinia, Vuex, Composition API, Capacitor, Ionic, front-end engineer"
+    },
+    "works": {
+      "title": "Works — Yurii Larsen's Portfolio",
+      "description": "Selected projects: Vue 3 SPAs, Nuxt 3 SSR sites, responsive UIs, GSAP animations, API integrations. Live code and demos on the portfolio of Yurii Larsen.",
+      "keywords": "Vue projects, Nuxt projects, SPA portfolio, SSR, front-end case studies, GSAP, responsive UI, web app examples, Yurii Larsen"
+    },
+    "notFound": {
+      "title": "404 — Page not found | Yurii Larsen",
+      "description": "The page you are looking for doesn't exist. Head back to the portfolio."
+    },
+    "og": {
+      "siteName": "Yurii Larsen — Front-End Developer",
+      "locale": "en_US",
+      "imageAlt": "Yurii Larsen — Front-End Developer portfolio (Vue, Nuxt, TypeScript)"
+    },
+    "jsonLd": {
+      "role": "Front-End Developer",
+      "summary": "Front-end developer building web apps with Vue 3, Nuxt 3, TypeScript, Pinia, and GSAP.",
+      "knowsAbout": "Vue 3, Nuxt 3, TypeScript, JavaScript, Pinia, Vuex, GSAP, SCSS, REST API, GraphQL, Capacitor, Ionic"
+    }
+  }
+}

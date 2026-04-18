@@ -1,0 +1,221 @@
+// ─────────────────────────────────────────────────────────
+// Design tokens — brand-preserved (purple/dark, orange/light)
+// with dev-tool minimalist spacing/typography/motion.
+// ─────────────────────────────────────────────────────────
+
+// Brand hues
+$brand-purple:   #7e3eff;
+$brand-purple-2: #692bdd;
+$brand-purple-3: #a67eff;
+
+$brand-orange:   #ff5526;
+$brand-orange-2: #e63d00;
+$brand-orange-3: #ff9966;
+
+$accent-cyan:    #00e5ff;
+$accent-blue:    #3c67e3;
+
+// ─────────────────────────────────────────────────────────
+// DARK theme (default) — deep plum base, purple accent
+// ─────────────────────────────────────────────────────────
+:root[data-theme="dark"],
+:root {
+  // Surfaces
+  --bg:          #0c0a16;
+  --bg-elevated: #141024;
+  --bg-subtle:   #1a1530;
+  --bg-overlay:  rgba(12, 10, 22, 0.72);
+
+  // Text
+  --fg:          #ffffff;
+  --fg-muted:    rgba(255, 255, 255, 0.68);
+  --fg-subtle:   rgba(255, 255, 255, 0.46);
+
+  // Borders (thin, low-opacity)
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-focus:  rgba(126, 62, 255, 0.5);
+
+  // Accent (brand purple)
+  --accent:          #{$brand-purple};
+  --accent-hover:    #{$brand-purple-3};
+  --accent-2:        #{$accent-cyan};
+  --accent-soft:     rgba(126, 62, 255, 0.14);
+  --accent-gradient: linear-gradient(120deg, #{$brand-purple} 0%, #{$accent-blue} 50%, #{$accent-cyan} 100%);
+
+  // Elevation
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.32);
+  --shadow-md:   0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg:   0 24px 64px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 64px rgba(126, 62, 255, 0.28);
+
+  // Back-compat aliases (existing components reference these)
+  --primary-color:     var(--accent);
+  --secondary-color:   #{$brand-purple-2};
+  --text-color:        var(--fg);
+  --background-color:  var(--bg);
+  --surface-color:     var(--bg-elevated);
+  --border-color:      var(--border);
+  --background-nav:    rgba(15, 1, 48, 0.72);
+  --shadow:            var(--shadow-md);
+
+  --style-color-sky:    #{$accent-cyan};
+  --style-color-blue:   #{$accent-blue};
+  --style-color-purple: #{$brand-purple-2};
+
+  --card-gradient:      var(--accent-gradient);
+  --card-gradient-size: 200% 200%;
+  --nav-gradient:       linear-gradient(90deg, rgba(126, 62, 255, 0.08), rgba(105, 43, 221, 0.12), rgba(143, 84, 255, 0.08));
+  --nav-gradient-size:  200% 100%;
+
+  --animate-card-color-1: #{$brand-purple-3};
+  --animate-card-color-2: #{$brand-purple};
+  --animate-card-color-3: #{$brand-purple-2};
+
+  --color-bright:       var(--accent);
+  --color-bright-hover: #{$brand-purple-3};
+}
+
+// ─────────────────────────────────────────────────────────
+// LIGHT theme — warm off-white, orange accent, readable
+// ─────────────────────────────────────────────────────────
+:root[data-theme="light"] {
+  // Surfaces (warm off-white, never pure #fff — feels more designed)
+  --bg:          #fafaf7;
+  --bg-elevated: #ffffff;
+  --bg-subtle:   #f2f2ee;
+  --bg-overlay:  rgba(250, 250, 247, 0.72);
+
+  // Text (near-black, not pure — reduces eye strain)
+  --fg:          #171717;
+  --fg-muted:    rgba(23, 23, 23, 0.64);
+  --fg-subtle:   rgba(23, 23, 23, 0.42);
+
+  // Borders (warm dark-on-light)
+  --border:        rgba(23, 23, 23, 0.08);
+  --border-strong: rgba(23, 23, 23, 0.14);
+  --border-focus:  rgba(255, 85, 38, 0.5);
+
+  // Accent (brand orange, slightly more saturated for contrast on cream bg)
+  --accent:          #{$brand-orange};
+  --accent-hover:    #{$brand-orange-3};
+  --accent-2:        #{$brand-orange-2};
+  --accent-soft:     rgba(255, 85, 38, 0.12);
+  --accent-gradient: linear-gradient(120deg, #{$brand-orange} 0%, #{$brand-orange-2} 50%, #{$brand-orange-3} 100%);
+
+  // Elevation — very soft for warm bg
+  --shadow-sm:   0 1px 2px rgba(23, 23, 23, 0.04);
+  --shadow-md:   0 8px 24px rgba(23, 23, 23, 0.08);
+  --shadow-lg:   0 24px 64px rgba(23, 23, 23, 0.12);
+  --shadow-glow: 0 0 64px rgba(255, 85, 38, 0.2);
+
+  --primary-color:     var(--accent);
+  --secondary-color:   #{$brand-orange-2};
+  --text-color:        var(--fg);
+  --background-color:  var(--bg);
+  --surface-color:     var(--bg-elevated);
+  --border-color:      var(--border);
+  --background-nav:    rgba(255, 255, 255, 0.72);
+  --shadow:            var(--shadow-md);
+
+  --style-color-sky:    #009cad;
+  --style-color-blue:   #143ebd;
+  --style-color-purple: #4806ac;
+
+  --card-gradient:      var(--accent-gradient);
+  --card-gradient-size: 200% 200%;
+  --nav-gradient:       linear-gradient(90deg, rgba(255, 85, 38, 0.05), rgba(230, 61, 0, 0.08), rgba(255, 120, 71, 0.05));
+  --nav-gradient-size:  200% 100%;
+
+  --animate-card-color-1: #{$brand-orange-3};
+  --animate-card-color-2: #{$brand-orange};
+  --animate-card-color-3: #{$brand-orange-2};
+
+  --color-bright:       var(--accent);
+  --color-bright-hover: #{$brand-orange-3};
+}
+
+// ─────────────────────────────────────────────────────────
+// Radii / motion — theme-agnostic
+// ─────────────────────────────────────────────────────────
+:root {
+  --radius-xs:   4px;
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-pill: 9999px;
+
+  --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+}
+
+// SCSS aliases (for legacy usage via $var)
+$primary-color:    var(--accent);
+$secondary-color:  var(--fg-muted);
+$text-color:       var(--fg);
+$background-color: var(--bg);
+$surface-color:    var(--bg-elevated);
+$border-color:     var(--border);
+
+$style-color-sky:    var(--style-color-sky);
+$style-color-blue:   var(--style-color-blue);
+$style-color-purple: var(--style-color-purple);
+
+// ─────────────────────────────────────────────────────────
+// Typography — Geist (sans + mono), Cyrillic-ready
+// ─────────────────────────────────────────────────────────
+$font-family-sans: "Geist Variable", "Geist", "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-family-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, "JetBrains Mono", Menlo, monospace;
+
+// Back-compat aliases
+$font-family-heading: $font-family-sans;
+$font-family-body:    $font-family-sans;
+
+// Type scale
+$font-size-xs:    0.75rem;    // 12
+$font-size-sm:    0.875rem;   // 14
+$font-size-base:  1rem;       // 16
+$font-size-lg:    1.0625rem;  // 17
+$font-size-xl:    1.25rem;    // 20
+$font-size-2xl:   1.5rem;     // 24
+$font-size-3xl:   2rem;       // 32
+$font-size-4xl:   2.75rem;    // 44
+$font-size-5xl:   4rem;       // 64
+$font-size-6xl:   5.5rem;     // 88
+$font-size-7xl:   7.5rem;     // 120
+
+$font-weight-normal:   400;
+$font-weight-medium:   500;
+$font-weight-semibold: 600;
+$font-weight-bold:     700;
+$font-weight-black:    900;
+
+$line-height-tight:   1.05;
+$line-height-snug:    1.2;
+$line-height-normal:  1.5;
+$line-height-relaxed: 1.6;
+
+$tracking-tight:  -0.025em;
+$tracking-normal: 0;
+$tracking-wide:   0.04em;
+$tracking-caps:   0.12em;
+
+// Layout
+$breakpoint-xs:  320px;
+$breakpoint-s:   480px;
+$breakpoint-sm:  576px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  992px;
+$breakpoint-xl:  1200px;
+$breakpoint-xxl: 1400px;
+
+$spacing-unit:      8px;
+$container-padding: $spacing-unit * 3;  // 24
+$container-max:     1200px;
+
+$transition-fast: var(--duration-fast) var(--ease-out);

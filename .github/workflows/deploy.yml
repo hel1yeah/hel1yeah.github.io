@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Site live at https://hel1yeah.github.io/ (user site) → root baseURL.
+      # If moving to a project site (username.github.io/repo-name), set:
+      #   NUXT_APP_BASE_URL: /repo-name/
+      NUXT_PUBLIC_DEFAULT_LOCALE: en
+      NUXT_PUBLIC_FALLBACK_LOCALE: uk
+      NUXT_PUBLIC_SUPPORTED_LOCALES: '["uk","en"]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate static site
+        run: npm run generate
+
+      - name: SPA fallback (copy 200.html → 404.html)
+        run: |
+          if [ -f .output/public/200.html ] && [ ! -f .output/public/404.html ]; then
+            cp .output/public/200.html .output/public/404.html
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
