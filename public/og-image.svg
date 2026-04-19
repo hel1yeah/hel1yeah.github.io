@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Yurii Larsen — Front-End Developer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c0a16"/>
+      <stop offset="100%" stop-color="#1a0f3a"/>
+    </linearGradient>
+    <radialGradient id="accent" cx="18%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#7e3eff" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#7e3eff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#7e3eff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="accent2" cx="88%" cy="92%" r="50%">
+      <stop offset="0%" stop-color="#3ea8ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#3ea8ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#accent)"/>
+  <rect width="1200" height="630" fill="url(#accent2)"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif" fill="#ffffff">
+    <text x="80" y="128" font-size="24" font-weight="500" letter-spacing="8" fill="#b9a6ff" opacity="0.9">PORTFOLIO</text>
+    <text x="80" y="286" font-size="96" font-weight="700" letter-spacing="-2">Yurii Larsen</text>
+    <text x="80" y="360" font-size="46" font-weight="500" fill="#cfd0e3">Front-End Developer</text>
+    <text x="80" y="420" font-size="30" font-weight="400" fill="#9aa0b8">Vue 3 · Nuxt 3 · TypeScript · GSAP</text>
+  </g>
+
+  <g transform="translate(80,520)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" fill="#b9a6ff">
+    <circle cx="8" cy="-6" r="6" fill="#7e3eff"/>
+    <text x="28" y="0">yurii-larsen.com</text>
+  </g>
+
+  <g transform="translate(960,470)" opacity="0.85">
+    <circle cx="80" cy="80" r="80" fill="none" stroke="#7e3eff" stroke-width="2"/>
+    <circle cx="80" cy="80" r="60" fill="none" stroke="#7e3eff" stroke-width="1" stroke-dasharray="4 6"/>
+    <text x="80" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="32" font-weight="700" fill="#ffffff">YL</text>
+  </g>
+</svg>

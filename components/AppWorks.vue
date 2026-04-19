@@ -147,6 +147,8 @@
 		}
 		@media (max-width: $breakpoint-sm) {
 			grid-template-columns: 1fr;
+			grid-auto-rows: auto;
+			grid-auto-flow: row;
 		}
 	}
 

@@ -61,22 +61,6 @@
       "purpose": "any maskable"
     }
   ],
-  "screenshots": [
-    {
-      "src": "/screenshots/desktop-home.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Home page on desktop"
-    },
-    {
-      "src": "/screenshots/mobile-home.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Home page on mobile"
-    }
-  ],
   "shortcuts": [
     {
       "name": "About Me",

@@ -1,2 +1,21 @@
-User-Agent: *
-Disallow:
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /404
+
+# AI crawlers — allow indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Host: https://yurii-larsen.com
+Sitemap: https://yurii-larsen.com/sitemap.xml

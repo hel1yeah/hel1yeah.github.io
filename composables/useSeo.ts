@@ -37,14 +37,21 @@ export function useSeo(key: SeoKey, options: SeoOptions = {}) {
 	const ogLocale = t('seo.og.locale');
 	const imageAlt = t('seo.og.imageAlt');
 
-	// Build hreflang alternates for every locale.
-	const alternates = (locales.value as Array<{ code: string; iso?: string }>).map(
-		(l) => ({
-			rel: 'alternate',
-			hreflang: l.iso ?? l.code,
-			href: `${SITE_ORIGIN}${switchLocalePath(l.code) || localePath(path)}`,
-		}),
-	);
+	const localeList = locales.value as Array<{ code: string; iso?: string }>;
+
+	// Build hreflang alternates for every locale + x-default.
+	const alternates = localeList.map((l) => ({
+		rel: 'alternate',
+		hreflang: l.iso ?? l.code,
+		href: `${SITE_ORIGIN}${switchLocalePath(l.code) || localePath(path)}`,
+	}));
+	const defaultLocaleCode =
+		(useRuntimeConfig().public.defaultLocale as string | undefined) ?? 'en';
+	alternates.push({
+		rel: 'alternate',
+		hreflang: 'x-default',
+		href: `${SITE_ORIGIN}${switchLocalePath(defaultLocaleCode) || localePath(path)}`,
+	});
 
 	const meta: Array<{ name?: string; property?: string; content: string }> = [
 		{ name: 'description', content: description },
@@ -66,7 +73,17 @@ export function useSeo(key: SeoKey, options: SeoOptions = {}) {
 		{ property: 'og:image:width', content: '1200' },
 		{ property: 'og:image:height', content: '630' },
 		{ property: 'og:image:alt', content: imageAlt },
+		{ property: 'og:image:type', content: 'image/jpeg' },
 	);
+
+	// og:locale:alternate for each non-active locale.
+	const currentIso = localeList.find((l) => l.code === locale.value)?.iso ?? locale.value;
+	for (const l of localeList) {
+		const iso = (l.iso ?? l.code).replace('-', '_');
+		if (iso !== currentIso.replace('-', '_')) {
+			meta.push({ property: 'og:locale:alternate', content: iso });
+		}
+	}
 
 	// Twitter
 	meta.push(

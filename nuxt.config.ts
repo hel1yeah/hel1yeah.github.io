@@ -58,18 +58,23 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/"],
+      routes: [
+        "/",
+        "/uk",
+        "/about-me",
+        "/uk/about-me",
+        "/works",
+        "/uk/works",
+        "/sitemap.xml",
+        "/robots.txt",
+      ],
+      failOnError: false,
     },
     esbuild: {
       options: {
-        target: "es2022", // Примусово використовує сучасний стандарт
+        target: "es2022",
       },
     },
-    // nodeOptions: {
-    //   experimental: {
-    //     fetch: true, // Явно дозволяє Fetch API
-    //   },
-    // },
   },
 
   experimental: {
@@ -115,35 +120,32 @@ export default defineNuxtConfig({
     buildAssetsDir: process.env.NUXT_APP_BUILD_ASSETS_DIR || "/_nuxt/",
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      htmlAttrs: {
-        lang: "uk",
-      },
       charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1",
+      viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
       meta: [
         { name: "format-detection", content: "telephone=no" },
         { name: "author", content: "Yurii Larsen" },
-        { name: "robots", content: "index, follow" },
+        { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+        { name: "googlebot", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
         { name: "theme-color", content: "#7e3eff" },
+        { name: "color-scheme", content: "dark light" },
+        { name: "referrer", content: "strict-origin-when-cross-origin" },
         { name: "msapplication-TileColor", content: "#7e3eff" },
         { name: "msapplication-config", content: "/browserconfig.xml" },
         { name: "apple-mobile-web-app-capable", content: "yes" },
         { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
         { name: "apple-mobile-web-app-title", content: "YL Portfolio" },
-        { property: "og:type", content: "website" },
-        { property: "og:image", content: "/og-image.jpg" },
-        { property: "og:image:width", content: "1200" },
-        { property: "og:image:height", content: "630" },
-        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:creator", content: "@hel1_yeah" },
+        { name: "twitter:site", content: "@hel1_yeah" },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: "canonical", href: "https://yurii-larsen.com" },
         { rel: "manifest", href: "/site.webmanifest" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/icons/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/icons/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/icons/favicon-16x16.png" },
+        { rel: "preconnect", href: "https://hel1yeah-github-io-default-rtdb.europe-west1.firebasedatabase.app", crossorigin: "" },
+        { rel: "dns-prefetch", href: "https://hel1yeah-github-io-default-rtdb.europe-west1.firebasedatabase.app" },
       ],
     },
   },

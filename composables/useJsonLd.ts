@@ -14,6 +14,8 @@ const SAME_AS = [
 
 export function useJsonLd() {
 	const { t, locale } = useI18n();
+	const route = useRoute();
+	const localePath = useLocalePath();
 
 	const role = t('seo.jsonLd.role');
 	const summary = t('seo.jsonLd.summary');
@@ -21,6 +23,8 @@ export function useJsonLd() {
 		.split(',')
 		.map((s) => s.trim())
 		.filter(Boolean);
+
+	const breadcrumb = buildBreadcrumb(route.path, t, localePath);
 
 	const graph = {
 		'@context': 'https://schema.org',
@@ -31,11 +35,13 @@ export function useJsonLd() {
 				name: PERSON_NAME,
 				alternateName: PERSON_ALT_NAME,
 				url: SITE_ORIGIN,
+				image: `${SITE_ORIGIN}/og-image.jpg`,
 				jobTitle: role,
 				description: summary,
 				knowsAbout,
 				sameAs: SAME_AS,
 				nationality: { '@type': 'Country', name: 'Ukraine' },
+				email: 'mailto:zoltic.sp.zoo@gmail.com',
 			},
 			{
 				'@type': 'WebSite',
@@ -44,7 +50,21 @@ export function useJsonLd() {
 				name: t('seo.og.siteName'),
 				inLanguage: locale.value,
 				publisher: { '@id': `${SITE_ORIGIN}/#person` },
+				potentialAction: {
+					'@type': 'SearchAction',
+					target: `${SITE_ORIGIN}/works?q={search_term_string}`,
+					'query-input': 'required name=search_term_string',
+				},
 			},
+			{
+				'@type': 'ProfilePage',
+				'@id': `${SITE_ORIGIN}${route.path}#profilepage`,
+				url: `${SITE_ORIGIN}${route.path}`,
+				inLanguage: locale.value,
+				mainEntity: { '@id': `${SITE_ORIGIN}/#person` },
+				isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
+			},
+			...(breadcrumb ? [breadcrumb] : []),
 		],
 	};
 
@@ -56,4 +76,43 @@ export function useJsonLd() {
 			},
 		],
 	});
+}
+
+type TFn = (key: string) => string;
+type LocalePathFn = (path: string) => string;
+
+function buildBreadcrumb(path: string, t: TFn, localePath: LocalePathFn) {
+	const normalized = path.replace(/^\/(uk|en)/, '') || '/';
+	if (normalized === '/') return null;
+
+	const items = [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: t('home'),
+			item: `${SITE_ORIGIN}${localePath('/')}`,
+		},
+	];
+
+	if (normalized === '/about-me') {
+		items.push({
+			'@type': 'ListItem',
+			position: 2,
+			name: t('about-me'),
+			item: `${SITE_ORIGIN}${localePath('/about-me')}`,
+		});
+	} else if (normalized === '/works') {
+		items.push({
+			'@type': 'ListItem',
+			position: 2,
+			name: t('works.title'),
+			item: `${SITE_ORIGIN}${localePath('/works')}`,
+		});
+	}
+
+	return {
+		'@type': 'BreadcrumbList',
+		'@id': `${SITE_ORIGIN}${path}#breadcrumb`,
+		itemListElement: items,
+	};
 }
