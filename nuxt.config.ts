@@ -132,6 +132,7 @@ export default defineNuxtConfig({
         { name: "referrer", content: "strict-origin-when-cross-origin" },
         { name: "msapplication-TileColor", content: "#7e3eff" },
         { name: "msapplication-config", content: "/browserconfig.xml" },
+        { name: "mobile-web-app-capable", content: "yes" },
         { name: "apple-mobile-web-app-capable", content: "yes" },
         { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
         { name: "apple-mobile-web-app-title", content: "YL Portfolio" },
