@@ -10,7 +10,7 @@
  *   useSeo('notFound', null, { noindex: true });
  */
 const SITE_ORIGIN = 'https://yurii-larsen.com';
-const OG_IMAGE = '/og-image.jpg';
+const OG_IMAGE = '/og-image.png';
 
 type SeoKey = 'home' | 'aboutMe' | 'works' | 'notFound';
 
@@ -73,7 +73,7 @@ export function useSeo(key: SeoKey, options: SeoOptions = {}) {
 		{ property: 'og:image:width', content: '1200' },
 		{ property: 'og:image:height', content: '630' },
 		{ property: 'og:image:alt', content: imageAlt },
-		{ property: 'og:image:type', content: 'image/jpeg' },
+		{ property: 'og:image:type', content: 'image/png' },
 	);
 
 	// og:locale:alternate for each non-active locale.
