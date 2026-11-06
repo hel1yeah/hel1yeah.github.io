@@ -82,7 +82,7 @@
 		light: [1, 85 / 255, 38 / 255],
 	};
 	// Low flame so it doesn't climb over the section header; radius matches .panel.
-	const FLAME_OPTIONS = { height: 80, radius: 12, intensity: 0.66, sparks: 1.2 } as const;
+	const FLAME_OPTIONS = { height: 88, radius: 12, intensity: 0.66, sparks: 1.2 } as const;
 	const flameColor = useThemeRgb(FLAME_PALETTE);
 
 	const sectionRef = ref<HTMLElement | null>(null);
