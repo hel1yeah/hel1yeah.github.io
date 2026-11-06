@@ -2,52 +2,28 @@
 	<article :class="['about', { 'about--page': page, 'about--excerpt': !page }]">
 		<header class="about__header">
 			<span class="about__kicker">{{ $t('aboutMe.background') }}</span>
-			<h2 class="about__role" ref="roleRef">{{ $t('aboutMe.jobTitle') }}</h2>
+			<h2 class="about__role">{{ $t('aboutMe.jobTitle') }}</h2>
 			<ul class="about__stack" aria-label="stack">
 				<li v-for="tag in stackTags" :key="tag" class="about__tag">{{ tag }}</li>
 			</ul>
 		</header>
 
 		<div class="about__body">
-			<p class="about__p about__p--lead" ref="p1Ref">{{ $t('aboutMe.description1') }}</p>
-			<p class="about__p" ref="p2Ref">{{ $t('aboutMe.description2') }}</p>
-			<p class="about__p" ref="p3Ref">{{ $t('aboutMe.description3') }}</p>
-			<p class="about__p" ref="p4Ref">{{ $t('aboutMe.description4') }}</p>
-			<p class="about__p" ref="p5Ref">{{ $t('aboutMe.description5') }}</p>
+			<p class="about__p about__p--lead">{{ $t('aboutMe.description1') }}</p>
+			<p class="about__p">{{ $t('aboutMe.description2') }}</p>
+			<p class="about__p">{{ $t('aboutMe.description3') }}</p>
+			<p class="about__p">{{ $t('aboutMe.description4') }}</p>
+			<p class="about__p">{{ $t('aboutMe.description5') }}</p>
 		</div>
 	</article>
 </template>
 
 <script setup lang="ts">
-	import { ref, onMounted } from 'vue';
-	import { useFlyingLetters } from '~/composables/useFlyingLetters';
-	import { useGlobalStore } from '~/stores/useGlobalStore';
-
-	const props = defineProps({
+	defineProps({
 		page: { type: Boolean, default: true },
 	});
 
 	const stackTags = ['Vue 3', 'Nuxt 3', 'TypeScript', 'Pinia', 'GSAP', 'SCSS'];
-
-	const roleRef = ref<HTMLElement | null>(null);
-	const p1Ref = ref<HTMLElement | null>(null);
-	const p2Ref = ref<HTMLElement | null>(null);
-	const p3Ref = ref<HTMLElement | null>(null);
-	const p4Ref = ref<HTMLElement | null>(null);
-	const p5Ref = ref<HTMLElement | null>(null);
-
-	const globalStore = useGlobalStore();
-
-	onMounted(() => {
-		// Flying letters only on home excerpt — full /about-me page stays static.
-		if (props.page) return;
-		if (!globalStore.isDesktop) return;
-
-		const targets = [roleRef, p1Ref, p2Ref, p3Ref, p4Ref, p5Ref];
-		targets.forEach((r) =>
-			useFlyingLetters(r, { useScrollTrigger: true }),
-		);
-	});
 </script>
 
 <style scoped lang="scss">
