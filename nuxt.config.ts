@@ -139,12 +139,10 @@ export default defineNuxtConfig({
         { name: "twitter:site", content: "@hel1_yeah" },
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
+        // Theme-aware PNG/SVG favicons are added in app.vue (utils/themeFavicon.ts).
+        { rel: "icon", type: "image/x-icon", sizes: "48x48", href: "/favicon.ico" },
         { rel: "manifest", href: "/site.webmanifest" },
         { rel: "apple-touch-icon", sizes: "180x180", href: "/icons/apple-touch-icon.png" },
-        { rel: "icon", type: "image/png", sizes: "32x32", href: "/icons/favicon-32x32.png" },
-        { rel: "icon", type: "image/png", sizes: "16x16", href: "/icons/favicon-16x16.png" },
       ],
       script: [
         { innerHTML: themeBootScript(), tagPriority: "critical" },
