@@ -81,5 +81,16 @@
 			"summary": "Front-end розробник створює веб-додатки на Vue 3, Nuxt 3, TypeScript, Pinia та GSAP.",
 			"knowsAbout": "Vue 3, Nuxt 3, TypeScript, JavaScript, Pinia, Vuex, GSAP, SCSS, REST API, GraphQL, Capacitor, Ionic"
 		}
+	},
+	"errorPage": {
+		"notFound": {
+			"title": "Сторінку не знайдено",
+			"lead": "Посилання могло застаріти, або сторінку перенесли."
+		},
+		"generic": {
+			"title": "Щось пішло не так",
+			"lead": "Сталася неочікувана помилка. Спробуйте трохи пізніше."
+		},
+		"cta": "Повернутися до портфоліо"
 	}
 }

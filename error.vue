@@ -1,25 +1,32 @@
 <script setup lang="ts">
+import type { NuxtError } from '#app';
 import { useSeo } from '~/composables/useSeo';
 
-definePageMeta({
-  layout: 'empty',
-});
+const props = defineProps<{ error: NuxtError }>();
+
+const { t } = useI18n();
+const localePath = useLocalePath();
+
+const isNotFound = computed(() => props.error.statusCode === 404);
+const messageKey = computed(() => (isNotFound.value ? 'notFound' : 'generic'));
 
 useSeo('notFound', { noindex: true });
+
+const backToPortfolio = () => clearError({ redirect: localePath('/') });
 </script>
 
 <template>
-  <main class="not-found">
-    <p class="not-found__code">404</p>
-    <h1 class="not-found__title">Page not found</h1>
-    <p class="not-found__lead">
-      The link may be broken or the page may have been moved.
-    </p>
-    <NuxtLink to="/" class="not-found__cta">
-      Back to portfolio
-      <span aria-hidden="true">→</span>
-    </NuxtLink>
-  </main>
+  <NuxtLayout name="empty">
+    <main class="not-found">
+      <p class="not-found__code">{{ error.statusCode }}</p>
+      <h1 class="not-found__title">{{ t(`errorPage.${messageKey}.title`) }}</h1>
+      <p class="not-found__lead">{{ t(`errorPage.${messageKey}.lead`) }}</p>
+      <button type="button" class="not-found__cta" @click="backToPortfolio">
+        {{ t('errorPage.cta') }}
+        <span aria-hidden="true">→</span>
+      </button>
+    </main>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="scss">
@@ -78,14 +85,20 @@ useSeo('notFound', { noindex: true });
     padding: 0.75rem 1.25rem;
     background: var(--fg);
     color: var(--bg);
+    border: 0;
     border-radius: var(--radius-md);
+    cursor: pointer;
+    font: inherit;
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
     transition: filter var(--duration-fast) var(--ease-out);
 
-    &:hover { filter: brightness(0.92); }
-
     span { transition: transform var(--duration-base) var(--ease-out); }
-    &:hover span { transform: translateX(3px); }
+
+    &:hover {
+      filter: brightness(0.92);
+
+      span { transform: translateX(3px); }
+    }
   }
 </style>

@@ -81,5 +81,16 @@
       "summary": "Front-end developer building web apps with Vue 3, Nuxt 3, TypeScript, Pinia, and GSAP.",
       "knowsAbout": "Vue 3, Nuxt 3, TypeScript, JavaScript, Pinia, Vuex, GSAP, SCSS, REST API, GraphQL, Capacitor, Ionic"
     }
+  },
+  "errorPage": {
+    "notFound": {
+      "title": "Page not found",
+      "lead": "The link may be broken or the page may have been moved."
+    },
+    "generic": {
+      "title": "Something went wrong",
+      "lead": "An unexpected error occurred. Please try again a bit later."
+    },
+    "cta": "Back to portfolio"
   }
 }

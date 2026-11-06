@@ -18,34 +18,43 @@
 			</div>
 
 			<aside class="about-section__col about-section__col--side">
-				<section data-reveal class="panel">
-					<h3 class="panel__title">{{ $t('aboutMe.merits') }}</h3>
-					<ul class="stats">
-						<li v-for="stat in stats" :key="stat.label" class="stats__item">
-							<span class="stats__value">{{ stat.value }}</span>
-							<span class="stats__label">{{ stat.label }}</span>
-						</li>
-					</ul>
-				</section>
+				<FlameFrame
+					data-reveal
+					class="about-section__flame"
+					:color="flameColor"
+					v-bind="FLAME_OPTIONS"
+				>
+					<div class="about-section__panels">
+						<section class="panel">
+							<h3 class="panel__title">{{ $t('aboutMe.merits') }}</h3>
+							<ul class="stats">
+								<li v-for="stat in stats" :key="stat.label" class="stats__item">
+									<span class="stats__value">{{ stat.value }}</span>
+									<span class="stats__label">{{ stat.label }}</span>
+								</li>
+							</ul>
+						</section>
 
-				<section data-reveal class="panel">
-					<h3 class="panel__title">{{ $t('aboutMe.links') }}</h3>
-					<ul class="links">
-						<li v-for="link in links" :key="link.title" class="links__item">
-							<a
-								class="links__a"
-								:href="link.link"
-								:title="link.title"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<component :is="iconComponents[link.title]" class="links__icon" />
-								<span class="links__text">{{ link.text }}</span>
-								<span class="links__arrow" aria-hidden="true">↗</span>
-							</a>
-						</li>
-					</ul>
-				</section>
+						<section class="panel">
+							<h3 class="panel__title">{{ $t('aboutMe.links') }}</h3>
+							<ul class="links">
+								<li v-for="link in links" :key="link.title" class="links__item">
+									<a
+										class="links__a"
+										:href="link.link"
+										:title="link.title"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<component :is="iconComponents[link.title]" class="links__icon" />
+										<span class="links__text">{{ link.text }}</span>
+										<span class="links__arrow" aria-hidden="true">↗</span>
+									</a>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</FlameFrame>
 			</aside>
 		</div>
 	</section>
@@ -59,11 +68,22 @@
 	import UkrnetIconSvg from '@/components/SVGcomponents/UkrnetIconSvg.vue';
 	import GmailIconSvg from '@/components/SVGcomponents/GmailIconSvg.vue';
 	import AppAboutMe from '@/components/AppAboutMe.vue';
+	import FlameFrame from '~/components/Style/FlameFrame.vue';
 	import { ref, onMounted } from 'vue';
 	import { useReveal } from '~/composables/useReveal';
+	import { useThemeRgb, type Rgb } from '~/composables/useThemeRgb';
 
 	const { t } = useI18n();
 	const localePath = useLocalePath();
+
+	// Fire around the side column follows the theme accent: purple (dark) / orange (light).
+	const FLAME_PALETTE: Record<'dark' | 'light', Rgb> = {
+		dark: [126 / 255, 62 / 255, 1],
+		light: [1, 85 / 255, 38 / 255],
+	};
+	// Low flame so it doesn't climb over the section header; radius matches .panel.
+	const FLAME_OPTIONS = { height: 80, radius: 12, intensity: 0.6, sparks: 1.2 } as const;
+	const flameColor = useThemeRgb(FLAME_PALETTE);
 
 	const sectionRef = ref<HTMLElement | null>(null);
 	onMounted(() =>
@@ -147,6 +167,25 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	.about-section__panels {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	// Phones: no WebGL fire (battery) — a static accent glow instead.
+	// A hidden canvas also pauses the engine via its IntersectionObserver.
+	.about-section__flame {
+		@media (max-width: 767.98px) {
+			border-radius: var(--radius-lg);
+			box-shadow: var(--shadow-glow);
+
+			:deep(.flame-frame__output) {
+				display: none;
+			}
+		}
 	}
 
 	.about-section__cta {

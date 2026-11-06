@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_nuxt/
-Disallow: /404
 
 # AI crawlers — allow indexing
 User-agent: GPTBot

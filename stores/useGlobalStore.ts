@@ -30,7 +30,11 @@ export const useGlobalStore = defineStore("global", () => {
     watch: true, // Спостерігаємо за змінами cookie
   });
 
-  const theme = ref<Theme>(themeCookie.value);
+  // Prerendered HTML (and its Pinia payload) is always built with the default theme,
+  // so the real value from the cookie is applied only after hydration — see
+  // plugins/theme.client.ts. Before paint, <html> is already themed by the inline
+  // script from config/headScripts.ts, so there is no flash.
+  const theme = ref<Theme>(THEMES.DARK);
 
   // Getters
   const isMobile = computed(() => screenSize.value === "mobile");
@@ -64,21 +68,22 @@ export const useGlobalStore = defineStore("global", () => {
     themeCookie.value = newTheme;
   }
 
+  function syncThemeFromCookie() {
+    theme.value = themeCookie.value === THEMES.LIGHT ? THEMES.LIGHT : THEMES.DARK;
+  }
+
   // Спостерігаємо за змінами теми та встановлюємо її в HTML
-  watch(
-    theme,
-    (newTheme) => {
-      if (import.meta.client) {
-        document.documentElement.setAttribute("data-theme", newTheme);
-        // Оновлюємо класи теми
-        Object.values(THEME_CLASSES).forEach((className) => {
-          document.documentElement.classList.remove(className);
-        });
-        document.documentElement.classList.add(THEME_CLASSES[newTheme]);
-      }
-    },
-    { immediate: true }
-  );
+  // (початкове значення до першого кадру ставить inline-скрипт у <head>)
+  watch(theme, (newTheme) => {
+    if (import.meta.client) {
+      document.documentElement.setAttribute("data-theme", newTheme);
+      // Оновлюємо класи теми
+      Object.values(THEME_CLASSES).forEach((className) => {
+        document.documentElement.classList.remove(className);
+      });
+      document.documentElement.classList.add(THEME_CLASSES[newTheme]);
+    }
+  });
 
   return {
     // State
@@ -96,5 +101,6 @@ export const useGlobalStore = defineStore("global", () => {
     updateScreenWidth,
     toggleTheme,
     setTheme,
+    syncThemeFromCookie,
   };
 });

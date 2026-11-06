@@ -1,7 +1,4 @@
 <script setup lang="ts">
-	import UkraineFlagSvg from './SVGcomponents/UkraineFlagSvg.vue';
-	import UkFlagSvg from './SVGcomponents/UkFlagSvg.vue';
-
 	const { locale, locales, setLocaleCookie } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();
 

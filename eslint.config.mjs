@@ -3,9 +3,8 @@ import withNuxt from "./.nuxt/eslint.config.mjs";
 
 export default withNuxt(
   {
-    compilerOptions: {
-      types: ["@nuxtjs/i18n"],
-    },
+    // `save/` is a committed snapshot of an old build; `vendor/` is third-party code kept verbatim.
+    ignores: ["save/**", "vendor/**"],
   }
   // Your custom configs here
 );

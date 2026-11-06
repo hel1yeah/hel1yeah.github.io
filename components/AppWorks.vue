@@ -37,6 +37,7 @@
 						<p class="work-card__descr">{{ work.descr }}</p>
 					</div>
 				</component>
+				<span class="work-card__laser" aria-hidden="true" />
 			</li>
 		</ul>
 	</section>
@@ -46,6 +47,7 @@
 	import { WORKS } from '@/data/works';
 	import { ref, onMounted } from 'vue';
 	import { useReveal } from '~/composables/useReveal';
+	import { useLaserReveal } from '~/composables/useLaserReveal';
 
 	defineProps({
 		page: { type: Boolean, default: false },
@@ -64,14 +66,12 @@
 			stagger: 0.16,
 			duration: 1.2,
 		});
-		// Cards fade up with a small stagger as the grid enters viewport.
-		useReveal(gridRef, {
-			childSelector: '.work-card',
-			y: 28,
-			stagger: 0.08,
-			duration: 0.95,
-			start: 'top 88%',
-		});
+	});
+
+	// Cards are "printed" by a laser beam as they scroll into view.
+	useLaserReveal(gridRef, {
+		itemSelector: '.work-card',
+		beamSelector: '.work-card__laser',
 	});
 
 	// Height variation for masonry flow — deterministic per index so SSR/hydration match.
@@ -182,6 +182,55 @@
 		// Mobile: don't force span, let content size naturally
 		@media (max-width: $breakpoint-sm) {
 			grid-row: auto !important;
+		}
+	}
+
+	// ───── Laser beam (driven by useLaserReveal; hidden at rest) ─────
+	.work-card__laser {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+		height: 3px;
+		// sits just above the clip edge, so it stays visible while the card is printed
+		transform: translateY(-100%);
+		opacity: 0;
+		pointer-events: none;
+
+		// heat band over the freshly revealed strip
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 100%;
+			height: 72px;
+			background: linear-gradient(to top, var(--accent-soft), transparent);
+		}
+
+		// white-hot core with accent glow and a slight flicker
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(90deg, transparent, #fff 18%, #fff 82%, transparent);
+			box-shadow:
+				0 0 6px 1px var(--accent),
+				0 0 18px 4px var(--accent),
+				0 0 44px 10px var(--accent-soft);
+			animation: laser-flicker 0.16s steps(2) infinite;
+		}
+	}
+
+	@keyframes laser-flicker {
+		0%,
+		100% {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0.82;
 		}
 	}
 

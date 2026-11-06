@@ -4,7 +4,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const store = useGlobalStore();
 
   // Debounce function to optimize resize events
-  function debounce<T extends (...args: any[]) => any>(
+  function debounce<T extends (...args: never[]) => unknown>(
     func: T,
     wait: number
   ): (...args: Parameters<T>) => void {

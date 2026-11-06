@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 // Opt-in glassmorphism button styles — use by adding `.btn` class.
 // (Bare `button` is NOT auto-styled anymore — it was crushing icon-only buttons.)
 .btn,
@@ -13,7 +15,7 @@ a.btn {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-weight: 500;
   cursor: pointer;
-  font-family: var(--font-family-body, "e-Ukraine", sans-serif);
+  font-family: $font-family-body;
   font-size: 1rem;
   text-align: center;
   color: #fff;

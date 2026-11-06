@@ -1,13 +1,13 @@
 <script setup lang="ts">
-definePageMeta({
-	layout: 'default',
-});
-
 import TheFirstScrean from '~/views/TheFirstScrean.vue';
 import ThaAboutMe from '~/views/ThaAboutMe.vue';
 import TheWorks from '~/views/TheWorks.vue';
 import AppSkills from '~/components/AppSkills.vue';
 import { useSeo } from '~/composables/useSeo';
+
+definePageMeta({
+	layout: 'default',
+});
 
 useSeo('home', { path: '/' });
 </script>

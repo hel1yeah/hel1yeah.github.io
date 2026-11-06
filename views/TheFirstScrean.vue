@@ -1,60 +1,80 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { defineAsyncComponent, ref, onMounted } from "vue";
 import ParticleCanvas from "~/components/Style/ParticleCanvas.vue";
-import { useReveal } from "~/composables/useReveal";
+import type { ParticleScrollOptions } from "~/vendor/canvas-ui/ParticleScroll/ParticleScrollVanilla";
+import { supportsHtmlInCanvas } from "~/utils/htmlInCanvas";
+
+// Loaded only where html-in-canvas exists, so other visitors never download the engine.
+const ParticleScroll = defineAsyncComponent(
+  () => import("~/vendor/canvas-ui/ParticleScroll/ParticleScroll.vue"),
+);
 
 const { t } = useI18n();
 const now = new Date().getFullYear();
 
-const heroInnerRef = ref<HTMLElement | null>(null);
+// canvasui ParticleScroll needs Chrome's experimental html-in-canvas API; everywhere
+// else (and in the prerendered HTML) the hero keeps the canvas particles.
+// All options are passed explicitly: the vendored wrapper forwards unset props as
+// `undefined`, which would override the engine defaults.
+const PARTICLE_SCROLL_OPTIONS: Required<ParticleScrollOptions> = {
+  point: 0.68,
+  band: 420,
+  density: 2,
+  size: 1.25,
+  spread: 220,
+  gravity: 0.35,
+  drift: 0.7,
+  swirl: 60,
+  stagger: 0.7,
+  fade: 0.85,
+  settle: 1.2,
+  smoothing: 0.6,
+};
+
+const useParticleScroll = ref(false);
 
 onMounted(() => {
-  useReveal(heroInnerRef, {
-    childSelector: "[data-reveal]",
-    y: 22,
-    stagger: 0.16,
-    duration: 1.25,
-    delay: 0.25,
-    immediate: true,
-  });
+  useParticleScroll.value = supportsHtmlInCanvas();
 });
 </script>
 
 <template>
   <section class="hero">
-    <ParticleCanvas class="hero__canvas">
-      <template #default>
-        <div ref="heroInnerRef" class="hero__inner">
-          <div data-reveal class="hero__eyebrow">
-            <span class="hero__dot" />
-            <span>{{ t("hero.status") }}</span>
-          </div>
-
-          <h1 data-reveal class="hero__title">
-            <span>{{ t("hero.line1") }}</span>
-            <span class="hero__title--accent">{{ t("hero.line2") }}</span>
-          </h1>
-
-          <p data-reveal class="hero__lead">{{ t("hero.lead") }}</p>
-
-          <div data-reveal class="hero__actions">
-            <NuxtLink to="/works" class="hero__cta hero__cta--primary">
-              {{ t("hero.ctaPrimary") }}
-              <span aria-hidden="true">→</span>
-            </NuxtLink>
-            <NuxtLink to="/about-me" class="hero__cta hero__cta--ghost">
-              {{ t("hero.ctaSecondary") }}
-            </NuxtLink>
-          </div>
-
-          <code data-reveal class="hero__kbd">
-            <span class="hero__kbd-sub">© {{ now }}</span>
-            <span class="hero__kbd-sep">/</span>
-            <span>nuxt 3 · vue 3 · typescript</span>
-          </code>
+    <component
+      :is="useParticleScroll ? ParticleScroll : ParticleCanvas"
+      v-bind="useParticleScroll ? PARTICLE_SCROLL_OPTIONS : {}"
+      :class="useParticleScroll ? 'hero__scroll-stage' : 'hero__canvas'"
+    >
+      <div class="hero__inner">
+        <div data-reveal class="hero__eyebrow">
+          <span class="hero__dot" />
+          <span>{{ t("hero.status") }}</span>
         </div>
-      </template>
-    </ParticleCanvas>
+
+        <h1 data-reveal class="hero__title">
+          <span>{{ t("hero.line1") }}</span>
+          <span class="hero__title--accent">{{ t("hero.line2") }}</span>
+        </h1>
+
+        <p data-reveal class="hero__lead">{{ t("hero.lead") }}</p>
+
+        <div data-reveal class="hero__actions">
+          <NuxtLink to="/works" class="hero__cta hero__cta--primary">
+            {{ t("hero.ctaPrimary") }}
+            <span aria-hidden="true">→</span>
+          </NuxtLink>
+          <NuxtLink to="/about-me" class="hero__cta hero__cta--ghost">
+            {{ t("hero.ctaSecondary") }}
+          </NuxtLink>
+        </div>
+
+        <code data-reveal class="hero__kbd">
+          <span class="hero__kbd-sub">© {{ now }}</span>
+          <span class="hero__kbd-sep">/</span>
+          <span>nuxt 3 · vue 3 · typescript</span>
+        </code>
+      </div>
+    </component>
   </section>
 </template>
 
@@ -65,15 +85,32 @@ onMounted(() => {
   // padding-block: clamp(2rem, 0vw, 4rem) 0;
 }
 
-// Override ParticleCanvas geometry: fixed height, rounded, subtle bg.
-.hero :deep(.particle-wrapper) {
-  min-height: min(calc(100svh - 140px), 720px);
-  max-height: min(calc(100svh - 140px), 720px);
+// Shared hero box for both stages (ParticleCanvas / canvasui ParticleScroll).
+@mixin hero-stage-surface {
   border-radius: var(--radius-2xl);
   background:
     radial-gradient(ellipse 60% 50% at 50% 35%, var(--accent-soft) 0%, transparent 70%),
     var(--bg);
   border: 1px solid var(--border);
+}
+
+// Override ParticleCanvas geometry: fixed height, rounded, subtle bg.
+.hero :deep(.particle-wrapper) {
+  @include hero-stage-surface;
+  min-height: min(calc(100svh - 140px), 720px);
+  max-height: min(calc(100svh - 140px), 720px);
+}
+
+// ParticleScroll draws its content inside an absolutely positioned canvas,
+// so the stage needs an explicit height.
+.hero__scroll-stage {
+  @include hero-stage-surface;
+  height: min(calc(100svh - 140px), 720px);
+  overflow: hidden;
+
+  .hero__inner {
+    padding: clamp(1.5rem, 4vw, 3rem);
+  }
 }
 
 // Reset the slot container to a true full-bleed flex box (the original
@@ -99,10 +136,39 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: clamp(0.75rem, 2vw, 1.5rem);
   text-align: center;
   width: 100%;
   max-width: 860px;
+  min-height: 100%;
+  margin-inline: auto;
+
+  // CSS-only entrance: starts with the first paint (no wait for JS/GSAP),
+  // so the prerendered headline is never hidden after hydration.
+  & > [data-reveal] {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: hero-reveal 1.25s var(--ease-out) both;
+
+      @for $index from 1 through 5 {
+        &:nth-child(#{$index}) {
+          animation-delay: #{0.25 + ($index - 1) * 0.16}s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .hero__eyebrow {

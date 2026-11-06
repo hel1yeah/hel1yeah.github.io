@@ -1,5 +1,7 @@
 import localesConfig from "./i18n/locales.config";
-import viteCompression from 'vite-plugin-compression';
+import { localeRedirectScript, themeBootScript } from "./config/headScripts";
+
+const baseURL = process.env.NUXT_APP_BASE_URL || "/";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
@@ -17,10 +19,6 @@ export default defineNuxtConfig({
 
   modules: [
     "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/icon",
-    "@nuxt/image",
-    "@nuxt/content",
     "@pinia/nuxt",
     ["@nuxtjs/i18n", localesConfig],
     "@vite-pwa/nuxt",
@@ -30,8 +28,25 @@ export default defineNuxtConfig({
     registerType: 'autoUpdate',
     manifest: false, // Вже є site.webmanifest
     workbox: {
-      globPatterns: ['**/*.{js,css,html,png,svg,ico,webp,woff2}'],
+      // No SPA fallback: every page is prerendered, so a navigation must get its own HTML.
+      navigateFallback: null,
+      // Precache only the app shell assets; images/icons are cached on demand below.
+      globPatterns: ['_nuxt/**/*.{js,css,woff2}', 'favicon.ico', 'logo.svg'],
       runtimeCaching: [
+        {
+          // Pages + their extracted payloads: fresh from the network, cached copy offline.
+          urlPattern: ({ request, url }) =>
+            request.mode === 'navigate' || url.pathname.endsWith('/_payload.json'),
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'pages-cache',
+            networkTimeoutSeconds: 3,
+            expiration: {
+              maxEntries: 30,
+              maxAgeSeconds: 60 * 60 * 24 * 7, // 7 днів
+            },
+          },
+        },
         {
           urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
           handler: 'CacheFirst',
@@ -89,22 +104,6 @@ export default defineNuxtConfig({
   ],
 
   vite: {
-    plugins: [
-      // Gzip compression
-      viteCompression({
-        algorithm: 'gzip',
-        ext: '.gz',
-        threshold: 10240, // Тільки файли > 10KB
-        deleteOriginFile: false,
-      }),
-      // Brotli compression (кращий за gzip)
-      viteCompression({
-        algorithm: 'brotliCompress',
-        ext: '.br',
-        threshold: 10240,
-        deleteOriginFile: false,
-      }),
-    ],
     css: {
       preprocessorOptions: {
         scss: {
@@ -116,7 +115,7 @@ export default defineNuxtConfig({
   },
 
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || "/",
+    baseURL,
     buildAssetsDir: process.env.NUXT_APP_BUILD_ASSETS_DIR || "/_nuxt/",
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -146,8 +145,17 @@ export default defineNuxtConfig({
         { rel: "apple-touch-icon", sizes: "180x180", href: "/icons/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/icons/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/icons/favicon-16x16.png" },
-        { rel: "preconnect", href: "https://hel1yeah-github-io-default-rtdb.europe-west1.firebasedatabase.app", crossorigin: "" },
-        { rel: "dns-prefetch", href: "https://hel1yeah-github-io-default-rtdb.europe-west1.firebasedatabase.app" },
+      ],
+      script: [
+        { innerHTML: themeBootScript(), tagPriority: "critical" },
+        {
+          innerHTML: localeRedirectScript({
+            baseURL,
+            defaultLocale: localesConfig.defaultLocale,
+            locales: localesConfig.locales.map((locale) => locale.code),
+          }),
+          tagPriority: "critical",
+        },
       ],
     },
   },
