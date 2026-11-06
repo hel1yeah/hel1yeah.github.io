@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app';
+import GlitchText from '~/components/Style/GlitchText.vue';
 import { useSeo } from '~/composables/useSeo';
 
 const props = defineProps<{ error: NuxtError }>();
@@ -18,8 +19,8 @@ const backToPortfolio = () => clearError({ redirect: localePath('/') });
 <template>
   <NuxtLayout name="empty">
     <main class="not-found">
-      <p class="not-found__code">{{ error.statusCode }}</p>
-      <h1 class="not-found__title">{{ t(`errorPage.${messageKey}.title`) }}</h1>
+      <GlitchText tag="p" class="not-found__code" :text="String(error.statusCode)" />
+      <GlitchText tag="h1" class="not-found__title" :text="t(`errorPage.${messageKey}.title`)" />
       <p class="not-found__lead">{{ t(`errorPage.${messageKey}.lead`) }}</p>
       <button type="button" class="not-found__cta" @click="backToPortfolio">
         {{ t('errorPage.cta') }}
