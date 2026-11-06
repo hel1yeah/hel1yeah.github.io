@@ -1,10 +1,10 @@
+import { SITE_ORIGIN } from '../../config/site';
+
 interface RouteEntry {
 	path: string;
 	priority: string;
 	changefreq: string;
 }
-
-const SITE_ORIGIN = 'https://yurii-larsen.com';
 
 const ROUTES: RouteEntry[] = [
 	{ path: '/', priority: '1.0', changefreq: 'monthly' },

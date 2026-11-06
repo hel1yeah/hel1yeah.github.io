@@ -85,7 +85,7 @@ Config in `i18n/locales.config.ts` (passed to the module from `nuxt.config.ts`);
 - `composables/useJsonLd.ts` — called once in `app.vue`; emits a schema.org `@graph` (Person, WebSite, ProfilePage, BreadcrumbList).
 - `server/routes/sitemap.xml.ts` — sitemap with hreflang alternates, prerendered to a static file.
 - `public/og-image.jpg` is rendered from `public/og-image.svg` (1200×630).
-- `SITE_ORIGIN = 'https://yurii-larsen.com'` is duplicated in `useSeo.ts`, `useJsonLd.ts`, `sitemap.xml.ts` and `public/robots.txt`.
+- `SITE_ORIGIN` (`https://hel1yeah.github.io`) lives in `config/site.ts` and is imported by `useSeo.ts`, `useJsonLd.ts` and `sitemap.xml.ts`; `public/robots.txt` and the text in `public/og-image.svg` repeat it by hand.
 
 **Adding a page:** create it under `pages/`; add both locale paths to `nitro.prerender.routes`; add it to `ROUTES` in the sitemap; add `seo.<key>` to both locale files and to `SeoKey`; extend `buildBreadcrumb` in `useJsonLd.ts`.
 

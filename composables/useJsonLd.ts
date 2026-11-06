@@ -2,7 +2,8 @@
  * Injects Person + WebSite JSON-LD structured data as one <script type="application/ld+json">.
  * Call once from app.vue (root) so it applies on every route.
  */
-const SITE_ORIGIN = 'https://yurii-larsen.com';
+import { SITE_ORIGIN } from '~/config/site';
+
 const PERSON_NAME = 'Yurii Larsen';
 const PERSON_ALT_NAME = 'hel1_yeah';
 const SAME_AS = [

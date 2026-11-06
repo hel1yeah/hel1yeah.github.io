@@ -9,7 +9,8 @@
  *   useSeo('aboutMe', '/about-me');
  *   useSeo('notFound', null, { noindex: true });
  */
-const SITE_ORIGIN = 'https://yurii-larsen.com';
+import { SITE_ORIGIN } from '~/config/site';
+
 const OG_IMAGE = '/og-image.jpg';
 
 type SeoKey = 'home' | 'aboutMe' | 'works' | 'notFound';

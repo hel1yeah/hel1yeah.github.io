@@ -16,5 +16,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Host: https://yurii-larsen.com
-Sitemap: https://yurii-larsen.com/sitemap.xml
+Host: https://hel1yeah.github.io
+Sitemap: https://hel1yeah.github.io/sitemap.xml
