@@ -41,9 +41,6 @@ interface FlameEngine {
 	/** True when WebGL can't draw (context lost after a GPU reset/switch, or no WebGL2). */
 	unavailable: Ref<boolean>;
 	start: () => void;
-	/** Re-measure the content box (call after moving it without resizing it). */
-	resize: () => void;
-	isRunning: () => boolean;
 }
 
 /**
@@ -102,10 +99,5 @@ export function useFlameEngine(
 		stop();
 	});
 
-	return {
-		unavailable,
-		start,
-		resize: () => instance?.resize(),
-		isRunning: () => instance !== null,
-	};
+	return { unavailable, start };
 }

@@ -37,28 +37,21 @@
 
 						<section class="panel">
 							<h3 class="panel__title">{{ $t('aboutMe.links') }}</h3>
-							<div class="links-wrap">
-								<ul class="links">
-									<li v-for="link in links" :key="link.title" class="links__item">
-										<a
-											class="links__a"
-											:href="link.link"
-											:title="link.title"
-											target="_blank"
-											rel="noopener noreferrer"
-											@mouseenter="igniteLink"
-											@mouseleave="extinguishLink"
-											@focus="igniteLink"
-											@blur="extinguishLink"
-										>
-											<component :is="iconComponents[link.title]" class="links__icon" />
-											<span class="links__text">{{ link.text }}</span>
-											<span class="links__arrow" aria-hidden="true">↗</span>
-										</a>
-									</li>
-								</ul>
-								<FlameHover :target="burningLink" :color="flameColor" v-bind="LINK_FLAME_OPTIONS" />
-							</div>
+							<ul class="links">
+								<li v-for="link in links" :key="link.title" class="links__item">
+									<a
+										class="links__a"
+										:href="link.link"
+										:title="link.title"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<component :is="iconComponents[link.title]" class="links__icon" />
+										<span class="links__text">{{ link.text }}</span>
+										<span class="links__arrow" aria-hidden="true">↗</span>
+									</a>
+								</li>
+							</ul>
 						</section>
 					</div>
 				</FlameFrame>
@@ -76,7 +69,6 @@
 	import GmailIconSvg from '@/components/SVGcomponents/GmailIconSvg.vue';
 	import AppAboutMe from '@/components/AppAboutMe.vue';
 	import FlameFrame from '~/components/Style/FlameFrame.vue';
-	import FlameHover from '~/components/Style/FlameHover.vue';
 	import { ref, onMounted } from 'vue';
 	import { useReveal } from '~/composables/useReveal';
 	import { useThemeRgb, type Rgb } from '~/composables/useThemeRgb';
@@ -92,17 +84,6 @@
 	// Low flame so it doesn't climb over the section header; radius matches .panel.
 	const FLAME_OPTIONS = { height: 80, radius: 12, intensity: 0.66, sparks: 1.2 } as const;
 	const flameColor = useThemeRgb(FLAME_PALETTE);
-
-	// Hovered (or keyboard-focused) link burns too — one shared engine, desktop only.
-	const LINK_FLAME_OPTIONS = { height: 28, spread: 6, radius: 6, intensity: 0.55, sparks: 1, scale: 0.9 } as const;
-	const burningLink = ref<HTMLElement | null>(null);
-	const canIgniteLinks = () => window.matchMedia('(hover: hover) and (min-width: 768px)').matches;
-	const igniteLink = (event: Event) => {
-		if (canIgniteLinks()) burningLink.value = event.currentTarget as HTMLElement;
-	};
-	const extinguishLink = (event: Event) => {
-		if (burningLink.value === event.currentTarget) burningLink.value = null;
-	};
 
 	const sectionRef = ref<HTMLElement | null>(null);
 	onMounted(() =>
@@ -300,10 +281,6 @@
 	}
 
 	// ───── Links ─────
-	.links-wrap {
-		position: relative;
-	}
-
 	.links {
 		display: flex;
 		flex-direction: column;
