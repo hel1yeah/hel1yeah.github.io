@@ -22,6 +22,10 @@ const DEFAULT_HEIGHT = 170;
 
 const contentEl = ref<HTMLElement | null>(null);
 const outputEl = ref<HTMLCanvasElement | null>(null);
+// No working WebGL right now (context lost after a GPU reset / GPU switch, or no
+// WebGL2 at all). Chrome paints a lost context as a white "sad face" box, so the
+// canvas is hidden and the root gets `flame-frame--unavailable` for a CSS fallback.
+const unavailable = ref(false);
 let instance: FlameWrapInstance | null = null;
 
 // Vue keeps unset optional props as `undefined`; dropping them lets engine defaults apply.
@@ -41,12 +45,35 @@ const outputStyle = computed(() => {
 	};
 });
 
-onMounted(() => {
+function start() {
 	if (!contentEl.value || !outputEl.value) return;
 	instance = createFlameWrap(
 		{ source: DOM_CONTENT_SOURCE, content: contentEl.value, output: outputEl.value },
 		definedOptions(),
 	);
+	unavailable.value = instance === null;
+}
+
+function stop() {
+	instance?.destroy();
+	instance = null;
+}
+
+function onContextLost(event: Event) {
+	// preventDefault() tells the browser we will handle restoration.
+	event.preventDefault();
+	stop();
+	unavailable.value = true;
+}
+
+function onContextRestored() {
+	start();
+}
+
+onMounted(() => {
+	outputEl.value?.addEventListener('webglcontextlost', onContextLost);
+	outputEl.value?.addEventListener('webglcontextrestored', onContextRestored);
+	start();
 });
 
 watch(
@@ -56,13 +83,14 @@ watch(
 );
 
 onBeforeUnmount(() => {
-	instance?.destroy();
-	instance = null;
+	outputEl.value?.removeEventListener('webglcontextlost', onContextLost);
+	outputEl.value?.removeEventListener('webglcontextrestored', onContextRestored);
+	stop();
 });
 </script>
 
 <template>
-	<div class="flame-frame">
+	<div class="flame-frame" :class="{ 'flame-frame--unavailable': unavailable }">
 		<div ref="contentEl" class="flame-frame__content">
 			<slot />
 		</div>
@@ -78,5 +106,9 @@ onBeforeUnmount(() => {
 	.flame-frame__output {
 		position: absolute;
 		pointer-events: none;
+
+		.flame-frame--unavailable & {
+			visibility: hidden;
+		}
 	}
 </style>

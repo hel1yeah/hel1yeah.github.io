@@ -82,7 +82,7 @@
 		light: [1, 85 / 255, 38 / 255],
 	};
 	// Low flame so it doesn't climb over the section header; radius matches .panel.
-	const FLAME_OPTIONS = { height: 80, radius: 12, intensity: 0.6, sparks: 1.2 } as const;
+	const FLAME_OPTIONS = { height: 80, radius: 12, intensity: 0.66, sparks: 1.2 } as const;
 	const flameColor = useThemeRgb(FLAME_PALETTE);
 
 	const sectionRef = ref<HTMLElement | null>(null);
@@ -175,12 +175,21 @@
 		gap: 1rem;
 	}
 
-	// Phones: no WebGL fire (battery) — a static accent glow instead.
-	// A hidden canvas also pauses the engine via its IntersectionObserver.
+	// Static accent glow instead of the WebGL fire: on phones (battery — a hidden
+	// canvas also pauses the engine via its IntersectionObserver) and whenever
+	// WebGL is unavailable (lost context, no WebGL2).
+	@mixin flame-fallback-glow {
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-glow);
+	}
+
 	.about-section__flame {
+		&.flame-frame--unavailable {
+			@include flame-fallback-glow;
+		}
+
 		@media (max-width: 767.98px) {
-			border-radius: var(--radius-lg);
-			box-shadow: var(--shadow-glow);
+			@include flame-fallback-glow;
 
 			:deep(.flame-frame__output) {
 				display: none;
