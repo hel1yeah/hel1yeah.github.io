@@ -84,7 +84,7 @@ Config in `i18n/locales.config.ts` (passed to the module from `nuxt.config.ts`);
 - `composables/useSeo.ts` — call once per page: `useSeo('<key>', { path, noindex })`. Reads `seo.<key>.title|description|keywords` from i18n and emits title, description, canonical, hreflang alternates (+ `x-default`), Open Graph, Twitter and `<html lang>`. Keys are typed by `SeoKey`.
 - `composables/useJsonLd.ts` — called once in `app.vue`; emits a schema.org `@graph` (Person, WebSite, ProfilePage, BreadcrumbList).
 - `server/routes/sitemap.xml.ts` — sitemap with hreflang alternates, prerendered to a static file.
-- `public/og-image.jpg` is rendered from `public/og-image.svg` (1200×630).
+- `public/og-image.jpg` (1200×630) = `public/og-image.svg` + the hero particle triangle (the `ParticleCanvas` simulation run offline, centered at x≈880, y≈290), composited in headless Chrome and saved as JPEG q85. Editing the SVG alone does not update the JPEG.
 - `SITE_ORIGIN` (`https://hel1yeah.github.io`) lives in `config/site.ts` and is imported by `useSeo.ts`, `useJsonLd.ts` and `sitemap.xml.ts`; `public/robots.txt` and the text in `public/og-image.svg` repeat it by hand.
 
 **Adding a page:** create it under `pages/`; add both locale paths to `nitro.prerender.routes`; add it to `ROUTES` in the sitemap; add `seo.<key>` to both locale files and to `SeoKey`; extend `buildBreadcrumb` in `useJsonLd.ts`.
